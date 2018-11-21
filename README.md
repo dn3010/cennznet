@@ -1,3 +1,3 @@
-# Template Node
+# CENNZNET Runtime
 
-A new SRML-based Substrate node, ready for hacking.
+CENNZNET node based on Substrate
