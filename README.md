@@ -10,3 +10,6 @@ CENNZNET node based on Substrate
 - Build & Run
   - `./build.sh`
   - `cargo run`
+- Run with as a validator
+  - `cargo run -- --dev`
+  - or `cennznet --dev`
