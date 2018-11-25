@@ -11,27 +11,27 @@ serde_derive = { version = "1.0", optional = true }
 safe-mix = { version = "1.0", default-features = false }
 parity-codec = "2.0"
 parity-codec-derive = "2.0"
-sr-std = { git = "https://github.com/paritytech/substrate" }
-sr-io = { git = "https://github.com/paritytech/substrate" }
-srml-support = { git = "https://github.com/paritytech/substrate" }
-substrate-primitives = { git = "https://github.com/paritytech/substrate" }
-substrate-keyring = { git = "https://github.com/paritytech/substrate" }
-srml-balances = { git = "https://github.com/paritytech/substrate" }
-srml-consensus = { git = "https://github.com/paritytech/substrate" }
-srml-contract = { git = "https://github.com/paritytech/substrate" }
-srml-council = { git = "https://github.com/paritytech/substrate" }
-srml-democracy = { git = "https://github.com/paritytech/substrate" }
-srml-executive = { git = "https://github.com/paritytech/substrate" }
-sr-primitives = { git = "https://github.com/paritytech/substrate" }
-srml-session = { git = "https://github.com/paritytech/substrate" }
-srml-staking = { git = "https://github.com/paritytech/substrate" }
-srml-system = { git = "https://github.com/paritytech/substrate" }
-srml-timestamp = { git = "https://github.com/paritytech/substrate" }
-srml-treasury = { git = "https://github.com/paritytech/substrate" }
-srml-upgrade-key = { git = "https://github.com/paritytech/substrate" }
-substrate-client = { git = "https://github.com/paritytech/substrate", optional = true }
-sr-version = { git = "https://github.com/paritytech/substrate" }
-substrate-finality-grandpa-primitives =  { git = "https://github.com/paritytech/substrate" }
+sr-std = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+sr-io = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-support = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+substrate-primitives = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+substrate-keyring = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-balances = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-consensus = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-contract = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-council = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-democracy = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-executive = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+sr-primitives = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-session = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-staking = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-system = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-timestamp = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-treasury = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+srml-upgrade-key = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+substrate-client = { git = "https://github.com/cennznet/substrate", branch = 'cennznet', optional = true }
+sr-version = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+substrate-finality-grandpa-primitives =  { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
 cennznet-primitives = { path = "../primitives" }
 
 [features]
