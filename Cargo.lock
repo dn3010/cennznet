@@ -253,19 +253,19 @@ dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "slog 2.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "structopt 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)",
- "substrate-cli 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-consensus-aura 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-executor 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-finality-grandpa 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keystore 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-network 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-service 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-transaction-pool 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "substrate-cli 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-consensus-aura 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-executor 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-finality-grandpa 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keystore 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-network 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-service 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-transaction-pool 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "tokio 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "trie-root 0.9.0 (git+https://github.com/paritytech/trie)",
  "vergen 2.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -279,9 +279,9 @@ dependencies = [
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
@@ -296,27 +296,27 @@ dependencies = [
  "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-version 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-balances 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-consensus 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-contract 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-council 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-democracy 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-executive 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-session 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-staking 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-timestamp 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-treasury 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-upgrade-key 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-finality-grandpa-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keyring 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-contract 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-council 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-democracy 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-executive 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-session 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-staking 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-timestamp 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-treasury 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-upgrade-key 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-finality-grandpa-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
@@ -2437,22 +2437,22 @@ dependencies = [
 [[package]]
 name = "sr-io"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "environmental 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "hash-db 0.9.0 (git+https://github.com/paritytech/trie)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc_version 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-state-machine 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-trie 0.4.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-state-machine 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-trie 0.4.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "sr-primitives"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "integer-sqrt 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2461,27 +2461,27 @@ dependencies = [
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "sr-sandbox"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc_version 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "wasmi 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "sr-std"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "rustc_version 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -2489,268 +2489,268 @@ dependencies = [
 [[package]]
 name = "sr-version"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-balances"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keyring 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-consensus"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-contract"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-wasm 0.31.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "pwasm-utils 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-sandbox 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-balances 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-sandbox 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-council"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-balances 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-democracy 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-democracy 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-democracy"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-balances 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-executive"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-metadata"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-session"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-consensus 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-timestamp 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-timestamp 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-staking"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-balances 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-consensus 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-session 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-timestamp 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keyring 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-session 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-timestamp 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-support"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "mashup 0.1.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-metadata 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-metadata 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-system"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-timestamp"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-consensus 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-treasury"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-balances 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "srml-upgrade-key"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-consensus 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
@@ -2853,7 +2853,7 @@ dependencies = [
 [[package]]
 name = "substrate-cli"
 version = "0.3.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "ansi_term 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "app_dirs 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2870,13 +2870,13 @@ dependencies = [
  "names 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "slog 2.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "structopt 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-network 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-service 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-telemetry 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-network 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-service 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-telemetry 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sysinfo 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.40 (registry+https://github.com/rust-lang/crates.io-index)",
  "tokio 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2885,7 +2885,7 @@ dependencies = [
 [[package]]
 name = "substrate-client"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2898,22 +2898,22 @@ dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "slog 2.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-version 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-consensus-common 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-executor 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keyring 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-state-machine 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-telemetry 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-trie 0.4.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-consensus-common 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-executor 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-state-machine 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-telemetry 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-trie 0.4.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-client-db"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hash-db 0.9.0 (git+https://github.com/paritytech/trie)",
  "kvdb 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2922,56 +2922,56 @@ dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-executor 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-state-db 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-state-machine 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-trie 0.4.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-executor 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-state-db 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-state-machine 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-trie 0.4.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-consensus-aura"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-version 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-consensus 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-consensus-common 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-network 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-consensus-common 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-network 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "tokio 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "substrate-consensus-common"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-version 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "tokio 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "substrate-executor"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2981,19 +2981,19 @@ dependencies = [
  "parking_lot 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-version 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-serializer 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-state-machine 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-trie 0.4.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-serializer 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-state-machine 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-trie 0.4.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "wasmi 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "substrate-finality-grandpa"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "finality-grandpa 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3001,43 +3001,43 @@ dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-consensus-common 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-finality-grandpa-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-network 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-service 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-consensus-common 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-finality-grandpa-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-network 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-service 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "tokio 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "substrate-finality-grandpa-primitives"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-keyring"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-keystore"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3046,14 +3046,14 @@ dependencies = [
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.33 (registry+https://github.com/rust-lang/crates.io-index)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "subtle 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "substrate-network"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "bitflags 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "env_logger 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3066,20 +3066,20 @@ dependencies = [
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.5.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-hex 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-consensus-common 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keyring 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-network-libp2p 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-test-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-consensus-common 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-network-libp2p 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-test-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "tokio 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "substrate-network-libp2p"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "bytes 0.4.11 (registry+https://github.com/rust-lang/crates.io-index)",
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3102,7 +3102,7 @@ dependencies = [
 [[package]]
 name = "substrate-primitives"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "base58 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "blake2-rfc 0.2.18 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3118,7 +3118,7 @@ dependencies = [
  "rustc-hex 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "twox-hash 1.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "uint 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "untrusted 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3128,7 +3128,7 @@ dependencies = [
 [[package]]
 name = "substrate-rpc"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core 9.0.0 (git+https://github.com/paritytech/jsonrpc.git)",
@@ -3138,33 +3138,33 @@ dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.33 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-version 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-executor 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-transaction-pool 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-executor 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-transaction-pool 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "tokio 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "substrate-rpc-servers"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "jsonrpc-http-server 9.0.0 (git+https://github.com/paritytech/jsonrpc.git)",
  "jsonrpc-pubsub 9.0.0 (git+https://github.com/paritytech/jsonrpc.git)",
  "jsonrpc-ws-server 9.0.0 (git+https://github.com/paritytech/jsonrpc.git)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-rpc 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-rpc 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-serializer"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.33 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3173,7 +3173,7 @@ dependencies = [
 [[package]]
 name = "substrate-service"
 version = "0.3.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "exit-future 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3186,19 +3186,19 @@ dependencies = [
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.33 (registry+https://github.com/rust-lang/crates.io-index)",
  "slog 2.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client-db 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-consensus-common 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-executor 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keystore 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-network 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-rpc 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-rpc-servers 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-telemetry 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-transaction-pool 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client-db 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-consensus-common 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-executor 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keystore 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-network 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-rpc 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-rpc-servers 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-telemetry 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-transaction-pool 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "target_info 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "tokio 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -3206,19 +3206,19 @@ dependencies = [
 [[package]]
 name = "substrate-state-db"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.5.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-state-machine"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hash-db 0.9.0 (git+https://github.com/paritytech/trie)",
  "heapsize 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3226,8 +3226,8 @@ dependencies = [
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-trie 0.4.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-trie 0.4.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "trie-db 0.9.0 (git+https://github.com/paritytech/trie)",
  "trie-root 0.9.0 (git+https://github.com/paritytech/trie)",
 ]
@@ -3235,7 +3235,7 @@ dependencies = [
 [[package]]
 name = "substrate-telemetry"
 version = "0.3.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3250,23 +3250,23 @@ dependencies = [
 [[package]]
 name = "substrate-test-client"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-consensus-common 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-executor 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keyring 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-state-machine 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-test-runtime 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-consensus-common 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-executor 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-state-machine 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-test-runtime 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-test-runtime"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3274,20 +3274,20 @@ dependencies = [
  "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "sr-version 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-keyring 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-transaction-graph"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3295,29 +3295,29 @@ dependencies = [
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-transaction-pool"
 version = "0.1.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "parking_lot 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
- "substrate-transaction-graph 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-transaction-graph 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
 [[package]]
 name = "substrate-trie"
 version = "0.4.0"
-source = "git+https://github.com/cennznet/substrate?branch=cennznet#74acba68668f7db160c8fa9eca55a7a75a0ca346"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#74acba68668f7db160c8fa9eca55a7a75a0ca346"
 dependencies = [
  "hash-db 0.9.0 (git+https://github.com/paritytech/trie)",
  "memory-db 0.9.0 (git+https://github.com/paritytech/trie)",
@@ -4277,25 +4277,25 @@ dependencies = [
 "checksum slog-json 2.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ddd14b8df2df39378b3e933c79784350bf715b11444d99f903df0253bbe524e5"
 "checksum slog-scope 4.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "053344c94c0e2b22da6305efddb698d7c485809427cf40555dc936085f67a9df"
 "checksum smallvec 0.6.6 (registry+https://github.com/rust-lang/crates.io-index)" = "622df2d454c29a4d89b30dc3b27b42d7d90d6b9e587dbf8f67652eb7514da484"
-"checksum sr-io 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum sr-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum sr-sandbox 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum sr-std 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum sr-version 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-balances 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-consensus 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-contract 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-council 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-democracy 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-executive 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-metadata 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-session 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-staking 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-support 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-system 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-timestamp 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-treasury 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum srml-upgrade-key 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
+"checksum sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum sr-sandbox 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-contract 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-council 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-democracy 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-executive 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-metadata 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-session 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-staking 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-timestamp 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-treasury 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-upgrade-key 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum stable_deref_trait 1.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "dba1a27d3efae4351c8051072d619e3ade2820635c3958d826bfea39d59b54c8"
 "checksum static_assertions 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)" = "c19be23126415861cb3a23e501d34a708f7f9b2183c5252d690941c2e69199d5"
 "checksum stdweb 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "ef5430c8e36b713e13b48a9f709cc21e046723fe44ce34587b73a830203b533e"
@@ -4308,31 +4308,31 @@ dependencies = [
 "checksum strsim 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "bb4f380125926a99e52bc279241539c018323fab05ad6368b56f93d9369ff550"
 "checksum structopt 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)" = "41c4a2479a078509940d82773d90ff824a8c89533ab3b59cd3ce8b0c0e369c02"
 "checksum structopt-derive 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)" = "5352090cfae7a2c85e1a31146268b53396106c88ca5d6ccee2e3fae83b6e35c2"
-"checksum substrate-cli 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-client-db 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-consensus-aura 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-consensus-common 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-executor 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-finality-grandpa 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-finality-grandpa-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-keyring 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-keystore 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-network 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-network-libp2p 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-primitives 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-rpc 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-rpc-servers 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-serializer 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-service 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-state-db 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-state-machine 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-telemetry 0.3.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-test-client 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-test-runtime 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-transaction-graph 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-transaction-pool 0.1.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
-"checksum substrate-trie 0.4.0 (git+https://github.com/cennznet/substrate?branch=cennznet)" = "<none>"
+"checksum substrate-cli 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-client-db 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-consensus-aura 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-consensus-common 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-executor 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-finality-grandpa 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-finality-grandpa-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-keystore 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-network 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-network-libp2p 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-rpc 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-rpc-servers 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-serializer 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-service 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-state-db 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-state-machine 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-telemetry 0.3.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-test-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-test-runtime 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-transaction-graph 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-transaction-pool 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum substrate-trie 0.4.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum subtle 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "dc7f6353c2ee5407358d063a14cccc1630804527090a6fb5a9489ce4924280fb"
 "checksum subtle 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "2d67a5a62ba6e01cb2192ff309324cb4875d0c451d55fe2319433abe7a05a8ee"
 "checksum syn 0.13.11 (registry+https://github.com/rust-lang/crates.io-index)" = "14f9bf6292f3a61d2c716723fdb789a41bbe104168e6f496dc6497e531ea1b9b"

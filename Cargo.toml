@@ -20,18 +20,18 @@ hex-literal = "0.1"
 slog = "^2"
 parity-codec = { version = "2.1" }
 trie-root = { git = "https://github.com/paritytech/trie" }
-sr-io = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-sr-primitives = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-cli = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-primitives = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-executor = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-service = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-transaction-pool = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-network = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-consensus-aura = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-keystore = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
-substrate-client = { git = "https://github.com/cennznet/substrate", branch = 'cennznet', default-features = false }
-substrate-finality-grandpa = { git = "https://github.com/cennznet/substrate", branch = 'cennznet' }
+sr-io = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+sr-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-cli = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-executor = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-service = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-transaction-pool = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-network = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-consensus-aura = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-keystore = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+substrate-finality-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 structopt = "0.2.13"
 cennznet-runtime = { path = "runtime" }
 cennznet-primitives = { path = "primitives" }
