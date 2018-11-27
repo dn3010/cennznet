@@ -33,11 +33,13 @@ substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git"
 sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-finality-grandpa-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 cennznet-primitives = { path = "../primitives" }
+gat = { path = "../modules/gat" }
 
 [features]
 default = ["std"]
 std = [
 	"parity-codec/std",
+	"parity-codec-derive/std",
 	"substrate-primitives/std",
 	"sr-std/std",
 	"srml-support/std",

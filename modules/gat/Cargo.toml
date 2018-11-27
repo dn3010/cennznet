@@ -1,0 +1,27 @@
+[package]
+name = "gat"
+version = "0.1.0"
+authors = ["Justin Yoon <justin.yoon@centrality.ai>"]
+
+[dependencies]
+serde = { version = "1.0", default-features = false }
+parity-codec = { version = "2.1", default-features = false }
+parity-codec-derive = { version = "2.1", default-features = false }
+# TODO fix these paths
+sr-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+srml-system = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+	# "serde/std",
+	"parity-codec/std",
+	"parity-codec-derive/std",
+	# "substrate-primitives/std",
+	# "sr-std/std",
+	# "sr-io/std",
+	"sr-primitives/std",
+	"srml-support/std",
+	"srml-system/std",
+]
