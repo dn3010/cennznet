@@ -32,6 +32,7 @@ srml-upgrade-key = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git"
 sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 substrate-finality-grandpa-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 cennznet-primitives = { path = "../../primitives", default-features = false }
+gat = { path = "../../modules/gat", default-features = false }
 
 [features]
 default = []
