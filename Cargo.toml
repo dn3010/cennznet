@@ -31,6 +31,7 @@ substrate-network = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git
 substrate-consensus-aura = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-keystore = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+substrate-consensus-common = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-finality-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 structopt = "0.2.13"
