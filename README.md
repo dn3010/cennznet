@@ -15,6 +15,7 @@ CENNZnet node based on Substrate
     - Make sure your have setup an SSH key with your bitbucket account
         - https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html
         - You can verify it by running `ssh git@bitbucket.org`, which should prompt `logged in as your_bitbucket_user_name.`
+        - If you are still unable to fetch, [following this instruction](https://github.com/rust-lang/cargo/issues/2078#issuecomment-434388584)
     - `./build.sh`
         - compile runtime to wasm
     - `cargo build`
