@@ -1,6 +1,6 @@
-# CENNZNET Runtime
+# CENNZnet Node
 
-CENNZNET node based on Substrate
+CENNZnet node based on Substrate
 
 ## Development
 
