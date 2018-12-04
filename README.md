@@ -18,7 +18,7 @@ CENNZNET node based on Substrate
     - `./build.sh`
         - compile runtime to wasm
     - `cargo build`
-        - compile and run
+        - compile the node
 - Run with as a validator
     - `cargo run -- --dev`
     - or `cennznet --dev`
