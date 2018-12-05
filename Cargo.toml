@@ -40,7 +40,7 @@ cennznet-primitives = { path = "primitives" }
 vergen = "2"
 
 [workspace]
-members = [ "runtime", "primitives", "modules/gat" ]
+members = [ "runtime", "primitives", "modules/*" ]
 exclude = [ "runtime/wasm" ]
 
 [profile.release]
