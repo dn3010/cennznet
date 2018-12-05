@@ -29,6 +29,7 @@ srml-system = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-timestamp = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-treasury = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-upgrade-key = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", optional = true }
 sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-finality-grandpa-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
