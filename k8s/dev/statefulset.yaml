@@ -1,0 +1,106 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: substrate-storage-0
+  labels:
+    kubernetes.io/cluster-service: "true"
+    app: substrate
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+---
+apiVersion: apps/v1beta1
+kind: StatefulSet
+
+metadata:
+  name: substrate-0
+  namespace: substrate
+  labels:
+    kubernetes.io/cluster-service: "true"
+    app: substrate
+    version: v1
+spec:
+  replicas: 1
+  serviceName: substrate-0
+  template:
+    metadata:
+      labels:
+        app: substrate
+        node: substrate-0
+        substrate: nodes
+        version: v1
+        kubernetes.io/cluster-service: "true"
+      annotations:
+        scheduler.alpha.kubernetes.io/critical-pod: ''
+    spec:
+      containers:
+      - image: parity/substrate:nightly-20181204
+        name: substrate-0
+        command:
+          - "/bin/bash"
+          - "-c"
+          - >
+            ls -laR /mnt &&  gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
+            --chain=/mnt/substrate/dev.json
+            --base-path="/mnt/substrate"
+            --key=Andrea
+            --name=ANDREA
+            --node-key=0000000000000000000000000000000000000000000000000000000000000001
+            --bootnodes=/dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+            --bootnodes=/dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
+            --validator
+            --telemetry-url=ws://telemetry.substrate:1024
+        volumeMounts:
+          - name: substrate-data-0
+            mountPath: "/mnt/substrate/"
+          - name: genesis-0
+            mountPath: "/mnt/genesis/"
+      volumes:  
+        - name: genesis-0
+          secret:
+            secretName: dev-genesis-block
+      imagePullSecrets:
+        - name: registry-secret
+  volumeClaimTemplates:
+  - metadata:
+      name: substrate-data-0
+      annotations:
+        volume.beta.kubernetes.io/storage-class: substrate-storage-0
+      labels:
+        app: substrate
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+
+---
+# Source: substrate/templates/Service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: substrate-0
+  namespace: substrate
+  labels:
+    node: substrate-0
+    app: substrate
+    substrate: nodes
+spec:
+  ports:
+  - port: 30333
+    name: p2p
+  - port: 9933
+    name: rpc-http
+  - port: 9944
+    name: rpc-ws
+  - port: 1024
+    name: telemetry
+  type: LoadBalancer
+  loadBalancerSourceRanges:
+  - 203.118.138.130/32
+  - 13.73.107.121/32
+  - 118.127.126.86/32
+  selector:
+    node: substrate-0
