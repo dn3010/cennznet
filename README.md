@@ -27,6 +27,14 @@ CENNZnet node based on Substrate
     - Run your own testnet with a validator
         - `cargo run -- --dev`
         - or `./target/debug/cennznet --dev`
+- Purge chain
+    - For CENNZnet DEV net
+        - `cargo run -- purge-chain`
+        - or `./target/debug/cennznet purge-chain`
+    - For local testnet
+        - `cargo run -- --dev purge-chain`
+        - or `./target/debug/cennznet --dev purge-chain`
+
 
 
 Note: Ctrl + C can kill the node but it could take some times, you may use `killall -9 cennznet` to force kill it. A robust blockchain application should survive from the harshest conditions.
