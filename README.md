@@ -34,6 +34,9 @@ CENNZnet node based on Substrate
     - For local testnet
         - `cargo run -- --dev purge-chain`
         - or `./target/debug/cennznet --dev purge-chain`
+- Telemetry
+    - Add command argument `--telemetry-url=ws://cennznet-telemetry.centrality.me:1024 --name your_name` to report information to telemetry server
+    - You can then view it at http://cennznet-telemetry.centrality.me/
 
 
 
