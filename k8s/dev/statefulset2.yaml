@@ -36,20 +36,25 @@ spec:
       containers:
       - image: parity/substrate:nightly-20181204
         name: substrate-2
+        env:
+        - name: RUST_LOG
+          value: "debug"
         command:
           - "/bin/bash"
           - "-c"
           - >
             ls -laR /mnt &&  gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
             --chain=/mnt/substrate/dev.json
-            --base-path="/mnt/substrate"
+            --base-path=/mnt/substrate
             --key=Courtney
             --name=COURTNEY
             --node-key=0000000000000000000000000000000000000000000000000000000000000003
             --validator
-            --bootnodes=/dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
-            --bootnodes=/dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+            --bootnodes=/dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
+            --bootnodes=/dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
             --telemetry-url=ws://telemetry.substrate:1024
+            --rpc-external
+            --ws-external
         volumeMounts:
           - name: substrate-data-2
             mountPath: /mnt/substrate/

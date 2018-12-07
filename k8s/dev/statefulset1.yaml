@@ -42,7 +42,7 @@ spec:
           - >
             ls -laR /mnt &&  gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
             --chain=/mnt/substrate/dev.json
-            --base-path="/mnt/substrate"
+            --base-path=/mnt/substrate
             --key=Brooke
             --name=BROOKE
             --node-key=0000000000000000000000000000000000000000000000000000000000000002
@@ -50,6 +50,9 @@ spec:
             --bootnodes=/dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
             --bootnodes=/dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
             --telemetry-url=ws://telemetry.substrate:1024
+            --rpc-external
+            --ws-external
+            --log sync=trace
         volumeMounts:
           - name: substrate-data-1
             mountPath: /mnt/substrate/
