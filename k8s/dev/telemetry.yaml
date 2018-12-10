@@ -1,0 +1,58 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+
+metadata:
+  name: telemetry
+  namespace: substrate
+  labels:
+    kubernetes.io/cluster-service: "true"
+    app: telemetry
+    version: v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: telemetry
+        version: v1
+        kubernetes.io/cluster-service: "true"
+      annotations:
+        scheduler.alpha.kubernetes.io/critical-pod: ''
+    spec:
+      containers:
+      - image: centralitycontainerregistry-on.azurecr.io/centrality/cennznet-telemetry:1.0.16
+        name: telemetry
+        command:
+          - "/bin/bash"
+          - "scripts/deploy.sh"
+      imagePullSecrets:
+        - name: registry-secret
+
+---
+# Source: substrate/templates/Service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: telemetry
+  namespace: substrate
+  labels:
+    app: telemetry
+spec:
+  ports:
+  - name: backend
+    port: 8080
+  - name: frontend
+    port: 80
+    targetPort: 5000
+  - name: ws
+    port: 1024
+  type: LoadBalancer
+  selector:
+    app: telemetry
+  loadBalancerSourceRanges:
+  - 203.118.138.130/32
+  - 13.73.107.121/32
+  - 118.127.126.86/32
+  - 52.220.204.131/32 # k8s-dev NAT gateway
+  - 18.136.19.89/32 # cennzscan

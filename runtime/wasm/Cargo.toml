@@ -34,6 +34,7 @@ sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", defa
 substrate-finality-grandpa-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 cennznet-primitives = { path = "../../primitives", default-features = false }
 gat = { path = "../../modules/gat", default-features = false }
+cennznet-module-sylo = { path = "../../modules/sylo", default-features = false }
 
 [features]
 default = []
@@ -60,6 +61,7 @@ std = [
 	"srml-upgrade-key/std",
 	"sr-version/std",
 	"cennznet-primitives/std",
+	"cennznet-module-sylo/std",
 ]
 
 [profile.release]

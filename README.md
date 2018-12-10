@@ -20,9 +20,24 @@ CENNZnet node based on Substrate
         - compile runtime to wasm
     - `cargo build`
         - compile the node
-- Run with as a validator
-    - `cargo run -- --dev`
-    - or `cennznet --dev`
+- Run
+    - Join CENNZnet DEV net
+        - `cargo run`
+        - or `./target/debug/cennznet`
+    - Run your own testnet with a validator
+        - `cargo run -- --dev`
+        - or `./target/debug/cennznet --dev`
+- Purge chain
+    - For CENNZnet DEV net
+        - `cargo run -- purge-chain`
+        - or `./target/debug/cennznet purge-chain`
+    - For local testnet
+        - `cargo run -- --dev purge-chain`
+        - or `./target/debug/cennznet --dev purge-chain`
+- Telemetry
+    - Add command argument `--telemetry-url=ws://cennznet-telemetry.centrality.me:1024 --name your_name` to report information to telemetry server
+    - You can then view it at http://cennznet-telemetry.centrality.me/
+
 
 
 Note: Ctrl + C can kill the node but it could take some times, you may use `killall -9 cennznet` to force kill it. A robust blockchain application should survive from the harshest conditions.

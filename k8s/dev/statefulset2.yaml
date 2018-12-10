@@ -1,0 +1,117 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: substrate-storage-2
+  labels:
+    kubernetes.io/cluster-service: "true"
+    app: substrate
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+---
+apiVersion: apps/v1beta1
+kind: StatefulSet
+
+metadata:
+  name: substrate-2
+  namespace: substrate
+  labels:
+    kubernetes.io/cluster-service: "true"
+    app: substrate
+    version: v1
+spec:
+  replicas: 1
+  serviceName: substrate-2
+  template:
+    metadata:
+      labels:
+        app: substrate
+        node: substrate-2
+        substrate: nodes
+        version: v1
+        kubernetes.io/cluster-service: "true"
+      annotations:
+        scheduler.alpha.kubernetes.io/critical-pod: ''
+    spec:
+      containers:
+      - image: parity/substrate:nightly-20181204
+        name: substrate-2
+        env:
+        - name: RUST_LOG
+          value: "debug"
+        command:
+          - "/bin/bash"
+          - "-c"
+          - >
+            ls -laR /mnt &&  gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
+            --chain=/mnt/substrate/dev.json
+            --base-path=/mnt/substrate
+            --key=Courtney
+            --name=COURTNEY
+            --node-key=0000000000000000000000000000000000000000000000000000000000000003
+            --validator
+            --bootnodes=/dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
+            --bootnodes=/dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+            --telemetry-url=ws://telemetry.substrate:1024
+            --rpc-external
+            --ws-external
+        volumeMounts:
+          - name: substrate-data-2
+            mountPath: /mnt/substrate/
+          - name: genesis-2
+            mountPath: "/mnt/genesis/"
+      imagePullSecrets:
+        - name: registry-secret
+      volumes:  
+        - name: genesis-2
+          secret:
+            secretName: dev-genesis-block
+  volumeClaimTemplates:
+  - metadata:
+      name: substrate-data-2
+      annotations:
+        volume.beta.kubernetes.io/storage-class: substrate-storage-2
+      labels:
+        app: substrate
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+
+---
+# Source: substrate/templates/Service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: substrate-2
+  namespace: substrate
+  labels:
+    node: substrate-2
+    app: substrate
+    substrate: nodes
+spec:
+  ports:
+  - port: 30333
+    targetPort: 30333
+    name: p2p
+  - port: 9933
+    targetPort: 9933
+    name: rpc-http
+  - port: 9944
+    targetPort: 9944
+    name: rpc-ws
+  - port: 1024
+    targetPort: 1024
+    name: telemetry
+  selector:
+    node: substrate-2
+  type: LoadBalancer
+  loadBalancerSourceRanges:
+  - 203.118.138.130/32
+  - 13.73.107.121/32
+  - 118.127.126.86/32
+  - 52.220.204.131/32 # k8s-dev NAT gateway
+  - 18.136.19.89/32 # cennzscan
