@@ -34,6 +34,7 @@ substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git"
 sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-finality-grandpa-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 cennznet-primitives = { path = "../primitives" }
+cennznet-module-sylo = { path = "../modules/sylo" }
 
 [features]
 default = ["std"]
@@ -62,4 +63,5 @@ std = [
 	"safe-mix/std",
 	"substrate-client/std",
 	"substrate-finality-grandpa-primitives/std",
+	"cennznet-module-sylo/std",
 ]
