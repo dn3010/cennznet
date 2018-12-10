@@ -3505,19 +3505,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tester"
-version = "0.1.0"
-dependencies = [
- "gat 0.1.0",
- "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde 1.0.80 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
- "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
- "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
-]
-
-[[package]]
 name = "textwrap"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
