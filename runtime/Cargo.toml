@@ -66,4 +66,5 @@ std = [
 	"substrate-client/std",
 	"substrate-finality-grandpa-primitives/std",
 	"cennznet-module-sylo/std",
+	"cennznet-module-generic-asset/std",
 ]

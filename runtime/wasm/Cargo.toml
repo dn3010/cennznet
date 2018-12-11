@@ -62,6 +62,7 @@ std = [
 	"sr-version/std",
 	"cennznet-primitives/std",
 	"cennznet-module-sylo/std",
+	"cennznet-module-generic-asset/std",
 ]
 
 [profile.release]
