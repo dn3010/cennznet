@@ -34,12 +34,14 @@ substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git"
 sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-finality-grandpa-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 cennznet-primitives = { path = "../primitives" }
+cennznet-module-generic-asset = { path = "../modules/generic-asset" }
 cennznet-module-sylo = { path = "../modules/sylo" }
 
 [features]
 default = ["std"]
 std = [
 	"parity-codec/std",
+	"parity-codec-derive/std",
 	"substrate-primitives/std",
 	"sr-std/std",
 	"srml-support/std",
@@ -64,4 +66,5 @@ std = [
 	"substrate-client/std",
 	"substrate-finality-grandpa-primitives/std",
 	"cennznet-module-sylo/std",
+	"cennznet-module-generic-asset/std",
 ]
