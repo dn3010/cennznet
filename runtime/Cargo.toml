@@ -34,7 +34,7 @@ substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git"
 sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-finality-grandpa-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 cennznet-primitives = { path = "../primitives" }
-gat = { path = "../modules/gat" }
+cennznet-module-generic-asset = { path = "../modules/generic-asset" }
 cennznet-module-sylo = { path = "../modules/sylo" }
 
 [features]
