@@ -11,6 +11,7 @@ CENNZnet node based on Substrate
         - make installed tool available to current shell
     - `./init.sh`
         - install nightly version of rust and required tools
+        *NOTE:* This needs to go after the SSH setup and fetch!
 - Build
     - Make sure your have setup an SSH key with your bitbucket account
         - https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html
