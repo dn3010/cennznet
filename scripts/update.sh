@@ -7,9 +7,9 @@
 cargo update
 cargo check
 
-cd $(pwd)/runtime/wasm
+pushd runtime/wasm
 cargo update
+popd
 
-cd $(pwd)
 ./scripts/build.sh
 cargo run
