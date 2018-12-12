@@ -21,6 +21,7 @@ pipeline {
                 PATH="${CARGO_HOME}/bin:${PATH}"
             }
             steps {
+              sh 'sudo apt-get install jq'
               sh './scripts/build-docker.sh'
             }
         }
