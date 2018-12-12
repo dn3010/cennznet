@@ -121,6 +121,7 @@ dependencies = [
  "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-aura 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-contract 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
@@ -1107,6 +1108,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "srml-aura"
+version = "0.1.0"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#23d2f134c90a1bb5eca369064e01e0242e6fbb98"
+dependencies = [
+ "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parity-codec 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parity-codec-derive 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.82 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-staking 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-timestamp 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+]
+
+[[package]]
 name = "srml-balances"
 version = "0.1.0"
 source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#23d2f134c90a1bb5eca369064e01e0242e6fbb98"
@@ -2086,6 +2107,7 @@ dependencies = [
 "checksum sr-sandbox 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-aura 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-balances 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-contract 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"

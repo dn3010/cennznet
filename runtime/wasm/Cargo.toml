@@ -16,6 +16,7 @@ substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git"
 sr-std = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 sr-io = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+srml-aura = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-balances = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-consensus = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-contract = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
