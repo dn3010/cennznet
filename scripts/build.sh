@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 
+# This script assumes that all pre-requisites are installed.
 set -e
 
 PROJECT_ROOT=`git rev-parse --show-toplevel`
+SRCS=(
+  "runtime/wasm"
+)
 
 export CARGO_INCREMENTAL=0
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
 # Save current directory.
-pushd . >/dev/null
+pushd .
 
 cd $ROOT
 
-for SRC in runtime/wasm
+for SRC in "${SRCS[@]}"
 do
-  echo "${bold}Building webassembly binary in $SRC...${normal}"
+  echo "*** Building wasm binaries in $SRC"
   cd "$PROJECT_ROOT/$SRC"
 
   ./build.sh
@@ -25,4 +26,4 @@ do
 done
 
 # Restore initial directory.
-popd >/dev/null
+popd
