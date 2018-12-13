@@ -13,7 +13,7 @@ curl -sSf https://static.rust-lang.org/rustup.sh | sh
 source ~/.cargo/env
 
 # Install nightly version of rust and required tools
-./init.sh
+./scripts/init.sh
 ```
 
 
