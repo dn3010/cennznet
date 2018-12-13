@@ -76,3 +76,26 @@ To create a local docker image run:
 # Rebuild builder images (see ./docker/)
 rebuild=true ./scripts/build-docker
 ```
+
+## Run with a prebuilt image from CI
+
+Firstly, we need to authenticate to Centrality's azure container registry (ACR)
+```bash
+# Get ACR credentials from k8s
+# !! will overwrite an existing .dockercfg
+kubectl get secret registry-secret -o json | jq -r .data.\".dockercfg\" | base64 -D > ~/.dockercfg
+
+# Authenticate to the ACR
+docker login centralitycontainerregistry-on.azurecr.io
+```
+
+Run a dockerized node and connect to cennznet dev.  
+Set `--name` to your own / desired name.  
+Set `1.0.39` tag to the desired build.  
+
+```bash
+docker run centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.39 \
+cennznet --name=cennzational \
+         --telemetry-url=ws://cennznet-telemetry.centrality.me:1024
+```
+
