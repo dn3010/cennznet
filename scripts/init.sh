@@ -10,6 +10,7 @@ if [ -z $CI_PROJECT_NAME ] ; then
 fi
 
 rustup target add wasm32-unknown-unknown --toolchain nightly
+rustup target add x86_64-unknown-linux-musl --toolchain=nightly
 
 # Install wasm-gc. It's useful for stripping slimming down wasm binaries.
 command -v wasm-gc || \
