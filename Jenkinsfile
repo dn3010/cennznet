@@ -8,7 +8,7 @@ pipeline {
     environment {
         TENANT = 'ea23b9ad-a3ca-4936-8613-68446bd85dde'
         SERVICE_PRINCIPAL = credentials('SERVICE_PRINCIPAL')
-        SERVICE_NAME = 'cennznet'
+        SERVICE_NAME = 'cennznet-node'
         ACR = credentials('AzureDockerRegistry')
     }
 
