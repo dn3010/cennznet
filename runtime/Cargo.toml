@@ -15,7 +15,9 @@ sr-std = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 sr-io = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-consensus-aura-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 substrate-keyring = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+srml-aura = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-balances = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-consensus = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-contract = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
@@ -32,7 +34,6 @@ srml-upgrade-key = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git"
 srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", optional = true }
 sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
-substrate-finality-grandpa-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 cennznet-primitives = { path = "../primitives" }
 cennznet-module-generic-asset = { path = "../modules/generic-asset" }
 cennznet-module-sylo = { path = "../modules/sylo" }
@@ -64,7 +65,7 @@ std = [
 	"serde/std",
 	"safe-mix/std",
 	"substrate-client/std",
-	"substrate-finality-grandpa-primitives/std",
+	"substrate-consensus-aura-primitives/std",
 	"cennznet-module-sylo/std",
 	"cennznet-module-generic-asset/std",
 ]
