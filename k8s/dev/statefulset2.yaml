@@ -33,17 +33,20 @@ spec:
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       containers:
-      - image: parity/substrate:nightly-20181204
+      - image: parity/substrate:0.1.0-49cb59b
         name: substrate-2
         env:
         - name: RUST_LOG
           value: "debug"
         command:
-          - "/bin/bash"
+          - "/bin/sh"
           - "-c"
           - >
-            ls -laR /mnt &&  gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
+            ls -laR /mnt; gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
             --chain=/mnt/substrate/dev.json
             --base-path=/mnt/substrate
             --key=Courtney
@@ -55,6 +58,7 @@ spec:
             --telemetry-url=ws://telemetry.substrate:1024
             --rpc-external
             --ws-external
+            --grandpa-authority
         volumeMounts:
           - name: substrate-data-2
             mountPath: /mnt/substrate/
