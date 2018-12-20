@@ -5,12 +5,17 @@
 set -e
 echo -e "\nStarting cennznet build..."
 
+# Clean build
+if [[ clean == 'true' ]]; then
+  ./scripts.clean.sh
+fi
+
 # Setup a local $CARGO_HOME and fetch dependencies
 $(pwd)/scripts/fetch-dependencies.sh
 
 # Create cennznet wasm builder image
 if [[ $(docker images -q cennznet-wasm-builder) ]] && [[ $rebuild == 'false' ]]; then
-  echo "cennznet-builder image exists. Not rebuilding..."
+  echo "cennznet-wasm-builder image exists. Not rebuilding..."
 else
   echo "Building cennznet-builder image..."
   docker build -f $(pwd)/docker/wasm-builder.Dockerfile -t cennznet-wasm-builder $(pwd)

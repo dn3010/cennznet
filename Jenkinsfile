@@ -42,17 +42,7 @@ pipeline {
 
         stage('Deploy new wasm Runtime to chain') {
             steps {
-                // Clone cennz-cli
-                sh 'git clone ssh://git@bitbucket.org/centralitydev/cennz-cli &&\
-                    cd cennz-cli \
-                    && yarn install'
-                // Submit the wasm Tx
-                // TODO: Update to use `cennz-cli <subcommand>` with npm install or exec in latest cennz-cli docker container
-                sh './bin/run repl --endpoint="ws://cennznet-node-0.centrality.me:9944" \
-                                   scripts/upgrade-runtime.js \
-                                   Centrality \
-                                   ../runtime/wasm/target/wasm32-unknown-unknown/release/cennznet_runtime.compact.wasm && \
-                    cd .. && rm -rf cennz-cli'
+                sh './scripts/deploy-runtime.sh'
             }
         }
     }
