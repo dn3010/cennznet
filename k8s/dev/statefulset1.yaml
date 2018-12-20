@@ -111,5 +111,7 @@ spec:
   - 118.127.126.86/32
   - 52.220.204.131/32 # k8s-dev NAT gateway
   - 18.136.19.89/32 # cennzscan
+  - 13.73.101.35/32 # jenkins slave 1
+  - 13.73.101.111/32 # jenkins slave 2
   selector:
     node: substrate-1
