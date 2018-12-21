@@ -13,7 +13,7 @@ rm -rf cennz-cli; git clone ssh://git@bitbucket.org/centralitydev/cennz-cli
 
 # Deploy cennznet-runtime
 docker run \
-  -v "$(pwd)/cennznet-node" \
+  -v "$(pwd):/cennznet-node" \
   node:alpine \
   sh -c \
   "cd cennz-cli && \
