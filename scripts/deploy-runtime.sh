@@ -16,7 +16,7 @@ docker run \
   -v "$(pwd):/cennznet-node" \
   node:alpine \
   sh -c \
-  "cd cennz-cli && \
+  "cd /cennznet-node/cennz-cli && \
    yarn && \
   ./bin/run repl \
   --endpoint="ws://cennznet-node-0.centrality.me:9944" \
