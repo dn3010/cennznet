@@ -37,7 +37,7 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       containers:
-      - image: parity/substrate:0.1.0-49cb59b
+      - image: parity/substrate:0.9.1-36e8a51
         name: substrate-2
         env:
         - name: RUST_LOG
@@ -82,7 +82,7 @@ spec:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 1Gi
+          storage: 20Gi
 
 ---
 # Source: substrate/templates/Service.yaml
