@@ -13,7 +13,7 @@ if [ ! -d "cennz-cli" ]; then
 	git clone ssh://git@bitbucket.org/centralitydev/cennz-cli
 else
 	cd cennz-cli
-	git pull
+	git pull origin master
 	cd ..
 fi
 
