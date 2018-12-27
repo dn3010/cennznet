@@ -33,8 +33,11 @@ spec:
       annotations:
         scheduler.alpha.kubernetes.io/critical-pod: ''
     spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
       containers:
-      - image: parity/substrate:nightly-20181204
+      - image: parity/substrate:0.9.1-36e8a51
         name: substrate-0
         env:
         - name: RUST_LOG
@@ -43,7 +46,7 @@ spec:
           - "/bin/bash"
           - "-c"
           - >
-            ls -laR /mnt &&  gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
+            ls -laR /mnt; gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
             --chain=/mnt/substrate/dev.json
             --base-path=/mnt/substrate
             --key=Andrea
@@ -54,6 +57,7 @@ spec:
             --bootnodes=/dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
             --telemetry-url=ws://telemetry.substrate:1024
             --rpc-external
+            --grandpa-authority
             --ws-external
         volumeMounts:
           - name: substrate-data-0
@@ -78,7 +82,7 @@ spec:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 1Gi
+          storage: 20Gi
 
 ---
 # Source: substrate/templates/Service.yaml
@@ -109,5 +113,7 @@ spec:
   - 118.127.126.86/32
   - 52.220.204.131/32 # k8s-dev NAT gateway
   - 18.136.19.89/32 # cennzscan
+  - 13.73.101.35/32 # jenkins slave 1
+  - 13.73.101.111/32 # jenkins slave 2
   selector:
     node: substrate-0

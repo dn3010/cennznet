@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        label 'linux'
+        label 'linux-agent1'
     }
 
     environment {
