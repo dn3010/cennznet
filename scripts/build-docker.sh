@@ -44,7 +44,7 @@ docker run --rm \
   -v "$PWD/.cargo/registry:/usr/local/cargo/registry" \
   -v "$PWD:/usr/src/cennznet-node" \
   cennznet-builder \
-  sh -c "cd /usr/src/cennznet-node && cargo build"
+  sh -c "cd /usr/src/cennznet-node && cargo build --release"
 
 # Create a cennznet-node image
 echo -e "\nBuilding cennznet node image..."
