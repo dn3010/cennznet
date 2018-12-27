@@ -9,7 +9,13 @@ set -ex
 
 # Ensure clean clone
 echo "Cloning cennz-cli..."
-rm -rf cennz-cli; git clone ssh://git@bitbucket.org/centralitydev/cennz-cli
+if [ ! -d "cennz-cli" ]; then
+	git clone ssh://git@bitbucket.org/centralitydev/cennz-cli
+else
+	cd cennz-cli
+	git pull
+	cd ..
+fi
 
 # Deploy cennznet-runtime
 docker run \
