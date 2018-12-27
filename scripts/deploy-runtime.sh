@@ -20,7 +20,7 @@ fi
 # Deploy cennznet-runtime
 docker run \
   -v "$(pwd):/cennznet-node" \
-  -w "/cennznet-node/cennz-cli"
+  -w "/cennznet-node/cennz-cli" \
   node:alpine \
   sh -c \
    "yarn && \
