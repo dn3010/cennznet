@@ -10,13 +10,7 @@ set -ex
 # Ensure clean clone
 echo "Cloning cennz-cli..."
 sudo rm -rf cennz-cli
-if [ ! -d "cennz-cli" ]; then
-	git clone ssh://git@bitbucket.org/centralitydev/cennz-cli
-else
-	cd cennz-cli
-	git pull origin master
-	cd ..
-fi
+git clone ssh://git@bitbucket.org/centralitydev/cennz-cli
 
 # Deploy cennznet-runtime
 docker run --rm \
@@ -24,8 +18,7 @@ docker run --rm \
   -w "/cennznet-node/cennz-cli" \
   node:alpine \
   sh -c \
-  "pwd && ls && ls /cennznet-node/cennz-cli/bin \
-  yarn && \
+  "yarn && \
   /cennznet-node/cennz-cli/bin/run repl \
   --endpoint=ws://cennznet-node-0.centrality.me:9944 \
     /cennznet-node/cennz-cli/scripts/upgrade-runtime.js \
