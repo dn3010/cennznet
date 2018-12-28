@@ -9,6 +9,7 @@ set -ex
 
 # Ensure clean clone
 echo "Cloning cennz-cli..."
+sudo rm -rf cennz-cli
 if [ ! -d "cennz-cli" ]; then
 	git clone ssh://git@bitbucket.org/centralitydev/cennz-cli
 else
@@ -23,7 +24,7 @@ docker run --rm \
   -w "/cennznet-node/cennz-cli" \
   node:alpine \
   sh -c \
-  "pwd && \
+  "pwd && ls && ls /cennznet-node/cennz-cli/bin \
   yarn && \
   /cennznet-node/cennz-cli/bin/run repl \
   --endpoint=ws://cennznet-node-0.centrality.me:9944 \
