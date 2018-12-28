@@ -23,9 +23,10 @@ docker run --rm \
   -w "/cennznet-node/cennz-cli" \
   node:alpine \
   sh -c \
-  "yarn && \
-  ./bin/run repl \
+  "pwd && \
+  yarn && \
+  /cennznet-node/cennz-cli/bin/run repl \
   --endpoint=ws://cennznet-node-0.centrality.me:9944 \
-    scripts/upgrade-runtime.js \
+    /cennznet-node/cennz-cli/scripts/upgrade-runtime.js \
     Centrality \
-    ../runtime/wasm/target/wasm32-unknown-unknown/release/cennznet_runtime.compact.wasm"
+    /cennznet-node/runtime/wasm/target/wasm32-unknown-unknown/release/cennznet_runtime.compact.wasm"
