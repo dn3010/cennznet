@@ -37,32 +37,30 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       containers:
-      - image: parity/substrate:0.9.1-36e8a51
+      - image: centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.93
         name: substrate-1
         command:
           - "/bin/bash"
           - "-c"
           - >
-            ls -laR /mnt; gunzip -dfc /mnt/genesis/dev.json.gz > /mnt/substrate/dev.json && substrate
-            --chain=/mnt/substrate/dev.json
+            /usr/local/bin/cennznet
             --base-path=/mnt/substrate
             --key=Brooke
             --name=BROOKE
             --node-key=0000000000000000000000000000000000000000000000000000000000000002
             --validator
+            --grandpa-authority
             --bootnodes=/dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
             --bootnodes=/dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
             --telemetry-url=ws://telemetry.substrate:1024
             --rpc-external
             --ws-external
-            --grandpa-authority
-            --log sync=trace
         volumeMounts:
           - name: substrate-data-1
             mountPath: /mnt/substrate/
           - name: genesis-1
             mountPath: "/mnt/genesis/"
-      volumes:  
+      volumes:
         - name: genesis-1
           secret:
             secretName: dev-genesis-block
