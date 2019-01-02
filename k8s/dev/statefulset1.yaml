@@ -37,7 +37,7 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       containers:
-      - image: centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.93
+      - image: centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.94
         name: substrate-1
         command:
           - "/bin/bash"
@@ -49,7 +49,6 @@ spec:
             --name=BROOKE
             --node-key=0000000000000000000000000000000000000000000000000000000000000002
             --validator
-            --grandpa-authority
             --bootnodes=/dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
             --bootnodes=/dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
             --telemetry-url=ws://telemetry.substrate:1024

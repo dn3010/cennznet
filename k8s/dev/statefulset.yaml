@@ -37,7 +37,7 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       containers:
-      - image: centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.93
+      - image: centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.94
         name: substrate-0
         env:
         - name: RUST_LOG
@@ -52,7 +52,6 @@ spec:
             --name=ANDREA
             --node-key=0000000000000000000000000000000000000000000000000000000000000001
             --validator
-            --grandpa-authority
             --bootnodes=/dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
             --bootnodes=/dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
             --telemetry-url=ws://telemetry.substrate:1024
