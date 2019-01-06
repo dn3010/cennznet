@@ -1,0 +1,6 @@
+cennznet-node:
+  namespace: "cennznet"
+  appName: "cennznet"
+  image:
+    repository: centralitycontainerregistry-on.azurecr.io/centrality
+    name: cennznet
