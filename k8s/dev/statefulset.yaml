@@ -37,7 +37,7 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       containers:
-      - image: centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.97
+      - image: centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.107
         name: substrate-0
         command:
           - "/bin/bash"
