@@ -33,6 +33,7 @@ substrate-keystore = { git = "ssh://git@bitbucket.org/centralitydev/substrate.gi
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 substrate-consensus-common = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-finality-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-basic-authorship = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 structopt = "0.2.13"
 cennznet-runtime = { path = "runtime" }

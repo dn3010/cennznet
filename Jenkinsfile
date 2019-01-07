@@ -2,7 +2,7 @@
 
 pipeline {
     agent {
-        label 'linux'
+        label 'linux-agent1'
     }
 
     environment {
@@ -31,5 +31,20 @@ pipeline {
                 sh './centrality.deploy/publish.sh'
             }
         }
+
+        stage ('Confirm deploy new Runtime') {
+            steps {
+                timeout(time:1, unit:'HOURS') {
+                    input "Confirm deploy new Runtime? Warning!! May brick the chain"
+                }
+           }
+        }
+
+        stage('Deploy new wasm Runtime to chain') {
+            steps {
+                sh './scripts/deploy-runtime.sh'
+            }
+        }
     }
+
 }

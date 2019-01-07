@@ -91,13 +91,17 @@ docker login centralitycontainerregistry-on.azurecr.io
 
 Run a dockerized node and connect to cennznet dev.  
 Set `--name` to your own / desired name.  
-Set `1.0.39` tag to the desired build.  
+Set `1.0.48` tag to the desired build*.  
 
 ```bash
-docker run centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.39 \
+docker run centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.48 \
 cennznet --name=cennzational \
          --telemetry-url=ws://cennznet-telemetry.centrality.me:1024
 ```
+
+You may check [https://jenkins.centrality.ai/jenkins/job/cennznet-node/]()) to find the latest build number.  
+*In future a tag of `:latest` should suffice as the latest release.  
+However, we currently only release images tagged by build number.  
 
 ## Quick start guide
 
