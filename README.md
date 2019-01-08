@@ -105,7 +105,7 @@ However, we currently only release images tagged by build number.
 
 ## Quick start guide
 
-### Start with pre-build docker image (broken with docker image was not match to the latest version)
+### Start with pre-build docker image
 
 Install docker and docker-compose
 
