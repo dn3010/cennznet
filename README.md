@@ -102,3 +102,58 @@ cennznet --name=cennzational \
 You may check [https://jenkins.centrality.ai/jenkins/job/cennznet-node/]()) to find the latest build number.  
 *In future a tag of `:latest` should suffice as the latest release.  
 However, we currently only release images tagged by build number.  
+
+## Quick start guide
+
+### Start with pre-build docker image (broken with docker image was not match to the latest version)
+
+Install docker and docker-compose
+
+remove settings in docker-compose.override.yml 
+
+Follow instruction above login to centrality docker registry
+
+Start multiple nodes
+```bash
+make up
+```
+
+Check logs
+```bash
+make logs
+or
+make logs telemetry
+```
+Open telemetry UI
+```bash
+open http://localhost:5000
+```
+
+Stop all nodes
+```bash
+make stop
+```
+
+update docker-compose.yml for different node configurations, then run
+```bash
+make up
+```
+
+### Host and Connect to a local network
+
+* build cennznet-node:latest docker image
+```bash
+./scripts/build-docker.sh
+```
+
+* update ip address to the host network ip in local.json, eg: replace 10.9.30.51 to your network ip
+
+* connect to the local network
+```bash
+cennznet-node --chain=local.json --telemetry-url=ws://localhost:1024 --name=local-test
+```
+
+Open telemetry UI
+```bash
+open http://localhost:5000
+```
