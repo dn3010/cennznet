@@ -30,7 +30,7 @@ srml-staking = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-system = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-timestamp = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-treasury = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
-srml-upgrade-key = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+srml-sudo = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", optional = true }
 sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
@@ -58,7 +58,7 @@ std = [
 	"srml-system/std",
 	"srml-timestamp/std",
 	"srml-treasury/std",
-	"srml-upgrade-key/std",
+	"srml-sudo/std",
 	"sr-version/std",
 	"cennznet-primitives/std",
 	"serde_derive",
