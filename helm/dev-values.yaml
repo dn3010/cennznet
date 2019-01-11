@@ -1,0 +1,52 @@
+cennznet-node:
+  nodes:
+    - env:
+        - name: RUST_LOG
+          value: "debug"
+        - name: CENNZNET_KEY
+          value: "Andrea"
+        - name: CENNZNET_NAME
+          value: ANDREA
+        - name: CENNZNET_NODE_KEY
+          value: "0000000000000000000000000000000000000000000000000000000000000001"
+        - name: CENNZNET_BOOTNODE_1
+          value: /dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+        - name: CENNZNET_BOOTNODE_2
+          value: /dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
+        - name: CENNZNET_TELEMETRY_URL
+          value: ws://cennznet-telemetry.centrality.me:1024
+    - env:
+        - name: CENNZNET_KEY
+          value: "Brooke"
+        - name: CENNZNET_NAME
+          value: BROOKE
+        - name: CENNZNET_NODE_KEY
+          value: "0000000000000000000000000000000000000000000000000000000000000002"
+        - name: CENNZNET_BOOTNODE_1
+          value: /dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
+        - name: CENNZNET_BOOTNODE_2
+          value: /dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
+        - name: CENNZNET_TELEMETRY_URL
+          value: ws://cennznet-telemetry.centrality.me:1024
+    - env:
+        - name: CENNZNET_KEY
+          value: "Courtney"
+        - name: CENNZNET_NAME
+          value: COURTNEY
+        - name: CENNZNET_NODE_KEY
+          value: "0000000000000000000000000000000000000000000000000000000000000003"
+        - name: CENNZNET_BOOTNODE_1
+          value: /dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
+        - name: CENNZNET_BOOTNODE_2
+          value: /dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+        - name: CENNZNET_TELEMETRY_URL
+          value: ws://cennznet-telemetry.centrality.me:1024
+
+  whitelistIPs:
+  - 203.118.138.130/32 # AKL office IP
+  - 13.73.107.121/32 # AKL office backup
+  - 118.127.126.86/32 # MEL office
+  - 13.73.101.35/32 # jenkins slave 1
+  - 13.73.101.111/32 # jenkins slave 2
+  - 52.220.204.131/32 # k8s-dev NAT gateway
+  - 18.136.19.89/32 # cennzscan
