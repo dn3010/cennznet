@@ -41,5 +41,11 @@ cennznet-node:
           value: /dns4/cennznet-node-1.centrality.cloud/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
+
   whitelistIPs:
+  - 203.118.138.130/32 # AKL office IP
+  - 13.73.107.121/32 # AKL office backup
+  - 118.127.126.86/32 # MEL office
+  - 13.73.101.35/32 # jenkins slave 1
+  - 13.73.101.111/32 # jenkins slave 2
   - 13.228.46.235/32 # UAT NAT gateway
