@@ -9,8 +9,8 @@ cennznet-node:
     - "/bin/bash"
     - "-c"
     - >
-      ls -laR /mnt; gunzip -dfc /mnt/genesis/genesis.json.gz > /mnt/cennznet/genesis.json && cennznet
-      --chain=/mnt/cennznet/genesis.json
+      cennznet
+      --chain=cennznet-dev
       --base-path=/mnt/cennznet
       --validator
       --rpc-external
