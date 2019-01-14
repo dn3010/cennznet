@@ -15,6 +15,7 @@ cennznet-node:
       --validator
       --rpc-external
       --ws-external
+      --pruning=archive
       --key=$CENNZNET_KEY
       --name=$CENNZNET_NAME
       --node-key=$CENNZNET_NODE_KEY
