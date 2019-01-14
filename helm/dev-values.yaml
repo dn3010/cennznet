@@ -50,6 +50,7 @@ cennznet-node:
       --chain=cennznet-dev
       --base-path=/mnt/cennznet
       --validator
+      --pruning=archive
       --rpc-external
       --ws-external
       --key=$CENNZNET_KEY

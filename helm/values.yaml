@@ -5,23 +5,3 @@ cennznet-node:
   image:
     repository: centralitycontainerregistry-on.azurecr.io/centrality
     name: cennznet
-  command:
-    - "/bin/bash"
-    - "-c"
-    - >
-      cennznet
-      --chain=cennznet-dev
-      --base-path=/mnt/cennznet
-      --validator
-      --rpc-external
-      --ws-external
-      --pruning=archive
-      --key=$CENNZNET_KEY
-      --name=$CENNZNET_NAME
-      --node-key=$CENNZNET_NODE_KEY
-      --bootnodes=$CENNZNET_BOOTNODE_1
-      --bootnodes=$CENNZNET_BOOTNODE_2
-      --telemetry-url=$CENNZNET_TELEMETRY_URL
-  whitelistIPs:
-  - 13.73.101.35/32 # jenkins slave 1
-  - 13.73.101.111/32 # jenkins slave 2
