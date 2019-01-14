@@ -42,6 +42,23 @@ cennznet-node:
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
 
+  command:
+    - "/bin/bash"
+    - "-c"
+    - >
+      cennznet
+      --chain=cennznet-uat
+      --base-path=/mnt/cennznet
+      --validator
+      --rpc-external
+      --ws-external
+      --key=$CENNZNET_KEY
+      --name=$CENNZNET_NAME
+      --node-key=$CENNZNET_NODE_KEY
+      --bootnodes=$CENNZNET_BOOTNODE_1
+      --bootnodes=$CENNZNET_BOOTNODE_2
+      --telemetry-url=$CENNZNET_TELEMETRY_URL
+
   whitelistIPs:
   - 203.118.138.130/32 # AKL office IP
   - 13.73.107.121/32 # AKL office backup
