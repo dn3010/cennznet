@@ -68,3 +68,4 @@ cennznet-node:
   - 13.73.101.111/32 # jenkins slave 2
   - 52.220.204.131/32 # k8s-dev NAT gateway
   - 18.136.19.89/32 # cennzscan
+  - 13.77.41.0/32  # windows jenkins agent
