@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Centrality Developers <developers@centrality.ai>"]
 
 [lib]
+name = "cennznet_runtime"
 crate-type = ["cdylib"]
 
 [dependencies]
