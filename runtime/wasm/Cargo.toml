@@ -1,5 +1,5 @@
 [package]
-name = "cennznet-runtime"
+name = "cennznet-runtime-wasm"
 version = "0.1.0"
 authors = ["Centrality Developers <developers@centrality.ai>"]
 
@@ -7,63 +7,12 @@ authors = ["Centrality Developers <developers@centrality.ai>"]
 crate-type = ["cdylib"]
 
 [dependencies]
-integer-sqrt = { git = "https://github.com/paritytech/integer-sqrt-rs.git" }
-safe-mix = { version = "1.0", default-features = false}
-parity-codec-derive = { version = "^2.1" }
-parity-codec = { version = "^2.1", default-features = false }
-substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-sr-std = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-sr-io = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-aura = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-balances = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-consensus = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-contract = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-council = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-democracy = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-executive = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-sr-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-session = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-staking = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-system = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-timestamp = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-treasury = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-sudo = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-sr-version = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-substrate-consensus-aura-primitives =  { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-cennznet-primitives = { path = "../../primitives", default-features = false }
-cennznet-module-generic-asset = { path = "../../modules/generic-asset", default-features = false }
-cennznet-module-sylo = { path = "../../modules/sylo", default-features = false }
+cennznet-runtime = { path = "..", default-features = false }
 
 [features]
 default = []
 std = [
-	"safe-mix/std",
-	"parity-codec/std",
-	"substrate-primitives/std",
-	"substrate-client/std",
-	"sr-std/std",
-	"sr-primitives/std",
-	"srml-support/std",
-	"srml-balances/std",
-	"srml-consensus/std",
-	"srml-contract/std",
-	"srml-council/std",
-	"srml-democracy/std",
-	"srml-executive/std",
-	"srml-session/std",
-	"srml-staking/std",
-	"srml-system/std",
-	"srml-timestamp/std",
-	"srml-treasury/std",
-	"srml-sudo/std",
-	"srml-grandpa/std",
-	"sr-version/std",
-	"cennznet-primitives/std",
-	"cennznet-module-sylo/std",
-	"cennznet-module-generic-asset/std",
+	"cennznet-runtime/std",
 ]
 
 [profile.release]
