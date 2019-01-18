@@ -8,11 +8,11 @@ cennznet-node:
         - name: CENNZNET_NAME
           value: ANDREA
         - name: CENNZNET_NODE_KEY
-          value: "0000000000000000000000000000000000000000000000000000000000000001"
+          value: "0000000000000000000000000000000000000000000000000000000000000011"
         - name: CENNZNET_BOOTNODE_1
-          value: /dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+          value: /dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmRaZu8UNGejxuGB9pMhjw5GZEVVBkaRiYYhhLYYUkT8qa
         - name: CENNZNET_BOOTNODE_2
-          value: /dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
+          value: /dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmTEUaAyqq3spjKSFLWw5gG8tzZ6xwbt5ptTKvs65VkBPJ
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
     - env:
@@ -21,11 +21,11 @@ cennznet-node:
         - name: CENNZNET_NAME
           value: BROOKE
         - name: CENNZNET_NODE_KEY
-          value: "0000000000000000000000000000000000000000000000000000000000000002"
+          value: "0000000000000000000000000000000000000000000000000000000000000012"
         - name: CENNZNET_BOOTNODE_1
-          value: /dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
+          value: /dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/Qmdpvn9xttHZ5SQePVhhsk8dFMHCUaS3EDQcGDZ8MuKbx2
         - name: CENNZNET_BOOTNODE_2
-          value: /dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
+          value: /dns4/cennznet-node-2.centrality.me/tcp/30333/p2p/QmTEUaAyqq3spjKSFLWw5gG8tzZ6xwbt5ptTKvs65VkBPJ
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
     - env:
@@ -34,11 +34,11 @@ cennznet-node:
         - name: CENNZNET_NAME
           value: COURTNEY
         - name: CENNZNET_NODE_KEY
-          value: "0000000000000000000000000000000000000000000000000000000000000003"
+          value: "0000000000000000000000000000000000000000000000000000000000000013"
         - name: CENNZNET_BOOTNODE_1
-          value: /dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
+          value: /dns4/cennznet-node-0.centrality.me/tcp/30333/p2p/Qmdpvn9xttHZ5SQePVhhsk8dFMHCUaS3EDQcGDZ8MuKbx2
         - name: CENNZNET_BOOTNODE_2
-          value: /dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+          value: /dns4/cennznet-node-1.centrality.me/tcp/30333/p2p/QmRaZu8UNGejxuGB9pMhjw5GZEVVBkaRiYYhhLYYUkT8qa
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
 
