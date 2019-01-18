@@ -312,18 +312,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cennznet-module-generic-asset"
-version = "0.1.0"
-dependencies = [
- "parity-codec 2.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "parity-codec-derive 2.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "serde 1.0.84 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
- "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
- "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
-]
-
-[[package]]
 name = "cennznet-module-sylo"
 version = "0.1.0"
 dependencies = [
@@ -356,7 +344,6 @@ dependencies = [
 name = "cennznet-runtime"
 version = "0.1.0"
 dependencies = [
- "cennznet-module-generic-asset 0.1.0",
  "cennznet-module-sylo 0.1.0",
  "cennznet-primitives 0.1.0",
  "hex-literal 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -376,6 +363,7 @@ dependencies = [
  "srml-council 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-democracy 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-executive 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-grandpa 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-indices 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-session 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
@@ -2632,6 +2620,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "srml-generic-asset"
+version = "0.1.0"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#f85163493c26fdca2949f4c9b8072f2a90463be8"
+dependencies = [
+ "parity-codec 2.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parity-codec-derive 2.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+]
+
+[[package]]
 name = "srml-grandpa"
 version = "0.1.0"
 source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#f85163493c26fdca2949f4c9b8072f2a90463be8"
@@ -4267,6 +4270,7 @@ dependencies = [
 "checksum srml-council 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-democracy 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-executive 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-grandpa 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-indices 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-metadata 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
