@@ -15,6 +15,7 @@ cennznet-node:
           value: /dns4/cennznet-node-2.centrality.cloud/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
+      domainName: cennznet-node-0.centrality.cloud
     - env:
         - name: CENNZNET_KEY
           value: "Brooke"
@@ -28,6 +29,7 @@ cennznet-node:
           value: /dns4/cennznet-node-2.centrality.cloud/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
+      domainName: cennznet-node-1.centrality.cloud
     - env:
         - name: CENNZNET_KEY
           value: "Courtney"
@@ -41,6 +43,7 @@ cennznet-node:
           value: /dns4/cennznet-node-1.centrality.cloud/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
+      domainName: cennznet-node-2.centrality.cloud
 
   command:
     - "/bin/bash"
@@ -66,6 +69,8 @@ cennznet-node:
   - 118.127.126.86/32 # MEL office
   - 13.73.101.35/32 # jenkins slave 1
   - 13.73.101.111/32 # jenkins slave 2
-  - 13.228.46.235/32 # UAT NAT gateway
+  - 52.220.204.131/32 # k8s-dev NAT gateway
+  - 13.228.46.235/32 # k8s-uat NAT gateway
   - 18.136.19.89/32 # cennzscan
-  - 13.77.41.0/32  # windows jenkins agent
+  - 13.77.41.0/32 # windows jenkins agent
+  - 222.154.246.210/32 # singlesource
