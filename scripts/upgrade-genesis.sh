@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+echo Build WASM runtime
+__dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+${__dir}/build.sh
+
 echo Updaing LOCAL genesis
 cargo run -- --chain=dev build-spec > ./genesis/local/local.json
 cargo run -- --chain=dev build-spec --raw > ./genesis/local/genesis.json
