@@ -35,6 +35,7 @@ substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git"
 substrate-consensus-common = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-finality-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-basic-authorship = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-inherents = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 structopt = "0.2.13"
 cennznet-runtime = { path = "runtime" }
