@@ -12,4 +12,4 @@ cargo update
 popd
 
 ./scripts/build.sh
-cargo run
+cargo run -- --chain=cennznet-dev
