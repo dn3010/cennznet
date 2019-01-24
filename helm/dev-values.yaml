@@ -2,7 +2,7 @@ cennznet-node:
   nodes:
     - env:
         - name: RUST_LOG
-          value: "debug"
+          value: "sync,afg=trace"
         - name: CENNZNET_KEY
           value: "Andrea"
         - name: CENNZNET_NAME
@@ -31,6 +31,8 @@ cennznet-node:
           value: ws://cennznet-telemetry.centrality.me:1024
       domainName: cennznet-node-1.centrality.me
     - env:
+        - name: RUST_LOG
+          value: "sync,afg=trace"
         - name: CENNZNET_KEY
           value: "Courtney"
         - name: CENNZNET_NAME
