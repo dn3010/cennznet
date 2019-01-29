@@ -22,7 +22,6 @@ srml-council = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", de
 srml-democracy = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-executive = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-indices = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-session = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-staking = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-system = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -53,7 +52,6 @@ std = [
 	"srml-democracy/std",
 	"srml-executive/std",
 	"srml-grandpa/std",
-	"srml-indices/std",
 	"srml-session/std",
 	"srml-staking/std",
 	"srml-system/std",
