@@ -1,7 +1,29 @@
 cennznet-node:
   namespace: "cennznet"
   appName: "cennznet"
-  createLoadBalancer: true
   image:
     repository: centralitycontainerregistry-on.azurecr.io/centrality
     name: cennznet
+
+  services:
+    rpc:
+      ports:
+        - port: 9933
+          name: rpc-http
+        - port: 9944
+          name: rpc-ws
+      createLoadBalancer: true
+    p2p:
+      ports:
+        - port: 30333
+          name: p2p
+      createService: true
+      createLoadBalancer: true
+    main:
+      ports:
+        - port: 30333
+          name: p2p
+        - port: 9933
+          name: rpc-http
+        - port: 9944
+          name: rpc-ws
