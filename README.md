@@ -17,10 +17,10 @@ source ~/.cargo/env
 ```
 
 
-__Build__  
-Ensure you have setup an SSH key with your bitbucket account: [https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html]()  
-You can verify it by running `ssh git@bitbucket.org`, which should prompt `logged in as your_bitbucket_user_name.`  
-If you are still unable to fetch, [follow these instructions](https://github.com/rust-lang/cargo/issues/2078#issuecomment-434388584)  
+__Build__
+Ensure you have setup an SSH key with your bitbucket account: [https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html]()
+You can verify it by running `ssh git@bitbucket.org`, which should prompt `logged in as your_bitbucket_user_name.`
+If you are still unable to fetch, [follow these instructions](https://github.com/rust-lang/cargo/issues/2078#issuecomment-434388584)
 
 ```bash
 # compile runtime to wasm
@@ -47,22 +47,22 @@ cargo run -- --dev
 
 __Purge chain__
 ```bash
-# For CENNZnet DEV net
+# For CENNZnet UAT net
 cargo run -- purge-chain
 # or
 ./target/debug/cennznet purge-chain
 
 # For local testnet
-cargo run -- --dev purge-chain
+cargo run -- purge-chain --dev
 # or
-./target/debug/cennznet --dev purge-chain
+./target/debug/cennznet purge-chain --dev
 ```
 
 
-__Telemetry__  
-Add command argument `--telemetry-url=ws://cennznet-telemetry.centrality.me:1024 --name your_name` to report information to telemetry server 
+__Telemetry__
+Add command argument `--telemetry-url=ws://cennznet-telemetry.centrality.me:1024 --name your_name` to report information to telemetry server
 
-You can then view it at [http://cennznet-telemetry.centrality.me/]()  
+You can then view it at [http://cennznet-telemetry.centrality.me/]()
 
 
 Note: Ctrl + C can kill the node but it could take some times, you may use `killall -9 cennznet` to force kill it. A robust blockchain application should survive from the harshest conditions.
@@ -89,9 +89,9 @@ kubectl get secret registry-secret -o json | jq -r .data.\".dockercfg\" | base64
 docker login centralitycontainerregistry-on.azurecr.io
 ```
 
-Run a dockerized node and connect to cennznet dev.  
-Set `--name` to your own / desired name.  
-Set `1.0.48` tag to the desired build*.  
+Run a dockerized node and connect to cennznet dev.
+Set `--name` to your own / desired name.
+Set `1.0.48` tag to the desired build*.
 
 ```bash
 docker run centralitycontainerregistry-on.azurecr.io/centrality/cennznet:1.0.48 \
@@ -99,9 +99,9 @@ cennznet --name=cennzational \
          --telemetry-url=ws://cennznet-telemetry.centrality.me:1024
 ```
 
-You may check [https://jenkins.centrality.ai/jenkins/job/cennznet-node/]()) to find the latest build number.  
-*In future a tag of `:latest` should suffice as the latest release.  
-However, we currently only release images tagged by build number.  
+You may check [https://jenkins.centrality.ai/jenkins/job/cennznet-node/]()) to find the latest build number.
+*In future a tag of `:latest` should suffice as the latest release.
+However, we currently only release images tagged by build number.
 
 ## Quick start guide
 
@@ -109,7 +109,7 @@ However, we currently only release images tagged by build number.
 
 Install docker and docker-compose
 
-remove settings in docker-compose.override.yml 
+remove settings in docker-compose.override.yml
 
 Follow instruction above login to centrality docker registry
 
