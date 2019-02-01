@@ -6,7 +6,7 @@ authors = ["Centrality Developers <developers@centrality.ai>"]
 [dependencies]
 integer-sqrt = { version = "0.1.2" }
 safe-mix = { version = "1.0", default-features = false }
-parity-codec-derive = { version = "2.1" }
+parity-codec-derive = { version = "3.0" }
 parity-codec = { version = "3.0", default-features = false }
 substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -29,7 +29,7 @@ srml-timestamp = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", 
 srml-treasury = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-sudo = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 substrate-consensus-aura-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-rustc-hex = { version = "1.0", optional = true }
+rustc-hex = { version = "2.0", optional = true }
 hex-literal = { version = "0.1.0", optional = true }
 serde = { version = "1.0", optional = true }
 substrate-keyring = {git = "ssh://git@bitbucket.org/centralitydev/substrate.git", optional = true }
