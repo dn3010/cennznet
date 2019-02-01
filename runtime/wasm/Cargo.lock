@@ -159,6 +159,7 @@ dependencies = [
  "srml-executive 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-grandpa 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-indices 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-session 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-staking 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-sudo 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
@@ -1395,6 +1396,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "srml-indices"
+version = "0.1.0"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#4030e89ca8737ee43046acd1928ad700ada7da55"
+dependencies = [
+ "hex-literal 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.85 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-keyring 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+]
+
+[[package]]
 name = "srml-metadata"
 version = "0.1.0"
 source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#55bd997442875de23fbeabcd8a36df875da8407a"
@@ -2306,6 +2326,7 @@ dependencies = [
 "checksum srml-executive 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-grandpa 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
+"checksum srml-indices 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-metadata 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-session 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum srml-staking 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"

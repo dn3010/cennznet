@@ -23,6 +23,7 @@ council = { package = "srml-council", git = "ssh://git@bitbucket.org/centralityd
 democracy = { package = "srml-democracy", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 executive = { package = "srml-executive", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 grandpa = { package = "srml-grandpa", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+indices = { package = "srml-indices", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 session = { package = "srml-session", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 staking = { package = "srml-staking", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 system = { package = "srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -55,6 +56,7 @@ std = [
 	"democracy/std",
 	"executive/std",
 	"grandpa/std",
+	"indices/std",
 	"session/std",
 	"staking/std",
 	"system/std",
