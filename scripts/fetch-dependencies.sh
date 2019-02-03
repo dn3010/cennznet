@@ -6,7 +6,7 @@
 # Create local, temp. cargo config
 echo "Creating local cargo config..."
 CARGO_HOME="$(pwd)/.cargo"
-alias cargo="CARGO_HOME=$CARGO_HOME cargo"
+alias cargo="CARGO_HOME=$CARGO_HOME cargo +nightly"
 mkdir -p $CARGO_HOME
 # Use host `git` command to clone dependencies
 cat << EOF > "$CARGO_HOME/config"
