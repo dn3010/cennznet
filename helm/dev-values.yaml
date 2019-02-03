@@ -76,7 +76,7 @@ cennznet-node:
     - "-c"
     - >
       cennznet
-      --chain=cennznet-dev
+      --chain=kauri
       --base-path=/mnt/cennznet
       --validator
       --pruning=archive
