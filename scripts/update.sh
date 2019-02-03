@@ -12,4 +12,4 @@ cargo update
 popd
 
 ./scripts/build.sh
-cargo run -- --chain=cennznet-dev
+cargo run -- --chain=kauri
