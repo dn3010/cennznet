@@ -27,7 +27,6 @@ docker run --rm \
       -v "$PWD:/home/rust/src" \
       -v "$PWD/.cargo/git:/home/rust/.cargo/git" \
       -v "$PWD/.cargo/registry:/home/rust/.cargo/registry" \
-      --user=root \
       cennznet-wasm-builder ./scripts/build.sh
 
 # Create cennznet native builder image
