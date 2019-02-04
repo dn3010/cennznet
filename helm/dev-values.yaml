@@ -75,7 +75,7 @@ cennznet-node:
     - "/bin/bash"
     - "-c"
     - >
-      cennznet
+      sleep 5 && cennznet
       --chain=kauri
       --base-path=/mnt/cennznet
       --validator
