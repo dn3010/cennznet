@@ -21,6 +21,9 @@ if [ -n "$BUILD_NUMBER" ]; then
   chmod +x rustup-install.sh
   ./rustup-install.sh -y
   export PATH="$CARGO_HOME/bin":$PATH
+
+  rustup update nightly
+  rustup default nightly
 fi
 
 # Fetch dependencies locally. Copied into container on build
