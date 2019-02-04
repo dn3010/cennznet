@@ -77,7 +77,7 @@ cennznet-node:
     - >
       cennznet
       --chain=kauri
-      --base-path=/mnt/cennznet/data
+      --base-path=/tmp/cennznet
       --validator
       --pruning=archive
       --rpc-external
