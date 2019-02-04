@@ -22,7 +22,7 @@ if [ -n "$BUILD_NUMBER" ]; then
   ./rustup-install.sh -y
   export PATH="$CARGO_HOME/bin":$PATH
 
-  rustup update nightly
+#   rustup update nightly
   rustup default nightly
 fi
 
@@ -31,4 +31,4 @@ fi
 echo "Fetching project dependencies..."
 # Have to fetch resursivley for all project modules as there is no
 # `cargo fetch --all` type command to do it automatically
-cargo metadata | jq '.packages | map(.manifest_path)| .[] | select(contains("cennznet-node/.") | not)' | xargs -I{} dirname {} | xargs -I{} sh -c "cd {} && cargo fetch"
+cargo metadata --format-version 1 | jq '.packages | map(.manifest_path)| .[] | select(contains("cennznet-node/.") | not)' | xargs -I{} dirname {} | xargs -I{} sh -c "cd {} && cargo fetch"
