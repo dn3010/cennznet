@@ -29,4 +29,4 @@ fi
 echo "Fetching project dependencies..."
 # Have to fetch resursivley for all project modules as there is no
 # `cargo fetch --all` type command to do it automatically
-cargo metadata | jq '.packages | map(.manifest_path)| .[] | select(contains("cennznet-node/.") | not)' | xargs -I{} dirname {} | xargs -I{} sh -c "cd {} && cargo fetch"
+cargo metadata | jq '.packages | map(.manifest_path)| .[] | select(contains("cennznet-node/.") | not)' | xargs -I{} dirname {} | xargs -I{} sh -c "cd {} && cargo +nightly fetch"
