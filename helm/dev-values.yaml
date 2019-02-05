@@ -23,7 +23,6 @@ cennznet-node:
           external-dns.alpha.kubernetes.io/hostname: cennznet-node-0.centrality.me
         p2p:
           external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-0.centrality.me
-          service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     - env:
         - name: CENNZNET_KEY
           value: "Brooke"
@@ -45,7 +44,6 @@ cennznet-node:
           external-dns.alpha.kubernetes.io/hostname: cennznet-node-1.centrality.me
         p2p:
           external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-1.centrality.me
-          service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     - env:
         - name: RUST_LOG
           value: "sync,afg=trace"
@@ -69,7 +67,6 @@ cennznet-node:
           external-dns.alpha.kubernetes.io/hostname: cennznet-node-2.centrality.me
         p2p:
           external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-2.centrality.me
-          service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
 
   command:
     - "/bin/bash"
