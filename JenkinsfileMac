@@ -1,0 +1,31 @@
+#!groovy
+
+pipeline {
+    agent {
+        label 'macos'
+    }
+
+    environment {
+        TENANT = 'ea23b9ad-a3ca-4936-8613-68446bd85dde'
+        SERVICE_PRINCIPAL = credentials('SERVICE_PRINCIPAL')
+        SERVICE_NAME = 'cennznet'
+        ACR = credentials('AzureDockerRegistry')
+        NAMESPACE = 'cennznet'
+        SUBCHART= 'cennznet-node'
+        IMAGE_NAME = "centrality/${SERVICE_NAME}:1.0.${BUILD_NUMBER}"
+    }
+
+    stages {
+
+        stage('Build cennznet-node') {
+			 environment {
+				 IMAGE_NAME = "centrality/cennznet-node-release-1.0.${BUILD_NUMBER}"
+				 CARGO_HOME = "${WORKSPACE}/.cargo"
+				 PATH = "${CARGO_HOME}/bin:${PATH}"
+			 }
+			 steps {
+				 sh './scripts/cennznet-node-release-mac.sh'
+			 }
+		 }
+    }
+}
