@@ -50,19 +50,19 @@ pipeline {
           }
         }
 
-        stage ('Confirm deploy new Runtime') {
-            steps {
-                timeout(time:1, unit:'HOURS') {
-                    input "Confirm deploy new Runtime? Warning!! May brick the chain"
-                }
-           }
-        }
+        // stage ('Confirm deploy new Runtime') {
+        //     steps {
+        //         timeout(time:1, unit:'HOURS') {
+        //             input "Confirm deploy new Runtime? Warning!! May brick the chain"
+        //         }
+        //    }
+        // }
 
-        stage('Deploy new wasm Runtime to chain') {
-            steps {
-                sh './scripts/deploy-runtime.sh'
-            }
-        }
+        // stage('Deploy new wasm Runtime to chain') {
+        //     steps {
+        //         sh './scripts/deploy-runtime.sh'
+        //     }
+        // }
 
         stage ('Confirm UAT deploy') {
             steps {
