@@ -71,7 +71,7 @@ cennznet-node:
     - "-c"
     - >
       cennznet
-      --chain=cennznet-uat
+      --chain=rimu
       --base-path=/mnt/cennznet
       --validator
       --rpc-external
