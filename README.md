@@ -33,10 +33,15 @@ cargo build
 
 __Run__
 ```bash
-# Join CENNZnet DEV net
+# Join Rimu CENNZnet net
 cargo run
 # or
 ./target/debug/cennznet
+
+# Join Kauri CENNZnet net
+cargo run -- --chain=kauri
+# or
+./target/debug/cennznet --chain=kauri
 
 # Run your own testnet with a validator
 cargo run -- --dev
@@ -47,10 +52,15 @@ cargo run -- --dev
 
 __Purge chain__
 ```bash
-# For CENNZnet UAT net
+# For Rimu CENNZnet net
 cargo run -- purge-chain
 # or
 ./target/debug/cennznet purge-chain
+
+# For Kauri CENNZnet net
+cargo run -- purge-chain --chain=kauri
+# or
+./target/debug/cennznet purge-chain --chain=kauri
 
 # For local testnet
 cargo run -- purge-chain --dev
