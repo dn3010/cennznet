@@ -366,6 +366,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "cennznet-module-cennz-x"
+version = "0.1.0"
+dependencies = [
+ "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+]
+
+[[package]]
 name = "cennznet-module-sylo"
 version = "0.1.0"
 dependencies = [
@@ -399,6 +414,7 @@ name = "cennznet-runtime"
 version = "0.1.0"
 dependencies = [
  "cennznet-module-attestation 0.1.0",
+ "cennznet-module-cennz-x 0.1.0",
  "cennznet-module-sylo 0.1.0",
  "cennznet-primitives 0.1.0",
  "hex-literal 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
