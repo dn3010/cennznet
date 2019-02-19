@@ -88,9 +88,13 @@ pipeline {
           }
         }
 
-
     }
-
+    post {
+        always {
+            echo "pipeline post always"
+            sh 'bash ./ci/cleanup.sh'
+        }
+    }
 
 
 }
