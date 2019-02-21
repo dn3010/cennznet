@@ -13,6 +13,7 @@ sr-std = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-
 sr-io = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-system = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+cennznet-primitives = { path = "../../primitives" }
 
 [features]
 default = ["std"]
