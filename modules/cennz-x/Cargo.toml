@@ -5,6 +5,7 @@ authors = ["Centrality Developers <developers@centrality.ai>"]
 edition = "2018"
 
 [dependencies]
+serde = { version = "1.0", default-features = false }
 parity-codec = { version = "3.0", default-features = false }
 parity-codec-derive = { version = "3.0", default-features = false }
 generic-asset = { package="srml-generic-asset", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -14,6 +15,7 @@ runtime_io = { package="sr-io", git = "ssh://git@bitbucket.org/centralitydev/sub
 runtime_primitives = { package="sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 system = { package="srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+srml-timestamp = { package="srml-timestamp", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 
 [features]
 default = ["std"]
@@ -24,4 +26,5 @@ std = [
 	"runtime_primitives/std",
 	"srml-support/std",
 	"system/std",
+	"srml-timestamp/std",
 ]
