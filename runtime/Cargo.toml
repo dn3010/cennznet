@@ -40,6 +40,7 @@ attestation = { package = "cennznet-module-attestation", path = "../modules/atte
 doughnut = { package = "cennznet-module-doughnut", path = "../modules/doughnut", default-features = false }
 sylo = { package = "cennznet-module-sylo", path = "../modules/sylo", default-features = false }
 generic-asset = { package = "srml-generic-asset", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+cennz-x = { package = "cennznet-module-cennz-x", path = "../modules/cennz-x", default-features = false }
 
 [features]
 default = ["std"]
@@ -75,7 +76,7 @@ std = [
 	"serde",
 	"substrate-keyring",
 	"attestation/std",
-	"doughnut/std",
+	"cennz-x/std",
 	"sylo/std",
 	"generic-asset/std",
 ]
