@@ -30,6 +30,7 @@ system = { package = "srml-system", git = "ssh://git@bitbucket.org/centralitydev
 timestamp = { package = "srml-timestamp", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 treasury = { package = "srml-treasury", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 sudo = { package = "srml-sudo", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+fees = { package = "srml-fees", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 consensus_aura = { package = "substrate-consensus-aura-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 rustc-hex = { version = "2.0", optional = true }
 hex-literal = { version = "0.1.0", optional = true }
