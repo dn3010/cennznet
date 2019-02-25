@@ -1,12 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Setup local rust, cargo, and fetch dependencies
 #
 
 # Create local, temp. cargo config
 PROJECT_ROOT="$(git rev-parse --show-toplevel)"
-echo "Creating local cargo config..."
 export CARGO_HOME="$PROJECT_ROOT/.cargo"
+echo "Creating local cargo config with $CARGO_HOME"
 mkdir -p $CARGO_HOME
 # Use host `git` command to clone dependencies
 cat << EOF > "$CARGO_HOME/config"

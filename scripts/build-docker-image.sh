@@ -7,7 +7,7 @@ echo -e "\nStarting cennznet build..."
 
 # Clean build
 if [[ $CLEAN_CARGO == 'true' ]]; then
-  ./scripts/clean.sh
+  ./scripts/clean-cargo.sh
 fi
 
 # Setup a local $CARGO_HOME and fetch dependencies
@@ -25,13 +25,15 @@ fi
 
 # Build cennznet-node runtime WASM binary
 echo -e "\nBuilding runtime wasm..."
-docker run -t --rm \
+docker run --user "$(id -u)":"$(id -g)" \
+      -t --rm \
       -v "$PWD:/cennznet" \
       rust-builder:$NIGHTLY_DATE ./scripts/build-wasm.sh
 
 # Create cennznet-node native binary
 echo -e "\nBuilding cennznet node binary..."
-docker run -t --rm \
+docker run --user "$(id -u)":"$(id -g)" \
+      -t --rm \
       -v "$PWD:/cennznet" \
       rust-builder:$NIGHTLY_DATE ./scripts/build-binary.sh
 

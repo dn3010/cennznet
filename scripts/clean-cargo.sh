@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Clean build related artifacts
 #
