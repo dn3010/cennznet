@@ -366,6 +366,7 @@ dependencies = [
  "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
