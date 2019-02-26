@@ -734,7 +734,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "elastic-array"
-version = "0.10.0"
+version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "heapsize 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -854,7 +854,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "fork-tree"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1273,7 +1273,7 @@ name = "kvdb"
 version = "0.1.0"
 source = "git+https://github.com/paritytech/parity-common?rev=b0317f649ab2c665b7987b8475878fc4d2e1f81d#b0317f649ab2c665b7987b8475878fc4d2e1f81d"
 dependencies = [
- "elastic-array 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "elastic-array 0.10.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-bytes 0.1.0 (git+https://github.com/paritytech/parity-common?rev=b0317f649ab2c665b7987b8475878fc4d2e1f81d)",
 ]
 
@@ -1282,7 +1282,7 @@ name = "kvdb-rocksdb"
 version = "0.1.4"
 source = "git+https://github.com/paritytech/parity-common?rev=b0317f649ab2c665b7987b8475878fc4d2e1f81d#b0317f649ab2c665b7987b8475878fc4d2e1f81d"
 dependencies = [
- "elastic-array 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "elastic-array 0.10.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "fs-swap 0.2.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "interleaved-ordered 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "kvdb 0.1.0 (git+https://github.com/paritytech/parity-common?rev=b0317f649ab2c665b7987b8475878fc4d2e1f81d)",
@@ -1522,7 +1522,7 @@ dependencies = [
  "libp2p-core 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)",
- "snow 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "snow 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "tokio-io 0.1.11 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -1860,7 +1860,7 @@ dependencies = [
  "openssl 0.10.18 (registry+https://github.com/rust-lang/crates.io-index)",
  "openssl-probe 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "openssl-sys 0.9.41 (registry+https://github.com/rust-lang/crates.io-index)",
- "schannel 0.1.14 (registry+https://github.com/rust-lang/crates.io-index)",
+ "schannel 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
  "security-framework 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "security-framework-sys 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "tempfile 3.0.7 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2561,7 +2561,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "schannel"
-version = "0.1.14"
+version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2754,7 +2754,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "snow"
-version = "0.5.1"
+version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "arrayref 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2766,6 +2766,7 @@ dependencies = [
  "rustc_version 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "smallvec 0.6.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "static_slice 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "subtle 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -2776,7 +2777,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "sr-api-macros"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "blake2-rfc 0.2.18 (registry+https://github.com/rust-lang/crates.io-index)",
  "proc-macro-crate 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2788,7 +2789,7 @@ dependencies = [
 [[package]]
 name = "sr-io"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "environmental 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "hash-db 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2805,7 +2806,7 @@ dependencies = [
 [[package]]
 name = "sr-primitives"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "integer-sqrt 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2822,7 +2823,7 @@ dependencies = [
 [[package]]
 name = "sr-sandbox"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc_version 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2834,7 +2835,7 @@ dependencies = [
 [[package]]
 name = "sr-std"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "rustc_version 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -2842,7 +2843,7 @@ dependencies = [
 [[package]]
 name = "sr-version"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "impl-serde 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2856,7 +2857,7 @@ dependencies = [
 [[package]]
 name = "srml-aura"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2874,7 +2875,7 @@ dependencies = [
 [[package]]
 name = "srml-balances"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2892,7 +2893,7 @@ dependencies = [
 [[package]]
 name = "srml-consensus"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2910,7 +2911,7 @@ dependencies = [
 [[package]]
 name = "srml-contract"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2934,7 +2935,7 @@ dependencies = [
 [[package]]
 name = "srml-council"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2952,7 +2953,7 @@ dependencies = [
 [[package]]
 name = "srml-democracy"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2971,7 +2972,7 @@ dependencies = [
 [[package]]
 name = "srml-executive"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.88 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2986,7 +2987,7 @@ dependencies = [
 [[package]]
 name = "srml-fees"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3003,7 +3004,7 @@ dependencies = [
 [[package]]
 name = "srml-generic-asset"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3019,7 +3020,7 @@ dependencies = [
 [[package]]
 name = "srml-grandpa"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3037,7 +3038,7 @@ dependencies = [
 [[package]]
 name = "srml-indices"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3056,7 +3057,7 @@ dependencies = [
 [[package]]
 name = "srml-metadata"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3069,7 +3070,7 @@ dependencies = [
 [[package]]
 name = "srml-session"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3087,7 +3088,7 @@ dependencies = [
 [[package]]
 name = "srml-staking"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3106,7 +3107,7 @@ dependencies = [
 [[package]]
 name = "srml-sudo"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3122,7 +3123,7 @@ dependencies = [
 [[package]]
 name = "srml-support"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "once_cell 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3142,7 +3143,7 @@ dependencies = [
 [[package]]
 name = "srml-support-procedural"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "proc-macro2 0.4.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "quote 0.6.11 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3154,7 +3155,7 @@ dependencies = [
 [[package]]
 name = "srml-support-procedural-tools"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "proc-macro-crate 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "proc-macro2 0.4.27 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3166,7 +3167,7 @@ dependencies = [
 [[package]]
 name = "srml-support-procedural-tools-derive"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "proc-macro2 0.4.27 (registry+https://github.com/rust-lang/crates.io-index)",
  "quote 0.6.11 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3176,7 +3177,7 @@ dependencies = [
 [[package]]
 name = "srml-system"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3194,7 +3195,7 @@ dependencies = [
 [[package]]
 name = "srml-timestamp"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3211,7 +3212,7 @@ dependencies = [
 [[package]]
 name = "srml-treasury"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3326,7 +3327,7 @@ dependencies = [
 [[package]]
 name = "substrate-basic-authorship"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3342,7 +3343,7 @@ dependencies = [
 [[package]]
 name = "substrate-cli"
 version = "0.3.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "ansi_term 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "app_dirs 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3374,7 +3375,7 @@ dependencies = [
 [[package]]
 name = "substrate-client"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3404,7 +3405,7 @@ dependencies = [
 [[package]]
 name = "substrate-client-db"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hash-db 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "kvdb 0.1.0 (git+https://github.com/paritytech/parity-common?rev=b0317f649ab2c665b7987b8475878fc4d2e1f81d)",
@@ -3426,7 +3427,7 @@ dependencies = [
 [[package]]
 name = "substrate-consensus-aura"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3451,7 +3452,7 @@ dependencies = [
 [[package]]
 name = "substrate-consensus-aura-primitives"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "substrate-client 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
@@ -3459,7 +3460,7 @@ dependencies = [
 [[package]]
 name = "substrate-consensus-aura-slots"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3478,7 +3479,7 @@ dependencies = [
 [[package]]
 name = "substrate-consensus-common"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "crossbeam-channel 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3496,7 +3497,7 @@ dependencies = [
 [[package]]
 name = "substrate-executor"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "byteorder 1.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3521,7 +3522,7 @@ dependencies = [
 [[package]]
 name = "substrate-finality-grandpa"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "finality-grandpa 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "fork-tree 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
@@ -3544,7 +3545,7 @@ dependencies = [
 [[package]]
 name = "substrate-finality-grandpa-primitives"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3557,7 +3558,7 @@ dependencies = [
 [[package]]
 name = "substrate-inherents"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec-derive 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3569,7 +3570,7 @@ dependencies = [
 [[package]]
 name = "substrate-keyring"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3579,7 +3580,7 @@ dependencies = [
 [[package]]
 name = "substrate-keystore"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "hex 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3595,7 +3596,7 @@ dependencies = [
 [[package]]
 name = "substrate-network"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "bitflags 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "crossbeam-channel 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3622,8 +3623,9 @@ dependencies = [
 [[package]]
 name = "substrate-network-libp2p"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
+ "byteorder 1.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "bytes 0.4.11 (registry+https://github.com/rust-lang/crates.io-index)",
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "fnv 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3647,7 +3649,7 @@ dependencies = [
 [[package]]
 name = "substrate-panic-handler"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "backtrace 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3656,7 +3658,7 @@ dependencies = [
 [[package]]
 name = "substrate-primitives"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "base58 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "blake2-rfc 0.2.18 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3684,7 +3686,7 @@ dependencies = [
 [[package]]
 name = "substrate-rpc"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-core 10.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3710,7 +3712,7 @@ dependencies = [
 [[package]]
 name = "substrate-rpc-servers"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "jsonrpc-http-server 10.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jsonrpc-pubsub 10.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3724,7 +3726,7 @@ dependencies = [
 [[package]]
 name = "substrate-serializer"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "serde 1.0.88 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.38 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3733,7 +3735,7 @@ dependencies = [
 [[package]]
 name = "substrate-service"
 version = "0.3.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "exit-future 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3765,7 +3767,7 @@ dependencies = [
 [[package]]
 name = "substrate-state-db"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3777,7 +3779,7 @@ dependencies = [
 [[package]]
 name = "substrate-state-machine"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hash-db 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "heapsize 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3795,7 +3797,7 @@ dependencies = [
 [[package]]
 name = "substrate-telemetry"
 version = "0.3.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3810,7 +3812,7 @@ dependencies = [
 [[package]]
 name = "substrate-transaction-graph"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3824,7 +3826,7 @@ dependencies = [
 [[package]]
 name = "substrate-transaction-pool"
 version = "0.1.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "futures 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3840,7 +3842,7 @@ dependencies = [
 [[package]]
 name = "substrate-trie"
 version = "0.4.0"
-source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#fe6db455ce6b9b6b15e36be18d4b97891f0c2c8e"
+source = "git+ssh://git@bitbucket.org/centralitydev/substrate.git#21a577b24e0f022e6b339f144427d69e3e8a1cfc"
 dependencies = [
  "hash-db 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "memory-db 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -4194,7 +4196,7 @@ name = "trie-db"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "elastic-array 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "elastic-array 0.10.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hash-db 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.6.5 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -4584,7 +4586,7 @@ dependencies = [
 "checksum dns-parser 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c4d33be9473d06f75f58220f71f7a9317aca647dc061dbd3c361b0bef505fbea"
 "checksum ed25519-dalek 1.0.0-pre.1 (registry+https://github.com/rust-lang/crates.io-index)" = "81956bcf7ef761fb4e1d88de3fa181358a0d26cbcb9755b587a08f9119824b86"
 "checksum either 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c67353c641dc847124ea1902d69bd753dee9bb3beff9aa3662ecf86c971d1fac"
-"checksum elastic-array 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "88d4851b005ef16de812ea9acdb7bece2f0a40dd86c07b85631d7dafa54537bb"
+"checksum elastic-array 0.10.2 (registry+https://github.com/rust-lang/crates.io-index)" = "073be79b6538296faf81c631872676600616073817dd9a440c477ad09b408983"
 "checksum env_logger 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "afb070faf94c85d17d50ca44f6ad076bce18ae92f0037d350947240a36e9d42e"
 "checksum environmental 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "db746025e3ea695bfa0ae744dbacd5fcfc8db51b9760cf8bd0ab69708bb93c49"
 "checksum error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)" = "07e791d3be96241c77c43846b665ef1384606da2cd2a48730abe606a12906e02"
@@ -4773,7 +4775,7 @@ dependencies = [
 "checksum ryu 0.2.7 (registry+https://github.com/rust-lang/crates.io-index)" = "eb9e9b8cde282a9fe6a42dd4681319bfb63f121b8a8ee9439c6f4107e58a46f7"
 "checksum safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "7f7bf422d23a88c16d5090d455f182bc99c60af4df6a345c63428acf5129e347"
 "checksum safemem 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8dca453248a96cb0749e36ccdfe2b0b4e54a61bfef89fb97ec621eb8e0a93dd9"
-"checksum schannel 0.1.14 (registry+https://github.com/rust-lang/crates.io-index)" = "0e1a231dc10abf6749cfa5d7767f25888d484201accbd919b66ab5413c502d56"
+"checksum schannel 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)" = "f2f6abf258d99c3c1c5c2131d99d064e94b7b3dd5f416483057f308fea253339"
 "checksum schnorrkel 0.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fe554f318830b48e5da8ab1ccb1ffd02b79228364dac7766b7cd1ec461ca5116"
 "checksum scopeguard 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "94258f53601af11e6a49f722422f6e3425c52b06245a5cf9bc09908b174f5e27"
 "checksum secp256k1 0.12.2 (registry+https://github.com/rust-lang/crates.io-index)" = "bfaccd3a23619349e0878d9a241f34b1982343cdf67367058cd7d078d326b63e"
@@ -4795,7 +4797,7 @@ dependencies = [
 "checksum slog-json 2.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ddc0d2aff1f8f325ef660d9a0eb6e6dcd20b30b3f581a5897f58bf42d061c37a"
 "checksum slog-scope 4.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "60c04b4726fa04595ccf2c2dad7bcd15474242c4c5e109a8a376e8a2c9b1539a"
 "checksum smallvec 0.6.9 (registry+https://github.com/rust-lang/crates.io-index)" = "c4488ae950c49d403731982257768f48fada354a5203fe81f9bb6f43ca9002be"
-"checksum snow 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7251f8920e9043106cfe466c04ed3eb257b8315a7699259c4fd0af6dffb6aef6"
+"checksum snow 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)" = "5a64f02fd208ef15bd2d1a65861df4707e416151e1272d02c8faafad1c138100"
 "checksum spin 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "44363f6f51401c34e7be73db0db371c04705d35efbe9f7d6082e03a921a32c55"
 "checksum sr-api-macros 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
 "checksum sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)" = "<none>"
