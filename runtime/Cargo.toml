@@ -79,4 +79,5 @@ std = [
 	"cennz-x/std",
 	"sylo/std",
 	"generic-asset/std",
+	"doughnut/std",
 ]
