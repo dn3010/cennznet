@@ -14,7 +14,7 @@ fi
 ./scripts/fetch-dependencies.sh
 
 # Create generic rust-builder image from nightly
-NIGHTLY_DATE="$(date -u +%Y%m%d)"
+NIGHTLY_DATE="$(date +%Y%m%d)"
 
 if [[ "$(docker images -q rust-builder:$NIGHTLY_DATE 2> /dev/null)" == "" ]]; then
   echo "Building rust-builder image..."

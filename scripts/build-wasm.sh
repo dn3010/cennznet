@@ -3,7 +3,7 @@
 # This script assumes that all pre-requisites are installed.
 set -e
 
-# Set the default to be the top level project repo, if not fall back to hopefully the project repo
+# Set the default to be the top level project repo, if not fall back to hopefully the project repo with docker
 PROJECT_ROOT=$(git rev-parse --show-toplevel) || PROJECT_ROOT="/cennznet"
 
 pushd $PROJECT_ROOT/runtime/wasm
