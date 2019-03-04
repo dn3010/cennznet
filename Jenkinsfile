@@ -1,8 +1,13 @@
 #!groovy
 
 pipeline {
+    
     agent {
         label 'linux-agent1'
+    }
+
+    options {
+      ansiColor('xterm')
     }
 
     environment {
@@ -77,20 +82,6 @@ pipeline {
           }
         }
 
-        // stage ('Confirm deploy new Runtime') {
-        //     steps {
-        //         timeout(time:1, unit:'HOURS') {
-        //             input "Confirm deploy new Runtime? Warning!! May brick the chain"
-        //         }
-        //    }
-        // }
-
-        // stage('Deploy new wasm Runtime to chain') {
-        //     steps {
-        //         sh './scripts/deploy-runtime.sh'
-        //     }
-        // }
-
         stage ('Confirm UAT deploy') {
             steps {
                 timeout(time:1, unit:'HOURS') {
@@ -119,7 +110,7 @@ pipeline {
     post {
         always {
             echo "pipeline post always"
-            sh 'bash ./ci/cleanup.sh'
+            sh 'bash ./ci/wipe-workspace.sh'
         }
     }
 
