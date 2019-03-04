@@ -1,0 +1,60 @@
+#!groovy
+
+pipeline {
+    agent {
+        label 'linux-agent1'
+    }
+
+    options {
+      ansiColor('xterm')
+    }
+
+    environment {
+        TENANT = 'ea23b9ad-a3ca-4936-8613-68446bd85dde'
+        SERVICE_PRINCIPAL = credentials('SERVICE_PRINCIPAL')
+        SERVICE_NAME = 'cennznet'
+        ACR = credentials('AzureDockerRegistry')
+        NAMESPACE = 'cennznet'
+        SUBCHART= 'cennznet-node'
+    }
+
+    stages {
+
+        stage('Build WASM') {
+            environment {
+                PATH="${HOME}/.cargo/bin:${PATH}"
+            }
+            steps {
+              sh 'bash ./ci/pre-build.sh'
+              sh 'bash ./ci/build-wasm-docker.sh'
+            }
+        }
+
+        stage('Run unit test') {
+            environment {
+                PATH="${HOME}/.cargo/bin:${PATH}"
+            }
+            steps {
+              sh 'bash ./ci/unit-test-docker.sh'
+            }
+        }
+
+        stage('Build CENNZnet image') {
+            environment {
+                PATH="${HOME}/.cargo/bin:${PATH}"
+            }
+            steps {
+              sh 'bash ./ci/pre-build.sh'
+              sh 'bash ./ci/build-image.sh'
+            }
+        }
+    }
+    post {
+        always {
+            echo "pipeline post always"
+            sh 'bash ./ci/wipe-workspace.sh'
+        }
+    }
+
+
+}
