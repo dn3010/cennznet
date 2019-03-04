@@ -20,6 +20,15 @@ pipeline {
 
     stages {
 
+        stage('Install dependencies') {
+           environment {
+               PATH="${HOME}/.cargo/bin:${PATH}"
+           }
+           steps {
+             sh 'bash ./ci/pre-build.sh'
+           }
+       }
+
         stage('Run lints') {
             environment {
                 PATH="${HOME}/.cargo/bin:${PATH}"
