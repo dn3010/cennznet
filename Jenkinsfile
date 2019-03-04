@@ -1,8 +1,13 @@
 #!groovy
 
 pipeline {
+    
     agent {
         label 'linux-agent1'
+    }
+
+    options {
+      ansiColor('xterm')
     }
 
     environment {
@@ -17,14 +22,41 @@ pipeline {
 
     stages {
 
-        stage('Build CENNZnet image') {
+
+        stage('Install dependencies') {
             environment {
-                CARGO_HOME="${WORKSPACE}/.cargo"
-                PATH="${CARGO_HOME}/bin:${PATH}"
+                PATH="${HOME}/.cargo/bin:${PATH}"
             }
             steps {
-              sh 'sudo apt-get install jq'
-              sh './scripts/build-docker.sh'
+              sh 'bash ./ci/pre-build.sh'
+            }
+        }
+
+
+        stage('Build WASM') {
+            environment {
+                PATH="${HOME}/.cargo/bin:${PATH}"
+            }
+            steps {
+              sh 'bash ./ci/build-wasm-docker.sh'
+            }
+        }
+
+        stage('Run Unit Tests') {
+            environment {
+                PATH="${HOME}/.cargo/bin:${PATH}"
+            }
+            steps {
+              sh 'bash ./ci/unit-test-docker.sh'
+            }
+        }
+
+        stage('Build CENNZnet image') {
+            environment {
+                PATH="${HOME}/.cargo/bin:${PATH}"
+            }
+            steps {
+              sh 'bash ./ci/build-image-docker.sh'
             }
         }
 
@@ -50,20 +82,6 @@ pipeline {
           }
         }
 
-        // stage ('Confirm deploy new Runtime') {
-        //     steps {
-        //         timeout(time:1, unit:'HOURS') {
-        //             input "Confirm deploy new Runtime? Warning!! May brick the chain"
-        //         }
-        //    }
-        // }
-
-        // stage('Deploy new wasm Runtime to chain') {
-        //     steps {
-        //         sh './scripts/deploy-runtime.sh'
-        //     }
-        // }
-
         stage ('Confirm UAT deploy') {
             steps {
                 timeout(time:1, unit:'HOURS') {
@@ -88,9 +106,13 @@ pipeline {
           }
         }
 
-
     }
-
+    post {
+        always {
+            echo "pipeline post always"
+            sh 'bash ./ci/wipe-workspace.sh'
+        }
+    }
 
 
 }

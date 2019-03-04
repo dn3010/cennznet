@@ -15,10 +15,6 @@ runtime_io = { package="sr-io", git = "ssh://git@bitbucket.org/centralitydev/sub
 runtime_primitives = { package="sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 system = { package="srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-timestamp = { package="srml-timestamp", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-
-[dev-dependencies]
-consensus = { package = "srml-consensus", git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 
 [features]
 default = ["std"]
@@ -32,5 +28,4 @@ std = [
 	"srml-support/std",
 	"system/std",
 	"generic-asset/std",
-	"timestamp/std",
 ]
