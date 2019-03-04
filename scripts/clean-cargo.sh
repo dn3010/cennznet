@@ -6,6 +6,6 @@
 #   ./scripts/clean.sh
 #
 echo "Cleaning cargo cache..."
+cargo +nightly clean
 rm -rf .cargo/
-rm -rf target/
 rm -rf runtime/wasm/target/
