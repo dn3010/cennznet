@@ -12,4 +12,5 @@ echo Updaing Kauri genesis
 cargo run -- build-spec --chain=kauri-latest --raw > ./genesis/dev/genesis.json
 
 # echo Updaing Rimu genesis
-# cargo run -- build-spec --chain=rimu-latest --raw > ./genesis/uat/genesis.json
+# cargo run -- build-spec --chain=rimu-latest > ./genesis/uat/readable.json
+# cargo run -- build-spec --chain=./genesis/uat/readable.json --raw > ./genesis/uat/genesis.json
