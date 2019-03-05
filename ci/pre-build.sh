@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if ! command -v rustup; then
   echo "Install rust nightly toolchain (for Jenkins)"
   curl https://sh.rustup.rs -sSf > ci/rustup-install.sh
@@ -15,14 +14,26 @@ if [[ $CLEAN_CARGO == 'true' ]]; then
   ./scripts/clean-cargo.sh
 fi
 
-# Setup a local $CARGO_HOME and fetch dependencies
-./scripts/fetch-dependencies.sh
+# Setup Cargo config
+PROJECT_ROOT="$(git rev-parse --show-toplevel)"
+export CARGO_HOME="$PROJECT_ROOT/.cargo"
+echo "Creating local cargo config with $CARGO_HOME"
+mkdir -p $CARGO_HOME
+
+# Use host `git` command to clone dependencies
+cat << EOF > "$CARGO_HOME/config"
+[net]
+git-fetch-with-cli = true
+EOF
+
+rustup default nightly
 
 # Create generic rust-builder image from nightly
 NIGHTLY_DATE="$(date +%Y%m%d)"
 
 if [[ "$(docker images -q rust-builder:$NIGHTLY_DATE 2> /dev/null)" == "" ]]; then
   echo "Building rust-builder image..."
+  rustup update nightly
   docker build --no-cache --pull -f docker/rust-builder.Dockerfile -t rust-builder:$NIGHTLY_DATE .
 else
   echo "rust-builder image for $NIGHTLY_DATE exists. Not rebuilding..."
