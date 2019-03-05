@@ -43,7 +43,7 @@ pipeline {
                 PATH="${HOME}/.cargo/bin:${PATH}"
             }
             steps {
-              sh 'bash ./ci/pre-build.sh'
+              sh 'bash ./scripts/fetch-dependencies.sh'
               sh 'bash ./ci/build-wasm-docker.sh'
             }
         }
@@ -60,13 +60,14 @@ pipeline {
         stage('Build CENNZnet image') {
             environment {
                 PATH="${HOME}/.cargo/bin:${PATH}"
+                BUILD_PROFILE="debug"
             }
             steps {
-              sh 'bash ./ci/pre-build.sh'
               sh 'bash ./ci/build-image.sh'
             }
         }
     }
+
     post {
         always {
             echo "pipeline post always"
