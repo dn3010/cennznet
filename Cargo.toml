@@ -3,6 +3,7 @@ name = "cennznet"
 version = "0.1.0"
 authors = ["Centrality Developers <developers@centrality.ai>"]
 build = "build.rs"
+edition = "2018"
 
 [[bin]]
 name = "cennznet"
@@ -35,6 +36,7 @@ substrate-consensus-common = { git = "ssh://git@bitbucket.org/centralitydev/subs
 substrate-finality-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-basic-authorship = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 substrate-inherents = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+substrate-telemetry = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 structopt = "0.2.13"
 cennznet-runtime = { path = "runtime" }

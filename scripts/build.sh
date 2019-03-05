@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script assumes that all pre-requisites are installed.
+# This script builds the wasm, however this isn't actually used anywhere and is kept to stay consistent with upstream substrate
 set -e
 
 PROJECT_ROOT=`git rev-parse --show-toplevel`
