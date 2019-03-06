@@ -29,6 +29,7 @@ pipeline {
             }
             steps {
               sh 'bash ./ci/pre-build.sh'
+              sh 'bash ./scripts/fetch-dependencies.sh'
             }
         }
 
