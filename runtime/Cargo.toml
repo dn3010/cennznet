@@ -16,7 +16,6 @@ runtime-primitives = { package = "sr-primitives", git = "ssh://git@bitbucket.org
 version = { package = "sr-version", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 aura = { package = "srml-aura", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-balances = { package = "srml-balances", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 consensus = { package = "srml-consensus", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 contract = { package= "srml-contract", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 council = { package = "srml-council", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -50,7 +49,6 @@ std = [
 	"rstd/std",
 	"runtime-primitives/std",
 	"srml-support/std",
-	"balances/std",
 	"aura/std",
 	"consensus/std",
 	"contract/std",
