@@ -13,6 +13,8 @@ cennznet-node:
           value: /dns4/cennznet-bootnode-1.centrality.cloud/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
         - name: CENNZNET_BOOTNODE_2
           value: /dns4/cennznet-bootnode-2.centrality.cloud/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
+        - name: CENNZNET_BOOTNODE_3
+          value: /dns4/cennznet-bootnode-3.centrality.cloud/tcp/30333/p2p/QmZq8Hqo53vAMUeQpoHsVichpcsvdoNmBSojM6qSdurd4Y
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
       annotations:
@@ -34,6 +36,8 @@ cennznet-node:
           value: /dns4/cennznet-bootnode-0.centrality.cloud/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
         - name: CENNZNET_BOOTNODE_2
           value: /dns4/cennznet-bootnode-2.centrality.cloud/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
+        - name: CENNZNET_BOOTNODE_3
+          value: /dns4/cennznet-bootnode-3.centrality.cloud/tcp/30333/p2p/QmZq8Hqo53vAMUeQpoHsVichpcsvdoNmBSojM6qSdurd4Y
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
       annotations:
@@ -55,6 +59,8 @@ cennznet-node:
           value: /dns4/cennznet-bootnode-0.centrality.cloud/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
         - name: CENNZNET_BOOTNODE_2
           value: /dns4/cennznet-bootnode-1.centrality.cloud/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+        - name: CENNZNET_BOOTNODE_3
+          value: /dns4/cennznet-bootnode-3.centrality.cloud/tcp/30333/p2p/QmZq8Hqo53vAMUeQpoHsVichpcsvdoNmBSojM6qSdurd4Y
         - name: CENNZNET_TELEMETRY_URL
           value: ws://cennznet-telemetry.centrality.me:1024
       annotations:
@@ -65,6 +71,29 @@ cennznet-node:
           external-dns.alpha.kubernetes.io/hostname: cennznet-node-2.centrality.cloud
         p2p:
           external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-2.centrality.cloud
+    - env:
+        - name: CENNZNET_KEY
+          value: "Drew"
+        - name: CENNZNET_NAME
+          value: DREW
+        - name: CENNZNET_NODE_KEY
+          value: "0000000000000000000000000000000000000000000000000000000000000004"
+        - name: CENNZNET_BOOTNODE_1
+          value: /dns4/cennznet-bootnode-0.centrality.cloud/tcp/30333/p2p/QmQZ8TjTqeDj3ciwr93EJ95hxfDsb9pEYDizUAbWpigtQN
+        - name: CENNZNET_BOOTNODE_2
+          value: /dns4/cennznet-bootnode-1.centrality.cloud/tcp/30333/p2p/QmXiB3jqqn2rpiKU7k1h7NJYeBg8WNSx9DiTRKz9ti2KSK
+        - name: CENNZNET_BOOTNODE_3
+          value: /dns4/cennznet-bootnode-2.centrality.cloud/tcp/30333/p2p/QmYcHeEWuqtr6Gb5EbK7zEhnaCm5p6vA2kWcVjFKbhApaC
+        - name: CENNZNET_TELEMETRY_URL
+          value: ws://cennznet-telemetry.centrality.me:1024
+      annotations:
+        rpc:
+          service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-southeast-1:921717751722:certificate/ebeccca7-7425-4bbc-a72a-9b62160fbfd1
+          service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+          service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "9933,9944"
+          external-dns.alpha.kubernetes.io/hostname: cennznet-node-3.centrality.cloud
+        p2p:
+          external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-3.centrality.cloud
 
   command:
     - "/bin/bash"
@@ -82,6 +111,7 @@ cennznet-node:
       --node-key=$CENNZNET_NODE_KEY
       --bootnodes=$CENNZNET_BOOTNODE_1
       --bootnodes=$CENNZNET_BOOTNODE_2
+      --bootnodes=$CENNZNET_BOOTNODE_3
       --telemetry-url=$CENNZNET_TELEMETRY_URL
 
   whitelistIPs:
