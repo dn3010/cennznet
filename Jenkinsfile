@@ -57,7 +57,7 @@ pipeline {
                 PATH="${HOME}/.cargo/bin:${PATH}"
             }
             steps {
-              sh 'bash ./ci/build-image-docker.sh'
+              sh 'bash ./ci/build-image.sh'
             }
         }
 
