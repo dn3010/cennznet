@@ -29,7 +29,7 @@ EOF
 rustup default nightly
 
 # Create generic rust-builder image from nightly
-NIGHTLY_DATE="$(date +%Y%m%d)"
+NIGHTLY_DATE="$(TZ="Pacific/Auckland" date +%Y%m%d)"
 
 if [[ "$(docker images -q rust-builder:$NIGHTLY_DATE 2> /dev/null)" == "" ]]; then
   echo "Building rust-builder image..."

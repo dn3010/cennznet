@@ -2,7 +2,7 @@
 
 set -e
 
-NIGHTLY_DATE="$(date +%Y%m%d)"
+NIGHTLY_DATE="$(TZ="Pacific/Auckland" date +%Y%m%d)"
 
 # Run unit test
 echo -e "\nRunning unit test"

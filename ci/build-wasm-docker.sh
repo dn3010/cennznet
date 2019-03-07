@@ -2,7 +2,7 @@
 
 set -e
 
-NIGHTLY_DATE="$(date +%Y%m%d)"
+NIGHTLY_DATE="$(TZ="Pacific/Auckland" date +%Y%m%d)"
 
 # Build cennznet-node runtime WASM binary
 echo -e "\nBuilding runtime wasm..."
