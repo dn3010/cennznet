@@ -15,6 +15,11 @@ srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", de
 srml-system = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-balances = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 
+[dev-dependencies]
+substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+sr-io = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+sr-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+
 [features]
 default = ["std"]
 std = [
