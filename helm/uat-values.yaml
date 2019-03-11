@@ -128,3 +128,4 @@ cennznet-node:
   - 13.251.201.221/32 # terraform vpc 1a NAT gateway - eks-dev
   - 13.251.201.8/32 # terraform vpc 1c NAT gateway - eks-dev
   - 13.251.209.118/32 # terraform vpc 1b NAT gateway - eks-dev
+  - 222.154.239.179/32 # sylo
