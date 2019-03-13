@@ -29,6 +29,7 @@ pipeline {
             }
             steps {
               sh 'bash ./ci/pre-build.sh'
+              sh 'bash ./scripts/fetch-dependencies.sh'
             }
         }
 
@@ -56,7 +57,7 @@ pipeline {
                 PATH="${HOME}/.cargo/bin:${PATH}"
             }
             steps {
-              sh 'bash ./ci/build-image-docker.sh'
+              sh 'bash ./ci/build-image.sh'
             }
         }
 

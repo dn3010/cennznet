@@ -11,7 +11,7 @@ fi
 
 # Create cennznet-node native binary
 echo -e "\nBuilding cennznet node binary..."
-NIGHTLY_DATE="$(date +%Y%m%d)"
+NIGHTLY_DATE="$(TZ="Pacific/Auckland" date +%Y%m%d)"
 docker run --user "$(id -u)":"$(id -g)" \
        -t --rm \
        -v "$PWD:/cennznet" \

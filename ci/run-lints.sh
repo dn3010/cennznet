@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-NIGHTLY_DATE="$(date +%Y%m%d)"
+NIGHTLY_DATE="$(TZ="Pacific/Auckland" date +%Y%m%d)"
 
 docker run --user "$(id -u)":"$(id -g)" \
        -t --rm \
