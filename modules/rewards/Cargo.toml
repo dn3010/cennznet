@@ -23,7 +23,6 @@ default = ["std"]
 std =[
 	"serde/std",
 	"parity-codec/std",
-	"parity-codec-derive/std",
 	"substrate-primitives/std",
 	"primitives/std",
 	"runtime_io/std",
