@@ -19,7 +19,7 @@ docker run --user "$(id -u)":"$(id -g)" \
 
 # Create a cennznet-node image
 echo -e "\nBuilding cennznet node image..."
-IMAGE_NAME="${IMAGE_NAME:-cennznet-node}"
+IMAGE_NAME="${IMAGE_NAME:-cennznet}"
 docker build --pull \
        -f docker/binary.Dockerfile \
        -t "$IMAGE_NAME" \
