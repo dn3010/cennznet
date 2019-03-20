@@ -1,5 +1,5 @@
 [package]
-name = "cennznet-module-rewards"
+name = "crml-rewards"
 version = "0.1.0"
 authors = ["Shaopeng Wang <git@spwang.net>"]
 edition = "2018"
