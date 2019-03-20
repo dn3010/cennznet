@@ -5,8 +5,7 @@ authors = ["Justin Yoon <justin.yoon@centrality.ai>"]
 edition = "2018"
 
 [dependencies]
-parity-codec = { version = "3.0", default-features = false }
-parity-codec-derive = { version = "3.0", default-features = false }
+parity-codec = { version = "3.1", default-features = false, features = ["derive"] }
 substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 sr-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 sr-std = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -18,7 +17,6 @@ srml-system = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", def
 default = ["std"]
 std = [
 	"parity-codec/std",
-	"parity-codec-derive/std",
 	"substrate-primitives/std",
 	"sr-primitives/std",
 	"sr-std/std",

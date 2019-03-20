@@ -7,8 +7,7 @@ edition = "2018"
 [dependencies]
 integer-sqrt = { version = "0.1.2" }
 safe-mix = { version = "1.0", default-features = false }
-parity-codec-derive = { version = "3.0" }
-parity-codec = { version = "3.0", default-features = false }
+parity-codec = { version = "3.1", default-features = false, features = ["derive"] }
 substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 rstd = { package = "sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
