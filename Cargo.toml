@@ -46,7 +46,7 @@ cennznet-primitives = { path = "primitives" }
 vergen = "2"
 
 [workspace]
-members = [ "runtime", "primitives", "modules/*" ]
+members = [ "runtime", "primitives", "crml/*" ]
 exclude = [ "runtime/wasm" ]
 
 [profile.release]
