@@ -11,7 +11,6 @@ parity-codec = { version = "3.1", default-features = false, features = ["derive"
 substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 rstd = { package = "sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-runtime-io = { package = "sr-io", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 runtime-primitives = { package = "sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 version = { package = "sr-version", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -48,7 +47,6 @@ std = [
 	"parity-codec/std",
 	"substrate-primitives/std",
 	"rstd/std",
-	"runtime-io/std",
 	"runtime-primitives/std",
 	"srml-support/std",
 	"aura/std",
