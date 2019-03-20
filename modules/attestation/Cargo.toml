@@ -1,5 +1,5 @@
 [package]
-name = "cennznet-module-attestation"
+name = "crml-attestation"
 version = "0.1.0"
 authors = ["Justin Yoon <justin.yoon@centrality.ai>"]
 edition = "2018"
