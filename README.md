@@ -168,7 +168,7 @@ Open telemetry UI
 open http://localhost:5000
 ```
 
-### Make a release
+### Release a new chain
 
 - Ensure changelog.md is up to date
 - For Kauri release:
@@ -179,18 +179,16 @@ open http://localhost:5000
 	- Bump Cargo.toml
 	- Ensure there is new version entry in changelog.md
 	- Ensure all changes are commited
-	- Deploy the change (Ask Bryan or Cameron if you don't know how to do this)
-		- Can be reset Kauri nodes and redeploy them
-		- Or perform an on-chain upgrade with sudo key
+	- Deploy the change by reseting Kuari nodes and redeploy them
+		- Ask Bryan or Cameron if you don't know how to do this
 - For Rimu release:
 	- Checkout `stable` branch
 	- Merge the last tagged version
 	- Update Rimu network name version in src/chain_spec.rs
 	- Generate a new genesis file for Rimu: `./scripts/upgrade-genesis.sh rimu`
 	- Ensure all changes are commited
-	- Deploy the change (Ask Bryan or Cameron if you don't know how to do this)
-		- Can be reset Kauri nodes and redeploy them
-		- Or perform an on-chain upgrade with sudo key
+	- Deploy the change by reseting Rimu nodes and redeploy them
+		- Ask Bryan or Cameron if you don't know how to do this
 	- Cherry pick or merge changes from `stable` to `master`
 
 
