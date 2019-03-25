@@ -133,3 +133,12 @@ cennznet-node:
   - 13.251.201.8/32 # terraform vpc 1c NAT gateway - eks-dev
   - 13.251.209.118/32 # terraform vpc 1b NAT gateway - eks-dev
   - 222.154.239.179/32 # sylo
+  - 3.1.185.115 # Causality prod EKS
+  - 18.138.13.247 # Causality prod EKS
+  - 18.138.13.76 # Causality prod EKS
+  - 13.251.210.200 # NAT gateway - eks-uat
+  - 13.251.211.185 # NAT gateway - eks-uat
+  - 13.251.213.251 # NAT gateway - eks-uat
+  - 13.251.251.105 # NAT gateway - eks-prod
+  - 13.251.227.57 # NAT gateway - eks-prod
+  - 13.251.249.126 # NAT gateway - eks-prod
