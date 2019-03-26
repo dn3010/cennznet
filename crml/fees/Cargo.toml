@@ -1,0 +1,29 @@
+[package]
+name = "crml-fees"
+version = "0.1.0"
+authors = ["Centrality Developers <support@centrality.ai>"]
+edition = "2018"
+
+[dependencies]
+hex-literal = "0.1.0"
+serde = { version = "1.0", optional = true }
+parity-codec = { version = "3.1", default-features = false }
+primitives = { package = "substrate-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+rstd = { package="sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+runtime_io = { package="sr-io", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+runtime_primitives = { package="sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+system = { package="srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+	"serde",
+	"parity-codec/std",
+	"primitives/std",
+	"rstd/std",
+	"runtime_io/std",
+	"runtime_primitives/std",
+	"support/std",
+	"system/std",
+]
