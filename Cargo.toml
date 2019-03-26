@@ -1,6 +1,6 @@
 [package]
 name = "cennznet"
-version = "0.9.13"
+version = "0.9.14"
 authors = ["Centrality Developers <developers@centrality.ai>"]
 build = "build.rs"
 edition = "2018"
@@ -46,7 +46,7 @@ cennznet-primitives = { path = "primitives" }
 vergen = "2"
 
 [workspace]
-members = [ "runtime", "primitives", "modules/*" ]
+members = [ "runtime", "primitives", "crml/*" ]
 exclude = [ "runtime/wasm" ]
 
 [profile.release]

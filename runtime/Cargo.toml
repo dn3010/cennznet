@@ -7,8 +7,7 @@ edition = "2018"
 [dependencies]
 integer-sqrt = { version = "0.1.2" }
 safe-mix = { version = "1.0", default-features = false }
-parity-codec-derive = { version = "3.1" }
-parity-codec = { version = "3.1", default-features = false }
+parity-codec = { version = "3.1", default-features = false, features = ["derive"] }
 substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 rstd = { package = "sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -37,11 +36,12 @@ hex-literal = { version = "0.1.0", optional = true }
 serde = { version = "1.0", optional = true }
 substrate-keyring = {git = "ssh://git@bitbucket.org/centralitydev/substrate.git", optional = true }
 cennznet-primitives = { path = "../primitives", default-features = false }
-attestation = { package = "cennznet-module-attestation", path = "../modules/attestation", default-features = false }
-doughnut = { package = "cennznet-module-doughnut", path = "../modules/doughnut", default-features = false }
-sylo = { package = "cennznet-module-sylo", path = "../modules/sylo", default-features = false }
+attestation = { package = "crml-attestation", path = "../crml/attestation", default-features = false }
+doughnut = { package = "crml-doughnut", path = "../crml/doughnut", default-features = false }
+sylo = { package = "crml-sylo", path = "../crml/sylo", default-features = false }
+rewards = { package = "crml-rewards", path = "../crml/rewards", default-features = false }
 generic-asset = { package = "srml-generic-asset", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-cennz-x = { package = "cennznet-module-cennz-x", path = "../modules/cennz-x", default-features = false }
+cennz-x = { package = "crml-cennz-x", path = "../crml/cennz-x", default-features = false }
 
 [features]
 default = ["std"]
@@ -81,4 +81,5 @@ std = [
 	"sylo/std",
 	"generic-asset/std",
 	"doughnut/std",
+	"rewards/std",
 ]

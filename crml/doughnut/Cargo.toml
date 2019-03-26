@@ -1,5 +1,5 @@
 [package]
-name = "cennznet-module-doughnut"
+name = "crml-doughnut"
 version = "0.1.0"
 authors = ["Centrality Developers <developers@centrality.ai>"]
 edition = "2018"
