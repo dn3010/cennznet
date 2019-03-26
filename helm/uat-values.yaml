@@ -2,7 +2,7 @@ cennznet-node:
   nodes:
     - env:
         - name: RUST_LOG
-          value: "debug"
+          value: "sync,afg=trace"
         - name: CENNZNET_KEY
           value: "Andrea"
         - name: CENNZNET_NAME
