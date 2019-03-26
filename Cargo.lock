@@ -313,7 +313,7 @@ dependencies = [
 
 [[package]]
 name = "cennznet"
-version = "0.9.14"
+version = "0.9.15"
 dependencies = [
  "app_dirs 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cennznet-primitives 0.1.0",
@@ -356,6 +356,7 @@ dependencies = [
  "parity-codec 3.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.89 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.89 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
@@ -368,6 +369,7 @@ dependencies = [
  "cennznet-primitives 0.1.0",
  "crml-attestation 0.1.0",
  "crml-cennz-x 0.1.0",
+ "crml-fees 0.1.0",
  "crml-rewards 0.1.0",
  "crml-sylo 0.1.0",
  "hex-literal 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -376,7 +378,6 @@ dependencies = [
  "rustc-hex 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "safe-mix 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.89 (registry+https://github.com/rust-lang/crates.io-index)",
- "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-version 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
@@ -386,7 +387,6 @@ dependencies = [
  "srml-council 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-democracy 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-executive 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
- "srml-fees 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-grandpa 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-indices 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
@@ -536,13 +536,13 @@ dependencies = [
 name = "crml-rewards"
 version = "0.1.0"
 dependencies = [
+ "crml-fees 0.1.0",
  "parity-codec 3.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.89 (registry+https://github.com/rust-lang/crates.io-index)",
  "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-consensus 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
- "srml-fees 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-session 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-staking 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",

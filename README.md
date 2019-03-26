@@ -167,3 +167,28 @@ Open telemetry UI
 ```bash
 open http://localhost:5000
 ```
+
+### Release a new chain
+
+- Ensure changelog.md is up to date
+- For Kauri release:
+	- Generate a new genesis file for local: `./scripts/upgrade-genesis.sh local`
+	- Generate a new genesis file for Kauri: `./scripts/upgrade-genesis.sh kauri`
+	- Commit genesis file and tag it with the current runtime version
+	- Bump `spec_version` and `impl_version` in runtime/src/lib.rs
+	- Bump Cargo.toml
+	- Ensure there is new version entry in changelog.md
+	- Ensure all changes are commited
+	- Deploy the change by reseting Kuari nodes and redeploy them
+		- Ask Bryan or Cameron if you don't know how to do this
+- For Rimu release:
+	- Checkout `stable` branch
+	- Merge the last tagged version
+	- Update Rimu network name version in src/chain_spec.rs
+	- Generate a new genesis file for Rimu: `./scripts/upgrade-genesis.sh rimu`
+	- Ensure all changes are commited
+	- Deploy the change by reseting Rimu nodes and redeploy them
+		- Ask Bryan or Cameron if you don't know how to do this
+	- Cherry pick or merge changes from `stable` to `master`
+
+
