@@ -235,6 +235,7 @@ dependencies = [
 name = "crml-cennz-x"
 version = "0.1.0"
 dependencies = [
+ "cennznet-primitives 0.1.0",
  "parity-codec 3.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.89 (registry+https://github.com/rust-lang/crates.io-index)",
  "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
