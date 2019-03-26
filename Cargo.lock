@@ -313,7 +313,7 @@ dependencies = [
 
 [[package]]
 name = "cennznet"
-version = "0.9.14"
+version = "0.9.15"
 dependencies = [
  "app_dirs 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cennznet-primitives 0.1.0",
