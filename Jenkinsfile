@@ -18,6 +18,8 @@ pipeline {
         NAMESPACE = 'cennznet'
         SUBCHART= 'cennznet-node'
         IMAGE_NAME = "centrality/${SERVICE_NAME}:1.0.${BUILD_NUMBER}"
+        IS_EKS='false'
+        CONTAINER="k8s-aws-terraform:1.0.20"
     }
 
     stages {

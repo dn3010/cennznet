@@ -1,6 +1,6 @@
 [package]
 name = "cennznet"
-version = "0.9.14"
+version = "0.9.15"
 authors = ["Centrality Developers <developers@centrality.ai>"]
 build = "build.rs"
 edition = "2018"
@@ -19,7 +19,7 @@ exit-future = "0.1"
 hex-literal = "0.1"
 slog = "^2"
 app_dirs = "1.2"
-parity-codec = { version = "3.0" }
+parity-codec = { version = "3.1" }
 trie-root = { git = "https://github.com/paritytech/trie" }
 sr-io = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 sr-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
@@ -46,7 +46,7 @@ cennznet-primitives = { path = "primitives" }
 vergen = "2"
 
 [workspace]
-members = [ "runtime", "primitives", "modules/*" ]
+members = [ "runtime", "primitives", "crml/*" ]
 exclude = [ "runtime/wasm" ]
 
 [profile.release]

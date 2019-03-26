@@ -1,0 +1,39 @@
+[package]
+name = "crml-rewards"
+version = "0.1.0"
+authors = ["Shaopeng Wang <git@spwang.net>"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1.0", default-features = false }
+parity-codec = { version = "3.1", default-features = false, features = ["derive"] }
+rstd = { package="sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+runtime_io = { package="sr-io", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+runtime_primitives = { package="sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+primitives = { package = "substrate-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+system = { package="srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+fees = { package = "srml-fees", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+staking = { package = "srml-staking", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+session = { package = "srml-session", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+
+[dev-dependencies]
+generic-asset = { package = "srml-generic-asset", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+timestamp = { package = "srml-timestamp", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+consensus = { package = "srml-consensus", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+
+[features]
+default = ["std"]
+std =[
+	"serde/std",
+	"parity-codec/std",
+	"runtime_primitives/std",
+	"primitives/std",
+	"runtime_io/std",
+	"rstd/std",
+	"support/std",
+	"system/std",
+	"fees/std",
+	"staking/std",
+	"session/std",
+]
