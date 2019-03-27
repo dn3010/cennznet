@@ -317,7 +317,7 @@ version = "0.9.15"
 dependencies = [
  "app_dirs 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cennznet-primitives 0.1.0",
- "cennznet-runtime 0.9.13",
+ "cennznet-runtime 0.9.15",
  "ctrlc 3.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "error-chain 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "exit-future 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -364,7 +364,7 @@ dependencies = [
 
 [[package]]
 name = "cennznet-runtime"
-version = "0.9.13"
+version = "0.9.15"
 dependencies = [
  "cennznet-primitives 0.1.0",
  "crml-attestation 0.1.0",

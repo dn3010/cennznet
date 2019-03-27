@@ -176,7 +176,7 @@ open http://localhost:5000
 	- Generate a new genesis file for Kauri: `./scripts/upgrade-genesis.sh kauri`
 	- Commit genesis file and tag it with the current runtime version
 	- Bump `spec_version` and `impl_version` in runtime/src/lib.rs
-	- Bump Cargo.toml
+	- Bump Cargo.toml and runtime/Cargo.toml
 	- Ensure there is new version entry in changelog.md
 	- Ensure all changes are commited
 	- Deploy the change by reseting Kuari nodes and redeploy them
@@ -184,7 +184,7 @@ open http://localhost:5000
 - For Rimu release:
 	- Checkout `stable` branch
 	- Merge the last tagged version
-	- Update Rimu network name version in src/chain_spec.rs
+	- Update Rimu network name version in src/chain_spec/testnet.rs
 	- Generate a new genesis file for Rimu: `./scripts/upgrade-genesis.sh rimu`
 	- Ensure all changes are commited
 	- Deploy the change by reseting Rimu nodes and redeploy them
