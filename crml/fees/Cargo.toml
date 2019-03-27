@@ -1,32 +1,29 @@
 [package]
-name = "crml-cennz-x"
+name = "crml-fees"
 version = "0.1.0"
 authors = ["Centrality Developers <support@centrality.ai>"]
 edition = "2018"
 
 [dependencies]
-cennznet-primitives = { path = "../../primitives", default-features = false }
+hex-literal = "0.1.0"
 serde = { version = "1.0", optional = true }
-parity-codec = { version = "3.1", default-features = false, features = ["derive"] }
-generic-asset = { package="srml-generic-asset", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+parity-codec = { version = "3.1", default-features = false }
+primitives = { package = "substrate-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 rstd = { package="sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 runtime_io = { package="sr-io", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 runtime_primitives = { package="sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 system = { package="srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 
 [features]
 default = ["std"]
 std = [
-	"cennznet-primitives/std",
 	"serde",
 	"parity-codec/std",
-	"substrate-primitives/std",
-	"runtime_primitives/std",
-	"runtime_io/std",
+	"primitives/std",
 	"rstd/std",
-	"srml-support/std",
+	"runtime_io/std",
+	"runtime_primitives/std",
+	"support/std",
 	"system/std",
-	"generic-asset/std",
 ]
