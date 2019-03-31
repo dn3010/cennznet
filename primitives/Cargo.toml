@@ -13,6 +13,7 @@ parity-codec = { version = "3.1", default-features = false, features = ["derive"
 primitives = { package = "substrate-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 rstd = { package = "sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 runtime_primitives = { package = "sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 
 [features]
 default = ["std"]
@@ -24,4 +25,5 @@ std = [
 	"runtime_primitives/std",
 	"serde_derive",
 	"serde/std",
+	"support/std",
 ]
