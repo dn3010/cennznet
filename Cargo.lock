@@ -515,6 +515,7 @@ name = "crml-cennzx-spot"
 version = "0.1.0"
 dependencies = [
  "cennznet-primitives 0.1.0",
+ "crml-fees 0.1.0",
  "parity-codec 3.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.89 (registry+https://github.com/rust-lang/crates.io-index)",
  "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
@@ -530,6 +531,7 @@ dependencies = [
 name = "crml-fees"
 version = "0.1.0"
 dependencies = [
+ "cennznet-primitives 0.1.0",
  "hex-literal 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "parity-codec 3.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.89 (registry+https://github.com/rust-lang/crates.io-index)",
