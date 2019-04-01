@@ -170,17 +170,23 @@ open http://localhost:5000
 
 ### Release a new chain
 
-- Ensure changelog.md is up to date
-- For Kauri release:
+- Make a new release:
+	- Ensure changelog.md is up to date
 	- Generate a new genesis file for local: `./scripts/upgrade-genesis.sh local`
+	- Perform deploy Kauri tasks if needed
+	- Tag master
+	- Prepare for next release
+		- Bump `spec_version` and `impl_version` in runtime/src/lib.rs
+		- Bump Cargo.toml and runtime/Cargo.toml
+		- Ensure there is new version entry in changelog.md
+		- Ensure all changes are commited
+
+- Deploy Kauri:
 	- Generate a new genesis file for Kauri: `./scripts/upgrade-genesis.sh kauri`
-	- Commit genesis file and tag it with the current runtime version
-	- Bump `spec_version` and `impl_version` in runtime/src/lib.rs
-	- Bump Cargo.toml and runtime/Cargo.toml
-	- Ensure there is new version entry in changelog.md
-	- Ensure all changes are commited
+	- Commit genesis file
 	- Deploy the change by reseting Kuari nodes and redeploy them
 		- Ask Bryan or Cameron if you don't know how to do this
+
 - For Rimu release:
 	- Checkout `stable` branch
 	- Merge the last tagged version
@@ -190,5 +196,6 @@ open http://localhost:5000
 	- Deploy the change by reseting Rimu nodes and redeploy them
 		- Ask Bryan or Cameron if you don't know how to do this
 	- Cherry pick or merge changes from `stable` to `master`
+	- Rimu genesis file must be same in both stable branch and master
 
 
