@@ -369,7 +369,7 @@ version = "0.9.15"
 dependencies = [
  "cennznet-primitives 0.1.0",
  "crml-attestation 0.1.0",
- "crml-cennz-x 0.1.0",
+ "crml-cennzx-spot 0.1.0",
  "crml-fees 0.1.0",
  "crml-rewards 0.1.0",
  "crml-sylo 0.1.0",
@@ -503,7 +503,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "crml-cennz-x"
+name = "crml-cennzx-spot"
 version = "0.1.0"
 dependencies = [
  "cennznet-primitives 0.1.0",
