@@ -1,6 +1,7 @@
 [submodule "centrality.deploy"]
     path = centrality.deploy
     url = ssh://git@bitbucket.org/centralitydev/centrality.deploy
+    branch = helm-bugfix
 [submodule "helm/charts/cennznet-node"]
     path = helm/charts/cennznet-node
     url = git@bitbucket.org:centralitydev/cennznet-node.helm.chart.git

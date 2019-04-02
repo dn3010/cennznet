@@ -80,12 +80,13 @@ pipeline {
             IS_EKS = "true"
             CHART_NAME="cennznet-bootnodes"
             SUBCHART= 'cennznet-bootnode'
+            HELM_FOLDER='helm/cennznet-bootnodes'
+            SERVICE_NAME = 'cennznet-bootnodes'
+            NAMESPACE = 'cennznet-bootnodes'
           }
           steps {
             sh '''
-                cd helm/cennznet-bootnodes
-                SCRIPT="config" ../../centrality.deploy/aws/helm/deploy.sh
-                '../../centrality.deploy/aws/helm/deploy.sh
+                ./centrality.deploy/aws/helm/deploy.sh
             '''
           }
         }
