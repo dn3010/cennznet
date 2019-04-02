@@ -157,7 +157,7 @@ cennznet-validator:
         nodeKeyName: nodeKey
       env:
         - name: CENNZNET_NAME
-          value: "VALIDATOR_2"
+          value: "VALIDATOR_3"
         - name: CENNZNET_BOOTNODE_1
           value: "/dns4/cennznet-validator-full-3-p2p-internal.cennznet/tcp/30333/p2p/QmeJMPTAxiMVezKvituWCT1cGM1wc4itREvTWzeQmWFgH1"
         - name: CENNZNET_RESERVEDNODE_1
@@ -171,7 +171,7 @@ cennznet-validator:
     - "-c"
     - >
       cennznet
-      --chain=kauri-dev
+      --chain=kauri
       --base-path=/mnt/cennznet
       --pruning=archive
       --validator
@@ -187,7 +187,7 @@ cennznet-validator:
     - "-c"
     - >
       cennznet
-      --chain=kauri-dev
+      --chain=kauri
       --base-path=/mnt/cennznet
       --pruning=archive
       --rpc-external

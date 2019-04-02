@@ -100,6 +100,7 @@ cennznet-bootnode:
       cennznet
       --chain=kauri
       --pruning=archive
+      --base-path=/mnt/cennznet
       --key=$CENNZNET_KEY
       --name=$CENNZNET_NAME
       --node-key=$CENNZNET_NODE_KEY
