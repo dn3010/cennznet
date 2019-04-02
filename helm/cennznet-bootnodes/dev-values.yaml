@@ -12,17 +12,13 @@ cennznet-bootnode:
 
   bootnodes:
     - keySecrets:
-        enable: false
+        enable: true
         secretName: bootnode-0
         keyName: key
         nodeKeyName: nodeKey
       env:
-        - name: CENNZNET_KEY
-          value: "0xed6415862d59e9cdd57b6edc3c0ce8207554e36de0c8547d7eaa9c5d2158ab2e"
         - name: CENNZNET_NAME
           value: "BOOTNODE_0"
-        - name: CENNZNET_NODE_KEY
-          value: "0000000000000000000000000000000000000000000000000000000000000011"
         - name: CENNZNET_BOOTNODE_1
           value: /dns4/cennznet-bootnode-1.centrality.me/tcp/30333/p2p/QmRaZu8UNGejxuGB9pMhjw5GZEVVBkaRiYYhhLYYUkT8qa
         - name: CENNZNET_BOOTNODE_2
@@ -36,14 +32,13 @@ cennznet-bootnode:
           external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-0.centrality.me
           service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     - keySecrets:
-        enable: false
+        enable: true
+        secretName: bootnode-1
+        keyName: key
+        nodeKeyName: nodeKey
       env:
-        - name: CENNZNET_KEY
-          value: "0xf5774d775712eb92abf2b4b424c031d6892d447ed2915d3f46c35270dfe056a2"
         - name: CENNZNET_NAME
           value: "BOOTNODE_1"
-        - name: CENNZNET_NODE_KEY
-          value: "0000000000000000000000000000000000000000000000000000000000000012"
         - name: CENNZNET_BOOTNODE_1
           value: /dns4/cennznet-bootnode-0.centrality.me/tcp/30333/p2p/Qmdpvn9xttHZ5SQePVhhsk8dFMHCUaS3EDQcGDZ8MuKbx2
         - name: CENNZNET_BOOTNODE_2
@@ -54,17 +49,16 @@ cennznet-bootnode:
           value: ws://cennznet-telemetry.centrality.me:1024
       annotations:
         external:
-          external-dns.alpha.kubernetes.io/hostname: ennznet-bootnode-1.centrality.me
+          external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-1.centrality.me
           service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     - keySecrets:
-        enable: false
+        enable: true
+        secretName: bootnode-2
+        keyName: key
+        nodeKeyName: nodeKey
       env:
-        - name: CENNZNET_KEY
-          value: "0x278586d7653cfbedb3955d690b605475723f962e38379ac5b2eee1930fe28188"
         - name: CENNZNET_NAME
           value: "BOOTNODE_2"
-        - name: CENNZNET_NODE_KEY
-          value: "0000000000000000000000000000000000000000000000000000000000000013"
         - name: CENNZNET_BOOTNODE_1
           value: /dns4/cennznet-bootnode-0.centrality.me/tcp/30333/p2p/Qmdpvn9xttHZ5SQePVhhsk8dFMHCUaS3EDQcGDZ8MuKbx2
         - name: CENNZNET_BOOTNODE_2
@@ -78,14 +72,13 @@ cennznet-bootnode:
           external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-2.centrality.me
           service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     - keySecrets:
-        enable: false
+        enable: true
+        secretName: bootnode-3
+        keyName: key
+        nodeKeyName: nodeKey
       env:
-        - name: CENNZNET_KEY
-          value: "0x483b39043708e8c5b0d873fcbe189dba555d064edd8da70e51053b964c409f56"
         - name: CENNZNET_NAME
           value: "BOOTNODE_2"
-        - name: CENNZNET_NODE_KEY
-          value: "0000000000000000000000000000000000000000000000000000000000000014"
         - name: CENNZNET_BOOTNODE_1
           value: /dns4/cennznet-bootnode-0.centrality.me/tcp/30333/p2p/Qmdpvn9xttHZ5SQePVhhsk8dFMHCUaS3EDQcGDZ8MuKbx2
         - name: CENNZNET_BOOTNODE_2
@@ -96,7 +89,7 @@ cennznet-bootnode:
           value: ws://cennznet-telemetry.centrality.me:1024
       annotations:
         external:
-          external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-2.centrality.me
+          external-dns.alpha.kubernetes.io/hostname: cennznet-bootnode-3.centrality.me
           service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
 
 
