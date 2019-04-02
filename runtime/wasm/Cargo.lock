@@ -137,7 +137,7 @@ dependencies = [
 
 [[package]]
 name = "cennznet-runtime"
-version = "0.9.17"
+version = "0.9.18"
 dependencies = [
  "cennznet-primitives 0.1.0",
  "crml-attestation 0.1.0",
@@ -180,7 +180,7 @@ dependencies = [
 name = "cennznet-runtime-wasm"
 version = "0.1.0"
 dependencies = [
- "cennznet-runtime 0.9.17",
+ "cennznet-runtime 0.9.18",
 ]
 
 [[package]]

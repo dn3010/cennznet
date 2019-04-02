@@ -1,6 +1,6 @@
 [package]
 name = "cennznet"
-version = "0.9.17"
+version = "0.9.18"
 authors = ["Centrality Developers <support@centrality.ai>"]
 build = "build.rs"
 edition = "2018"
