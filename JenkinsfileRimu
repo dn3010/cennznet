@@ -76,7 +76,7 @@ pipeline {
             JENKINS_AWS_K8S_CERTIFICATE = credentials('UAT_JENKINS_AWS_K8S_CERTIFICATE')
             JENKINS_AWS_K8S_KEY = credentials('UAT_JENKINS_AWS_K8S_KEY')
             JENKINS_AWS_K8S_CA = credentials('UAT_JENKINS_AWS_K8S_CA')
-            IS_EKS='false'
+            IS_EKS='true'
           }
           steps {
             sh './ci/deploy-rimu.sh'
