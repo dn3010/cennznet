@@ -1,6 +1,6 @@
 [package]
 name = "cennznet-runtime"
-version = "0.9.15"
+version = "0.9.16"
 authors = ["Centrality Developers <developers@centrality.ai>"]
 edition = "2018"
 
