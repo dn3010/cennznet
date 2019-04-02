@@ -119,8 +119,8 @@ cennznet-node:
       operator: Exists
 
   resources:
-    memory: "15Gi"
-    cpu: "4"
+    memory: "14Gi"
+    cpu: "3.5"
 
   whitelistIPs:
   - 203.118.138.130/32 # AKL office IP
