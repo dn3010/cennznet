@@ -4,3 +4,4 @@
 [submodule "helm/charts/cennznet-node"]
     path = helm/charts/cennznet-node
     url = git@bitbucket.org:centralitydev/cennznet-node.helm.chart.git
+    branch = tolerations

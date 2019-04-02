@@ -137,7 +137,7 @@ dependencies = [
 
 [[package]]
 name = "cennznet-runtime"
-version = "0.9.15"
+version = "0.9.16"
 dependencies = [
  "cennznet-primitives 0.1.0",
  "crml-attestation 0.1.0",
@@ -180,7 +180,7 @@ dependencies = [
 name = "cennznet-runtime-wasm"
 version = "0.1.0"
 dependencies = [
- "cennznet-runtime 0.9.15",
+ "cennznet-runtime 0.9.16",
 ]
 
 [[package]]
@@ -260,7 +260,6 @@ dependencies = [
  "sr-io 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "sr-std 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
- "srml-generic-asset 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-support 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "srml-system 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "substrate-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",

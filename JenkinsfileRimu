@@ -68,17 +68,19 @@ pipeline {
 
         stage('Deploy CENNZnet to Kubernetes on AWS (Uat)') {
           environment {
+            ENV = 'uat'
             AWS_ACCESS_KEY  = credentials('TF_AWS_ACCESS_KEY')
             AWS_SECRET_KEY = credentials('TF_AWS_SECRET_KEY')
             AWS_CLUSTER_NAME = credentials('UAT_AWS_CLUSTER_NAME')
             AWS_CLUSTER_URL = credentials('UAT_AWS_CLUSTER_URL')
-            ENV = 'uat'
             JENKINS_AWS_K8S_CERTIFICATE = credentials('UAT_JENKINS_AWS_K8S_CERTIFICATE')
             JENKINS_AWS_K8S_KEY = credentials('UAT_JENKINS_AWS_K8S_KEY')
             JENKINS_AWS_K8S_CA = credentials('UAT_JENKINS_AWS_K8S_CA')
-            IS_EKS='false'
+            CONTAINER = 'k8s-aws-terraform-v3:1.0.28'
+            IS_EKS = "true"
           }
           steps {
+            sh 'SCRIPT="config" ./centrality.deploy/aws/helm/deploy.sh'
             sh './ci/deploy-rimu.sh'
           }
         }
