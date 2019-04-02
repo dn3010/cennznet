@@ -1,0 +1,3 @@
+cennznet-validator:
+  namespace: "cennznet"
+  appName: "cennznet-validator"

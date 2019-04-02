@@ -91,6 +91,30 @@ pipeline {
           }
         }
 
+        stage('Deploy CENNZnet validators to Kubernetes on AWS (Dev)') {
+          environment {
+            AWS_ACCESS_KEY  = credentials('TF_AWS_ACCESS_KEY')
+            AWS_SECRET_KEY = credentials('TF_AWS_SECRET_KEY')
+            AWS_CLUSTER_NAME = credentials('DEV_AWS_CLUSTER_NAME')
+            AWS_CLUSTER_URL = credentials('DEV_AWS_CLUSTER_URL')
+            ENV = 'dev'
+            JENKINS_AWS_K8S_CERTIFICATE = credentials('DEV_JENKINS_AWS_K8S_CERTIFICATE')
+            JENKINS_AWS_K8S_KEY = credentials('DEV_JENKINS_AWS_K8S_KEY')
+            JENKINS_AWS_K8S_CA = credentials('DEV_JENKINS_AWS_K8S_CA')
+            CONTAINER = 'k8s-aws-terraform-v3:1.0.28'
+            IS_EKS = "true"
+            CHART_NAME="cennznet-validators"
+            SUBCHART= 'cennznet-validator'
+            HELM_FOLDER='helm/cennznet-validators'
+            SERVICE_NAME = 'cennznet-validators'
+            NAMESPACE = 'cennznet'
+          }
+          steps {
+            sh '''
+                ./centrality.deploy/aws/helm/deploy.sh
+            '''
+          }
+        }
 
     }
     post {
