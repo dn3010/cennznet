@@ -16,10 +16,7 @@ pipeline {
         SERVICE_NAME = 'cennznet'
         ACR = credentials('AzureDockerRegistry')
         NAMESPACE = 'cennznet'
-        SUBCHART= 'cennznet-node'
         IMAGE_NAME = "centrality/${SERVICE_NAME}:1.0.${BUILD_NUMBER}"
-        IS_EKS='false'
-        CONTAINER="k8s-aws-terraform:1.0.20"
     }
 
     stages {
@@ -69,7 +66,7 @@ pipeline {
             }
         }
 
-        stage('Deploy CENNZnet to Kubernetes on AWS (Dev)') {
+        stage('Deploy CENNZnet Bootnodes to Kubernetes on AWS (Dev)') {
           environment {
             AWS_ACCESS_KEY  = credentials('TF_AWS_ACCESS_KEY')
             AWS_SECRET_KEY = credentials('TF_AWS_SECRET_KEY')
@@ -79,35 +76,20 @@ pipeline {
             JENKINS_AWS_K8S_CERTIFICATE = credentials('DEV_JENKINS_AWS_K8S_CERTIFICATE')
             JENKINS_AWS_K8S_KEY = credentials('DEV_JENKINS_AWS_K8S_KEY')
             JENKINS_AWS_K8S_CA = credentials('DEV_JENKINS_AWS_K8S_CA')
+            CONTAINER = 'k8s-aws-terraform-v3:1.0.28'
+            IS_EKS = "true"
+            CHART_NAME="cennznet-bootnodes"
+            SUBCHART= 'cennznet-bootnode'
           }
           steps {
-            sh './centrality.deploy/aws/helm/deploy.sh'
+            sh '''
+                cd helm/cennznet-bootnodes
+                SCRIPT="config" ../../centrality.deploy/aws/helm/deploy.sh
+                '../../centrality.deploy/aws/helm/deploy.sh
+            '''
           }
         }
 
-        stage ('Confirm UAT deploy') {
-            steps {
-                timeout(time:1, unit:'HOURS') {
-                input "Confirm UAT deploy?"
-                }
-            }
-        }
-
-        stage('Deploy CENNZnet to Kubernetes on AWS (Uat)') {
-          environment {
-            AWS_ACCESS_KEY  = credentials('TF_AWS_ACCESS_KEY')
-            AWS_SECRET_KEY = credentials('TF_AWS_SECRET_KEY')
-            AWS_CLUSTER_NAME = credentials('UAT_AWS_CLUSTER_NAME')
-            AWS_CLUSTER_URL = credentials('UAT_AWS_CLUSTER_URL')
-            ENV = 'uat'
-            JENKINS_AWS_K8S_CERTIFICATE = credentials('UAT_JENKINS_AWS_K8S_CERTIFICATE')
-            JENKINS_AWS_K8S_KEY = credentials('UAT_JENKINS_AWS_K8S_KEY')
-            JENKINS_AWS_K8S_CA = credentials('UAT_JENKINS_AWS_K8S_CA')
-          }
-          steps {
-            sh './centrality.deploy/aws/helm/deploy.sh'
-          }
-        }
 
     }
     post {
