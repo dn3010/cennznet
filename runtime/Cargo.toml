@@ -35,8 +35,8 @@ serde = { version = "1.0", optional = true }
 substrate-keyring = {git = "ssh://git@bitbucket.org/centralitydev/substrate.git", optional = true }
 cennznet-primitives = { path = "../primitives", default-features = false }
 rewards = { package = "crml-rewards", path = "../crml/rewards", default-features = false }
-fees = { package = "crml-fees", path = "../crml/fees", default-features = false }
-attestation = { package = "crml-attestation", path = "../crml/attestation", default-features = false }
+fees = { package = "prml-fees", path = "../prml/fees", default-features = false }
+attestation = { package = "prml-attestation", path = "../prml/attestation", default-features = false }
 sylo = { package = "crml-sylo", path = "../crml/sylo", default-features = false }
 generic-asset = { package = "srml-generic-asset", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 cennzx-spot = { package = "crml-cennzx-spot", path = "../crml/cennzx-spot", default-features = false }
