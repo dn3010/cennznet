@@ -191,6 +191,7 @@ cennznet-validator:
       --base-path=/mnt/cennznet
       --pruning=archive
       --rpc-external
+      --ws-external
       --key=$CENNZNET_KEY
       --name=$CENNZNET_NAME
       --node-key=$CENNZNET_NODE_KEY
