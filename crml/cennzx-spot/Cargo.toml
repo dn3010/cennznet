@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 cennznet-primitives = { path = "../../primitives", default-features = false }
-fees = { package="crml-fees", path = "../fees", default-features = false }
+fees = { package="prml-fees", path = "../../prml/fees", default-features = false }
 serde = { version = "1.0", optional = true }
 parity-codec = { version = "3.1", default-features = false, features = ["derive"] }
 generic-asset = { package="srml-generic-asset", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
