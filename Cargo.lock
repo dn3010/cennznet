@@ -408,7 +408,9 @@ dependencies = [
  "srml-treasury 1.0.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "substrate-client 1.0.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "substrate-consensus-aura-primitives 1.0.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-consensus-authorities 1.0.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "substrate-keyring 1.0.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
+ "substrate-offchain-primitives 0.1.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
  "substrate-primitives 1.0.0 (git+ssh://git@bitbucket.org/centralitydev/substrate.git)",
 ]
 
