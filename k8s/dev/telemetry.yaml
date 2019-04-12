@@ -38,6 +38,8 @@ metadata:
   namespace: cennznet
   labels:
     app: telemetry
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: cennznet-telemetry.centrality.me
 spec:
   ports:
   - name: backend

@@ -4,4 +4,9 @@
 [submodule "helm/charts/cennznet-node"]
     path = helm/charts/cennznet-node
     url = git@bitbucket.org:centralitydev/cennznet-node.helm.chart.git
-    branch = tolerations
+[submodule "helm/cennznet-bootnodes/charts/cennznet-bootnode"]
+    path = helm/cennznet-bootnodes/charts/cennznet-bootnode
+    url = git@bitbucket.org:centralitydev/cennznet-bootnode.helm.chart.git
+[submodule "helm/cennznet-validators/charts/cennznet-validator"]
+    path = helm/cennznet-validators/charts/cennznet-validator
+    url = git@bitbucket.org:centralitydev/cennznet-validator.helm.chart.git
