@@ -12,6 +12,8 @@ substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.
 substrate-client = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 rstd = { package = "sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 runtime-primitives = { package = "sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+offchain-primitives = { package = "substrate-offchain-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+consensus_authorities = { package = "substrate-consensus-authorities", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 version = { package = "sr-version", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 aura = { package = "srml-aura", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
