@@ -249,7 +249,7 @@ dependencies = [
 
 [[package]]
 name = "cennznet-runtime"
-version = "0.9.18"
+version = "0.9.19"
 dependencies = [
  "cennznet-primitives 0.1.0",
  "crml-cennzx-spot 0.1.0",
@@ -294,7 +294,7 @@ dependencies = [
 name = "cennznet-runtime-wasm"
 version = "0.1.0"
 dependencies = [
- "cennznet-runtime 0.9.18",
+ "cennznet-runtime 0.9.19",
 ]
 
 [[package]]
