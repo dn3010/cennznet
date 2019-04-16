@@ -18,7 +18,7 @@ session = { package = "srml-session", git = "ssh://git@bitbucket.org/centralityd
 fees = { package = "prml-fees", path = "../../prml/fees", default-features = false }
 
 [dev-dependencies]
-generic-asset = { package = "srml-generic-asset", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+generic-asset = { package = "prml-generic-asset", path = "../../prml/generic-asset", default-features = false }
 timestamp = { package = "srml-timestamp", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 consensus = { package = "srml-consensus", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 

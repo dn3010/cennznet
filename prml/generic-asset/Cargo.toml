@@ -1,0 +1,28 @@
+[package]
+name = "prml-generic-asset"
+version = "0.1.0"
+authors = ["Centrality Developers <support@centrality.ai>"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1.0", default-features = false }
+parity-codec = { version = "3.1", default-features = false, features = ["derive"] }
+substrate-primitives = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+primitives = { package = "sr-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+rstd = { package = "sr-std", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+runtime_io = { package = "sr-io", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+system = { package = "srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+
+[features]
+default = ["std"]
+std =[
+	"serde/std",
+    "parity-codec/std",
+    "substrate-primitives/std",
+    "rstd/std",
+    "runtime_io/std",
+    "primitives/std",
+    "support/std",
+    "system/std",
+]
