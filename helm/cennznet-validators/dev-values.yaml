@@ -181,6 +181,7 @@ cennznet-validator:
       --telemetry-url=$CENNZNET_TELEMETRY_URL
       --bootnodes=$CENNZNET_BOOTNODE_1
       --reserved-nodes=$CENNZNET_RESERVEDNODE_1
+      -lafg
 
   fullnodeCommand:
     - "/bin/bash"
@@ -199,6 +200,7 @@ cennznet-validator:
       --bootnodes=$CENNZNET_BOOTNODE_1
       --reserved-nodes=$CENNZNET_RESERVEDNODE_1
       --reserved-nodes=$CENNZNET_RESERVEDNODE_2
+      -lafg
 
   resources:
     memory: "256Mi"

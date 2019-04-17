@@ -108,6 +108,7 @@ cennznet-bootnode:
       --bootnodes=$CENNZNET_BOOTNODE_2
       --bootnodes=$CENNZNET_BOOTNODE_3
       --telemetry-url=$CENNZNET_TELEMETRY_URL
+      -lafg
 
   resources:
     memory: "256Mi"
