@@ -109,11 +109,11 @@ cennznet-node:
       --key=$CENNZNET_KEY
       --name=$CENNZNET_NAME
       --node-key=$CENNZNET_NODE_KEY
+      --node-key-type=secp256k1
       --bootnodes=$CENNZNET_BOOTNODE_1
       --bootnodes=$CENNZNET_BOOTNODE_2
       --bootnodes=$CENNZNET_BOOTNODE_3
       --telemetry-url=$CENNZNET_TELEMETRY_URL
-      --node-key-type=secp256k1
 
   tolerations:
     - effect: NoSchedule
