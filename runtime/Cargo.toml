@@ -45,6 +45,9 @@ cennzx-spot = { package = "crml-cennzx-spot", path = "../crml/cennzx-spot", defa
 
 [features]
 default = ["std"]
+core = [
+	"contract/core",
+]
 std = [
 	"parity-codec/std",
 	"substrate-primitives/std",

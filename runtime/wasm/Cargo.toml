@@ -12,7 +12,10 @@ crate-type = ["cdylib"]
 cennznet-runtime = { path = "..", default-features = false }
 
 [features]
-default = []
+default = ["core"]
+core = [
+	"cennznet-runtime/core",
+]
 std = [
 	"cennznet-runtime/std",
 ]
