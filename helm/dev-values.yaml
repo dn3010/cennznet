@@ -118,6 +118,7 @@ cennznet-node:
       --bootnodes=$CENNZNET_BOOTNODE_2
       --bootnodes=$CENNZNET_BOOTNODE_3
       --telemetry-url=$CENNZNET_TELEMETRY_URL
+      -lafg
 
   whitelistIPs:
   - 203.118.138.130/32 # AKL office IP

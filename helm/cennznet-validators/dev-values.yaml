@@ -181,7 +181,7 @@ cennznet-validator:
       --node-key-type=secp256k1
       --telemetry-url=$CENNZNET_TELEMETRY_URL
       --bootnodes=$CENNZNET_BOOTNODE_1
-      --reserved-nodes=$CENNZNET_RESERVEDNODE_1
+      --bootnodes=$CENNZNET_RESERVEDNODE_1
       -lafg
 
   fullnodeCommand:
@@ -200,8 +200,7 @@ cennznet-validator:
       --node-key-type=secp256k1
       --telemetry-url=$CENNZNET_TELEMETRY_URL
       --bootnodes=$CENNZNET_BOOTNODE_1
-      --reserved-nodes=$CENNZNET_RESERVEDNODE_1
-      --reserved-nodes=$CENNZNET_RESERVEDNODE_2
+      --bootnodes=$CENNZNET_RESERVEDNODE_2
       -lafg
 
   resources:
