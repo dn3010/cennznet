@@ -12,7 +12,7 @@ cennznet-validator:
 
   monitor:
     create: true
-    image: 
+    image:
       repository: centralitycontainerregistry-on.azurecr.io/centrality
       name: run-monitor
       tag: latest
@@ -178,6 +178,7 @@ cennznet-validator:
       --key=$CENNZNET_KEY
       --name=$CENNZNET_NAME
       --node-key=$CENNZNET_NODE_KEY
+      --node-key-type=secp256k1
       --telemetry-url=$CENNZNET_TELEMETRY_URL
       --bootnodes=$CENNZNET_BOOTNODE_1
       --reserved-nodes=$CENNZNET_RESERVEDNODE_1
@@ -196,6 +197,7 @@ cennznet-validator:
       --key=$CENNZNET_KEY
       --name=$CENNZNET_NAME
       --node-key=$CENNZNET_NODE_KEY
+      --node-key-type=secp256k1
       --telemetry-url=$CENNZNET_TELEMETRY_URL
       --bootnodes=$CENNZNET_BOOTNODE_1
       --reserved-nodes=$CENNZNET_RESERVEDNODE_1
