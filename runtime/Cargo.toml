@@ -1,6 +1,6 @@
 [package]
 name = "cennznet-runtime"
-version = "0.9.19"
+version = "0.9.20"
 authors = ["Centrality Developers <support@centrality.ai>"]
 edition = "2018"
 
@@ -15,7 +15,7 @@ runtime-primitives = { package = "sr-primitives", git = "ssh://git@bitbucket.org
 offchain-primitives = { package = "substrate-offchain-primitives", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 consensus_authorities = { package = "substrate-consensus-authorities", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 version = { package = "sr-version", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
-srml-support = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
+support = { package = "srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 aura = { package = "srml-aura", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 consensus = { package = "srml-consensus", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 contract = { package= "srml-contract", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
@@ -53,7 +53,7 @@ std = [
 	"substrate-primitives/std",
 	"rstd/std",
 	"runtime-primitives/std",
-	"srml-support/std",
+	"support/std",
 	"aura/std",
 	"consensus/std",
 	"contract/std",
