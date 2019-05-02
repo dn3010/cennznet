@@ -41,6 +41,8 @@ srml-grandpa = { git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
 structopt = "0.2.13"
 cennznet-runtime = { path = "runtime" }
 cennznet-primitives = { path = "primitives" }
+generic-asset = { package = "prml-generic-asset", path = "prml/generic-asset" }
+fees = { package = "prml-fees", path = "prml/fees" }
 
 [build-dependencies]
 vergen = "2"
