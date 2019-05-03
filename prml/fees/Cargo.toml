@@ -5,7 +5,6 @@ authors = ["Centrality Developers <support@centrality.ai>"]
 edition = "2018"
 
 [dependencies]
-cennznet-primitives = { path = "../../primitives", default-features = false }
 hex-literal = "0.1.0"
 serde = { version = "1.0", optional = true }
 parity-codec = { version = "3.1", default-features = false }
@@ -17,12 +16,11 @@ support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev
 system = { package="srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 
 [dev-dependencies]
-generic-asset = { package="prml-generic-asset", path = "../generic-asset", default-features = false }
+generic-asset = { package="prml-generic-asset", path = "../generic-asset" }
 
 [features]
 default = ["std"]
 std = [
-	"cennznet-primitives/std",
 	"serde",
 	"parity-codec/std",
 	"primitives/std",

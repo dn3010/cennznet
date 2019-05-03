@@ -43,6 +43,9 @@ attestation = { package = "prml-attestation", path = "../prml/attestation", defa
 sylo = { package = "crml-sylo", path = "../crml/sylo", default-features = false }
 cennzx-spot = { package = "crml-cennzx-spot", path = "../crml/cennzx-spot", default-features = false }
 
+[dev-dependencies]
+runtime-io = { package = "sr-io", git = "ssh://git@bitbucket.org/centralitydev/substrate.git" }
+
 [features]
 default = ["std"]
 core = [
