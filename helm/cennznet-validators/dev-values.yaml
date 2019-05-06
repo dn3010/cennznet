@@ -238,14 +238,8 @@ cennznet-validator:
   storageSize: 20Gi
 
   whitelistIPs:
-  - 203.118.138.130/32 # AKL office IP
-  - 13.73.107.121/32 # AKL office backup
-  - 118.127.126.86/32 # MEL office
   - 52.220.204.131/32 # k8s-dev NAT gateway
   - 13.228.46.235/32 # k8s-uat NAT gateway
   - 18.136.19.89/32 # cennzscan
   - 222.154.246.210/32 # singlesource
-  - 13.251.201.221/32 # terraform vpc 1a NAT gateway - eks-dev
-  - 13.251.201.8/32 # terraform vpc 1c NAT gateway - eks-dev
-  - 13.251.209.118/32 # terraform vpc 1b NAT gateway - eks-dev
   - 222.154.239.179/32 # sylo
