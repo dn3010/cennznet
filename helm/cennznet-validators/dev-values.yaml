@@ -204,8 +204,8 @@ cennznet-validator:
       -lafg
 
   resources:
-    memory: "256Mi"
-    cpu: "500m"
+    memory: "384Mi"
+    cpu: "800m"
 
   fullnodeServices:
     external:
