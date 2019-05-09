@@ -172,6 +172,7 @@ open http://localhost:5000
 
 - Make a new release:
 	- Ensure changelog.md is up to date
+	- Bump Cargo.toml and runtime/Cargo.toml to remove beta part
 	- Generate a new genesis file for local: `./scripts/upgrade-genesis.sh local`
 	- Perform deploy Kauri tasks if needed
 	- Tag master
