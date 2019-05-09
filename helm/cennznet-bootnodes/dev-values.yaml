@@ -112,8 +112,8 @@ cennznet-bootnode:
       -lafg
 
   resources:
-    memory: "256Mi"
-    cpu: "500m"
+    memory: "512Mi"
+    cpu: "800m"
 
   services:
     external:
