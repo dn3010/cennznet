@@ -65,3 +65,6 @@ spec:
   - 13.251.213.251/32 # terraform vpc 1a NAT gateway - eks-uat
   - 13.251.211.185/32 # terraform vpc 1b NAT gateway - eks-uat
   - 13.251.210.200/32 # terraform vpc 1c NAT gateway - eks-uat
+  - 13.251.251.105/32 # terraform vpc 1a NAT gateway - eks-prod
+  - 13.251.249.126/32 # terraform vpc 1b NAT gateway - eks-prod
+  - 13.251.227.57/32 # terraform vpc 1c NAT gateway - eks-prod
