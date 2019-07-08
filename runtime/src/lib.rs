@@ -213,6 +213,8 @@ impl cennzx_spot::Trait for Runtime {
 	type Call = Call;
 	type Event = Event;
 	type ExchangeAddressGenerator = ExchangeAddressGenerator<Self>;
+	type BalanceToU128 = Balance;
+	type U128ToBalance = Balance;
 }
 
 impl attestation::Trait for Runtime {

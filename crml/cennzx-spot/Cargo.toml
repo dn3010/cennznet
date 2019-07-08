@@ -16,6 +16,7 @@ runtime_primitives = { package="sr-primitives", git = "ssh://git@bitbucket.org/c
 srml-support = { package="srml-support", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 system = { package="srml-system", git = "ssh://git@bitbucket.org/centralitydev/substrate.git", default-features = false }
 generic-asset = { package="prml-generic-asset", path = "../../prml/generic-asset", default-features = false }
+uint = { version = "0.7.1", default-features = false }
 
 [features]
 default = ["std"]

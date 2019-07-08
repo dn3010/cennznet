@@ -8,6 +8,7 @@ use crate::{
 	Call, CoreAssetId, DefaultFeeRate, GenesisConfig, Module, Trait,
 };
 use cennznet_primitives::AccountId;
+use core::convert::TryInto;
 use generic_asset;
 use runtime_io::with_externalities;
 use runtime_primitives::{
@@ -48,10 +49,24 @@ impl generic_asset::Trait for Test {
 	type Event = ();
 }
 
+pub struct U128ToBalance(u128);
+impl From<u128> for U128ToBalance {
+	fn from(u: u128) -> Self {
+		U128ToBalance(u)
+	}
+}
+impl From<U128ToBalance> for u128 {
+	fn from(u: U128ToBalance) -> u128 {
+		u.0.try_into().unwrap_or(u128::max_value())
+	}
+}
+
 impl Trait for Test {
 	type Call = Call<Self>;
 	type Event = ();
 	type ExchangeAddressGenerator = ExchangeAddressGenerator<Self>;
+	type BalanceToU128 = u128;
+	type U128ToBalance = U128ToBalance;
 }
 
 pub type CennzXSpot = Module<Test>;
@@ -209,12 +224,12 @@ fn get_output_price_zero_cases() {
 	with_externalities(&mut ExtBuilder::default().build(), || {
 		with_exchange!(CORE_ASSET_ID => 1000, TRADE_ASSET_A => 1000);
 
-		assert_eq!(
+		assert_ok!(
 			CennzXSpot::get_output_price(100, 0, 10, <DefaultFeeRate<Test>>::get()),
 			Zero::zero()
 		);
 
-		assert_eq!(
+		assert_ok!(
 			CennzXSpot::get_output_price(100, 10, 0, <DefaultFeeRate<Test>>::get()),
 			Zero::zero()
 		);
@@ -226,9 +241,39 @@ fn get_output_price() {
 	with_externalities(&mut ExtBuilder::default().build(), || {
 		with_exchange!(CORE_ASSET_ID => 1000, TRADE_ASSET_A => 1000);
 
-		assert_eq!(
+		assert_ok!(
 			CennzXSpot::get_output_price(123, 1000, 1000, <DefaultFeeRate<Test>>::get()),
 			141
+		);
+
+		assert_ok!(
+			CennzXSpot::get_output_price(
+				100_000_000_000_000,
+				120_627_710_511_649_660,
+				20_627_710_511_649_660,
+				<DefaultFeeRate<Test>>::get()
+			),
+			589396433540516
+		);
+
+		assert_ok!(
+			CennzXSpot::get_output_price(
+				u128::max_value() / 2,
+				u128::max_value() / 2,
+				u128::max_value(),
+				<DefaultFeeRate<Test>>::get()
+			),
+			170651607010850639426882365627031758044
+		);
+
+		assert_err!(
+			CennzXSpot::get_output_price(
+				u128::max_value() - 100,
+				u128::max_value(),
+				u128::max_value(),
+				<DefaultFeeRate<Test>>::get()
+			),
+			"Overflow error"
 		);
 	});
 }
@@ -238,12 +283,12 @@ fn get_output_price_max_withdrawal() {
 	with_externalities(&mut ExtBuilder::default().build(), || {
 		with_exchange!(CORE_ASSET_ID => 1000, TRADE_ASSET_A => 1000);
 
-		assert_eq!(
+		assert_ok!(
 			CennzXSpot::get_output_price(1000, 1000, 1000, <DefaultFeeRate<Test>>::get()),
 			<Test as generic_asset::Trait>::Balance::max_value()
 		);
 
-		assert_eq!(
+		assert_ok!(
 			CennzXSpot::get_output_price(1_000_000, 1000, 1000, <DefaultFeeRate<Test>>::get()),
 			<Test as generic_asset::Trait>::Balance::max_value()
 		);
@@ -663,15 +708,45 @@ fn core_to_asset_transfer_output() {
 #[test]
 fn get_input_price() {
 	with_externalities(&mut ExtBuilder::default().build(), || {
-		assert_eq!(
+		assert_ok!(
 			CennzXSpot::get_input_price(123, 1000, 1000, <DefaultFeeRate<Test>>::get()),
-			109
+			108
 		);
 
 		// No f32/f64 types, so we use large values to test precision
-		assert_eq!(
+		assert_ok!(
 			CennzXSpot::get_input_price(123_000_000, 1_000_000_000, 1_000_000_000, <DefaultFeeRate<Test>>::get()),
-			109236234
+			109236233
+		);
+
+		assert_ok!(
+			CennzXSpot::get_input_price(
+				100_000_000_000_000,
+				120_627_710_511_649_660,
+				4_999_727_416_279_531_363,
+				<DefaultFeeRate<Test>>::get()
+			),
+			4128948876492407
+		);
+
+		assert_ok!(
+			CennzXSpot::get_input_price(
+				100_000_000_000_000,
+				120_627_710_511_649_660,
+				u128::max_value(),
+				<DefaultFeeRate<Test>>::get()
+			),
+			281017019450612581324176880746747822
+		);
+
+		assert_ok!(
+			CennzXSpot::get_input_price(
+				u128::max_value() / 2,
+				u128::max_value() / 2,
+				u128::max_value(),
+				<DefaultFeeRate<Test>>::get()
+			),
+			169886353929574869427545984738775941814
 		);
 	});
 }
@@ -683,12 +758,12 @@ fn asset_swap_input_price() {
 
 		assert_ok!(
 			CennzXSpot::get_asset_to_core_input_price(&TRADE_ASSET_A, 123, <DefaultFeeRate<Test>>::get()),
-			109
+			108
 		);
 
 		assert_ok!(
 			CennzXSpot::get_core_to_asset_input_price(&TRADE_ASSET_A, 123, <DefaultFeeRate<Test>>::get()),
-			109
+			108
 		);
 	});
 }
@@ -797,12 +872,12 @@ fn make_asset_to_core_input() {
 				50,                            // min buy: T::Balance,
 				<DefaultFeeRate<Test>>::get()  // fee_rate
 			),
-			82
+			81
 		);
 
-		assert_exchange_balance_eq!(CORE_ASSET_ID => 918, TRADE_ASSET_A => 1090);
+		assert_exchange_balance_eq!(CORE_ASSET_ID => 919, TRADE_ASSET_A => 1090);
 		assert_balance_eq!(trader, TRADE_ASSET_A => 2110);
-		assert_balance_eq!(trader, CORE_ASSET_ID => 2282);
+		assert_balance_eq!(trader, CORE_ASSET_ID => 2281);
 	});
 }
 
@@ -821,12 +896,12 @@ fn make_core_to_asset_input() {
 				50,                            // min buy: T::Balance,
 				<DefaultFeeRate<Test>>::get()  // fee_rate
 			),
-			82
+			81
 		);
 
-		assert_exchange_balance_eq!(CORE_ASSET_ID => 1090, TRADE_ASSET_A => 918);
+		assert_exchange_balance_eq!(CORE_ASSET_ID => 1090, TRADE_ASSET_A => 919);
 		assert_balance_eq!(trader, CORE_ASSET_ID => 2110);
-		assert_balance_eq!(trader, TRADE_ASSET_A => 2282);
+		assert_balance_eq!(trader, TRADE_ASSET_A => 2281);
 	});
 }
 
@@ -912,9 +987,9 @@ fn asset_to_core_transfer_input() {
 			40, // min_sale: T::Balance,
 		));
 
-		assert_exchange_balance_eq!(CORE_ASSET_ID => 953, TRADE_ASSET_A => 1050);
+		assert_exchange_balance_eq!(CORE_ASSET_ID => 954, TRADE_ASSET_A => 1050);
 		assert_balance_eq!(trader, TRADE_ASSET_A => 2150);
-		assert_balance_eq!(recipient, CORE_ASSET_ID => 147);
+		assert_balance_eq!(recipient, CORE_ASSET_ID => 146);
 	});
 }
 
@@ -935,9 +1010,9 @@ fn core_to_asset_transfer_input() {
 			40, // min_sale: T::Balance,
 		));
 
-		assert_exchange_balance_eq!(CORE_ASSET_ID => 1050, TRADE_ASSET_A => 953);
+		assert_exchange_balance_eq!(CORE_ASSET_ID => 1050, TRADE_ASSET_A => 954);
 		assert_balance_eq!(trader, CORE_ASSET_ID => 2150);
-		assert_balance_eq!(recipient, TRADE_ASSET_A => 147);
+		assert_balance_eq!(recipient, TRADE_ASSET_A => 146);
 	});
 }
 
@@ -1069,10 +1144,10 @@ fn asset_to_asset_swap_input() {
 			100,           // min buy limit for asset B
 		));
 
-		assert_exchange_balance_eq!(CORE_ASSET_ID => 870, TRADE_ASSET_A => 1150);
-		assert_exchange_balance_eq!(CORE_ASSET_ID => 1130, TRADE_ASSET_B => 886);
+		assert_exchange_balance_eq!(CORE_ASSET_ID => 871, TRADE_ASSET_A => 1150);
+		assert_exchange_balance_eq!(CORE_ASSET_ID => 1129, TRADE_ASSET_B => 887);
 		assert_balance_eq!(trader, TRADE_ASSET_A => 2050);
-		assert_balance_eq!(trader, TRADE_ASSET_B => 114);
+		assert_balance_eq!(trader, TRADE_ASSET_B => 113);
 		assert_balance_eq!(trader, CORE_ASSET_ID => 2200);
 	});
 }
@@ -1157,10 +1232,10 @@ fn asset_to_asset_transfer_input() {
 			100,                     // min buy limit for asset B
 		));
 
-		assert_exchange_balance_eq!(CORE_ASSET_ID => 870, TRADE_ASSET_A => 1150);
-		assert_exchange_balance_eq!(CORE_ASSET_ID => 1130, TRADE_ASSET_B => 886);
+		assert_exchange_balance_eq!(CORE_ASSET_ID => 871, TRADE_ASSET_A => 1150);
+		assert_exchange_balance_eq!(CORE_ASSET_ID => 1129, TRADE_ASSET_B => 887);
 		assert_balance_eq!(trader, TRADE_ASSET_A => 2050);
-		assert_balance_eq!(recipient, TRADE_ASSET_B => 214);
+		assert_balance_eq!(recipient, TRADE_ASSET_B => 213);
 		assert_balance_eq!(trader, CORE_ASSET_ID => 2200);
 	});
 }

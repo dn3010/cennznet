@@ -15,9 +15,26 @@ extern crate srml_support as support;
 
 use generic_asset;
 use rstd::prelude::*;
-use runtime_primitives::traits::{As, Bounded, One, Zero};
-use support::{dispatch::Result, Dispatchable, Parameter, StorageDoubleMap, StorageMap, StorageValue};
+use runtime_primitives::traits::{Bounded, One, Zero};
+use support::{
+	dispatch::Result as DispatchResult, Dispatchable, Parameter, StorageDoubleMap, StorageMap, StorageValue,
+};
 use system::ensure_signed;
+
+// TODO: remove this temp fix for overflow issue when upstream fix ready
+#[macro_use]
+extern crate uint;
+use core::convert::TryInto;
+
+construct_uint! {
+	/// 128-bit unsigned integer.
+	pub struct U128(2);
+}
+
+construct_uint! {
+	/// 256-bit unsigned integer.
+	pub struct U256(4);
+}
 
 // (core_asset_id, asset_id)
 pub type ExchangeKey<T> = (
@@ -30,6 +47,9 @@ pub trait Trait: system::Trait + generic_asset::Trait {
 	type Event: From<Event<Self>> + Into<<Self as system::Trait>::Event>;
 	/// A function type to get an exchange address given the asset ID pair.
 	type ExchangeAddressGenerator: ExchangeAddressFor<Self::AssetId, Self::AccountId>;
+	// TODO: remove this temp fix for overflow issue when upstream fix ready
+	type BalanceToU128: From<Self::Balance> + Into<u128>;
+	type U128ToBalance: From<u128> + Into<Self::Balance>;
 }
 
 decl_module! {
@@ -51,7 +71,7 @@ decl_module! {
 			#[compact] asset_bought: T::AssetId,
 			#[compact] buy_amount: T::Balance,
 			#[compact] max_paying_amount: T::Balance
-		) -> Result {
+		) -> DispatchResult {
 			let buyer = ensure_signed(origin)?;
 			let _ = Self::make_asset_swap_output(
 				&buyer,
@@ -80,7 +100,7 @@ decl_module! {
 			#[compact] asset_bought: T::AssetId,
 			#[compact] sell_amount: T::Balance,
 			#[compact] min_receive: T::Balance
-		) -> Result {
+		) -> DispatchResult {
 			let seller = ensure_signed(origin)?;
 			let _ = Self::make_asset_swap_input(
 				&seller,
@@ -167,7 +187,7 @@ decl_module! {
 			#[compact] liquidity_withdrawn: T::Balance,
 			#[compact] min_asset_withdraw: T::Balance,
 			#[compact] min_core_withdraw: T::Balance
-		) -> Result {
+		) -> DispatchResult {
 			let from_account = ensure_signed(origin)?;
 			ensure!(liquidity_withdrawn > Zero::zero(), "Amount of exchange asset to burn should exist");
 			ensure!(min_asset_withdraw > Zero::zero() && min_core_withdraw > Zero::zero(), "Assets withdrawn to be greater than zero");
@@ -198,7 +218,7 @@ decl_module! {
 		}
 
 		/// Set the spot exchange wide fee rate (root only)
-		pub fn set_fee_rate(new_fee_rate: FeeRate) -> Result {
+		pub fn set_fee_rate(new_fee_rate: FeeRate) -> DispatchResult {
 			<DefaultFeeRate<T>>::mutate(|fee_rate| *fee_rate = new_fee_rate);
 			Ok(())
 		}
@@ -610,12 +630,7 @@ impl<T: Trait> Module<T> {
 
 		let core_reserve = <generic_asset::Module<T>>::free_balance(&core_asset_id, &exchange_address);
 
-		Ok(Self::get_output_price(
-			buy_amount,
-			core_reserve,
-			asset_reserve,
-			fee_rate,
-		))
+		Self::get_output_price(buy_amount, core_reserve, asset_reserve, fee_rate)
 	}
 
 	/// `asset_id` - Trade asset
@@ -633,12 +648,7 @@ impl<T: Trait> Module<T> {
 
 		let asset_reserve = <generic_asset::Module<T>>::free_balance(asset_id, &exchange_address);
 		let core_reserve = <generic_asset::Module<T>>::free_balance(&core_asset_id, &exchange_address);
-		Ok(Self::get_input_price(
-			sell_amount,
-			asset_reserve,
-			core_reserve,
-			fee_rate,
-		))
+		Self::get_input_price(sell_amount, asset_reserve, core_reserve, fee_rate)
 	}
 
 	fn get_output_price(
@@ -646,21 +656,26 @@ impl<T: Trait> Module<T> {
 		input_reserve: T::Balance,
 		output_reserve: T::Balance,
 		fee_rate: FeeRate,
-	) -> T::Balance {
+	) -> rstd::result::Result<T::Balance, &'static str> {
 		if input_reserve.is_zero() || output_reserve.is_zero() {
-			return Zero::zero();
+			return Ok(Zero::zero());
 		}
 
 		// Special case, in theory price should progress towards infinity
 		if output_amount >= output_reserve {
-			return T::Balance::max_value();
+			return Ok(T::Balance::max_value());
 		}
 
-		let numerator: T::Balance = input_reserve * output_amount;
-		let denominator = output_reserve - output_amount;
-		let output: T::Balance = numerator / denominator + One::one();
+		let output_amount_uint = U256::from(T::BalanceToU128::from(output_amount).into());
+		let input_reserve_uint = U256::from(T::BalanceToU128::from(input_reserve).into());
+		let denominator_uint = U256::from(T::BalanceToU128::from(output_reserve - output_amount).into());
 
-		(FeeRate::one() + fee_rate) * output
+		let res: Result<u128, &'static str> = (input_reserve_uint * output_amount_uint / denominator_uint).try_into();
+
+		ensure!(res.is_ok(), "Overflow error");
+		let price = T::U128ToBalance::from(res.unwrap()).into();
+		let output = price + One::one();
+		Ok(FeeRate::safe_mul(FeeRate::one() + fee_rate, output))
 	}
 
 	fn get_input_price(
@@ -668,21 +683,27 @@ impl<T: Trait> Module<T> {
 		input_reserve: T::Balance,
 		output_reserve: T::Balance,
 		fee_rate: FeeRate,
-	) -> T::Balance {
+	) -> rstd::result::Result<T::Balance, &'static str> {
 		if input_reserve.is_zero() || output_reserve.is_zero() {
-			return Zero::zero();
+			return Ok(Zero::zero());
 		}
+
 		let div_rate = FeeRate::one() + fee_rate;
 		// This operation rounds away necessary decimal points. In order to-
 		// counteract this, we scale the input amount
-		let input_amount_less_fee_scaled = FeeRate::div(
-			input_amount * T::Balance::sa(1_000_000), // scale up
+		let input_amount_less_fee_scaled = FeeRate::safe_div(
+			input_amount, // scale up
 			div_rate,
-		);
-		let numerator: T::Balance = input_amount_less_fee_scaled * output_reserve;
-		let denominator: T::Balance = FeeRate::div(input_amount, div_rate) + input_reserve;
+		)?;
 
-		numerator / denominator / T::Balance::sa(1_000_000) // undo scaling
+		let output_reserve_uint = U256::from(T::BalanceToU128::from(output_reserve).into());
+		let input_amount_uint = U256::from(T::BalanceToU128::from(input_amount_less_fee_scaled).into());
+		let denominator_uint = U256::from(T::BalanceToU128::from(input_amount_less_fee_scaled + input_reserve).into());
+
+		let res: Result<u128, &'static str> = (output_reserve_uint * input_amount_uint / denominator_uint).try_into();
+
+		ensure!(res.is_ok(), "Overflow error");
+		Ok(T::U128ToBalance::from(res.unwrap()).into())
 	}
 
 	/// `asset_id` - Trade asset
@@ -707,12 +728,7 @@ impl<T: Trait> Module<T> {
 
 		let trade_asset_reserve = <generic_asset::Module<T>>::free_balance(&asset_id, &exchange_address);
 
-		Ok(Self::get_output_price(
-			buy_amount,
-			trade_asset_reserve,
-			core_asset_reserve,
-			fee_rate,
-		))
+		Self::get_output_price(buy_amount, trade_asset_reserve, core_asset_reserve, fee_rate)
 	}
 
 	/// Returns the amount of trade asset to pay for `sell_amount` of core sold.
@@ -732,7 +748,7 @@ impl<T: Trait> Module<T> {
 		let core_asset_reserve = <generic_asset::Module<T>>::free_balance(&core_asset_id, &exchange_address);
 		let trade_asset_reserve = <generic_asset::Module<T>>::free_balance(asset_id, &exchange_address);
 
-		let output_amount = Self::get_input_price(sell_amount, core_asset_reserve, trade_asset_reserve, fee_rate);
+		let output_amount = Self::get_input_price(sell_amount, core_asset_reserve, trade_asset_reserve, fee_rate)?;
 
 		ensure!(
 			trade_asset_reserve > output_amount,
@@ -759,7 +775,7 @@ impl<T: Trait> Module<T> {
 		buy_amount: T::Balance,
 		max_paying_amount: T::Balance,
 		fee_rate: FeeRate,
-	) -> Result {
+	) -> DispatchResult {
 		let core_asset = Self::core_asset_id();
 		ensure!(asset_sold != asset_bought, "Asset to swap should not be equal");
 		if *asset_sold == core_asset {
@@ -806,7 +822,7 @@ impl<T: Trait> Module<T> {
 		sell_amount: T::Balance,
 		min_receive: T::Balance,
 		fee_rate: FeeRate,
-	) -> Result {
+	) -> DispatchResult {
 		let core_asset = Self::core_asset_id();
 		ensure!(asset_sold != asset_bought, "Asset to swap should not be equal");
 		if *asset_sold == core_asset {
