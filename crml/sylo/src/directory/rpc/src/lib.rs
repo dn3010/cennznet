@@ -1,10 +1,10 @@
-use std::{convert::TryInto, sync::Arc};
+use std::sync::Arc;
 
 use codec::Codec;
 use jsonrpc_core::{Error as RpcError, ErrorCode, Result};
 use jsonrpc_derive::rpc;
 use sp_api::ProvideRuntimeApi;
-use sp_arithmetic::traits::{BaseArithmetic, SaturatedConversion};
+use sp_arithmetic::traits::BaseArithmetic;
 use sp_blockchain::HeaderBackend;
 use sp_runtime::{generic::BlockId, traits::Block as BlockT};
 

@@ -4,13 +4,13 @@ use frame_support::{
 	decl_error, decl_module, decl_storage,
 	dispatch::DispatchError,
 	ensure,
-	traits::{Currency, ExistenceRequirement, Get, Time, WithdrawReason},
+	traits::{Currency, ExistenceRequirement, Time, WithdrawReason},
 	weights::Weight,
 };
 use frame_system::{ensure_root, ensure_signed};
 use sp_core::U256;
 use sp_io::hashing::keccak_256;
-use sp_runtime::{traits::Verify, AccountId32, MultiSignature};
+use sp_runtime::{traits::{Saturating, Verify}, AccountId32, MultiSignature};
 use sp_std::convert::TryFrom;
 
 mod default_weights;
@@ -113,7 +113,7 @@ decl_module! {
 		pub fn deposit_escrow(origin, amount: BalanceOf<T>) {
 			let account = ensure_signed(origin)?;
 			let mut deposit = <Deposits<T>>::get(&account);
-			ensure!(deposit.unlock_at == (0 as u32).into(), Error::<T>::DepositWhileUnlocking);
+			ensure!(deposit.unlock_at == 0u32.into(), Error::<T>::DepositWhileUnlocking);
 
 			T::Currency::withdraw(&account, amount, WithdrawReason::Fee.into(), ExistenceRequirement::KeepAlive)?;
 			deposit.escrow += amount;
@@ -124,7 +124,7 @@ decl_module! {
 		pub fn deposit_penalty(origin, amount: BalanceOf<T>) {
 			let account = ensure_signed(origin)?;
 			let mut deposit = <Deposits<T>>::get(&account);
-			ensure!(deposit.unlock_at == (0 as u32).into(), Error::<T>::DepositWhileUnlocking);
+			ensure!(deposit.unlock_at == 0u32.into(), Error::<T>::DepositWhileUnlocking);
 
 			T::Currency::withdraw(&account, amount, WithdrawReason::Fee.into(), ExistenceRequirement::KeepAlive)?;
 			deposit.penalty += amount;
@@ -135,8 +135,8 @@ decl_module! {
 		pub fn unlock_deposits(origin) {
 			let account = ensure_signed(origin)?;
 			let mut deposit = <Deposits<T>>::get(&account);
-			ensure!(deposit.escrow > (0 as u32).into() || deposit.penalty > (0 as u32).into(), Error::<T>::NothingToWithdraw);
-			ensure!(deposit.unlock_at == (0 as u32).into(), Error::<T>::UnlockAlreadyInProgress);
+			ensure!(deposit.escrow > 0u32.into() || deposit.penalty > 0u32.into(), Error::<T>::NothingToWithdraw);
+			ensure!(deposit.unlock_at == 0u32.into(), Error::<T>::UnlockAlreadyInProgress);
 
 			deposit.unlock_at = T::Time::now() + <UnlockDuration<T>>::get();
 			<Deposits<T>>::insert(&account, deposit)
@@ -146,9 +146,9 @@ decl_module! {
 		pub fn lock_deposits(origin) {
 			let account = ensure_signed(origin)?;
 			let mut deposit = <Deposits<T>>::get(&account);
-			ensure!(deposit.unlock_at != (0 as u32).into(), Error::<T>::NotUnlocking);
+			ensure!(deposit.unlock_at != 0u32.into(), Error::<T>::NotUnlocking);
 
-			deposit.unlock_at = (0 as u32).into();
+			deposit.unlock_at = 0u32.into();
 			<Deposits<T>>::insert(account, deposit)
 		}
 
@@ -179,10 +179,10 @@ decl_module! {
 
 			if ticket.face_value > deposit.escrow {
 				let penalty_amount = ticket.face_value - deposit.escrow;
-				deposit.escrow = (0 as u32).into();
-				deposit.penalty -= penalty_amount;
+				deposit.escrow = 0u32.into();
+				deposit.penalty = deposit.penalty.saturating_sub(penalty_amount);
 			} else {
-				deposit.escrow = deposit.escrow - ticket.face_value;
+				deposit.escrow -= ticket.face_value;
 			}
 
 			T::Currency::deposit_into_existing(&ticket.receiver, ticket.face_value)?;
@@ -199,17 +199,17 @@ decl_module! {
 
 fn withdraw_to<T: Trait>(account: T::AccountId) -> Result<(), DispatchError> {
 	let mut deposit = <Deposits<T>>::get(&account);
-	ensure!(deposit.unlock_at > (0 as u32).into(), Error::<T>::DepositNotUnlocked);
+	ensure!(deposit.unlock_at > 0u32.into(), Error::<T>::DepositNotUnlocked);
 	ensure!(deposit.unlock_at < T::Time::now(), Error::<T>::UnlockPeriodNotComplete);
 
 	let amount: BalanceOf<T> = deposit.escrow + deposit.penalty;
 
 	// Set values to 0
-	deposit.escrow = (0 as u32).into();
-	deposit.penalty = (0 as u32).into();
+	deposit.escrow = 0u32.into();
+	deposit.penalty = 0u32.into();
 
 	// Relock so if more funds are deposited they may be unlocked again
-	deposit.unlock_at = (0 as u32).into();
+	deposit.unlock_at = 0u32.into();
 
 	T::Currency::deposit_into_existing(&account, amount)?;
 	<Deposits<T>>::insert(&account, deposit);
@@ -227,7 +227,7 @@ pub fn ensure_valid_winning_ticket<T: Trait>(
 	sig: MultiSignature,
 ) -> Result<(), DispatchError> {
 	ensure!(
-		ticket.expiration == (0 as u32).into() || ticket.expiration >= T::Time::now(),
+		ticket.expiration == 0u32.into() || ticket.expiration >= T::Time::now(),
 		Error::<T>::ExpiredTicket
 	);
 	ensure!(!UsedTickets::get(ticket_hash), Error::<T>::TicketAlreadyRedeemed);
@@ -264,7 +264,7 @@ mod test {
 	use frame_support::{impl_outer_origin, parameter_types};
 	use pallet_balances::Module as BalanceModule;
 	use pallet_timestamp::Module as TimeModule;
-	use sp_core::{crypto::AccountId32, ecdsa, ed25519, sr25519, Pair};
+	use sp_core::{crypto::AccountId32, ecdsa, ed25519, Pair};
 	use sp_runtime::{traits::IdentifyAccount, MultiSigner};
 
 	#[derive(Clone, Eq, PartialEq)]
@@ -443,7 +443,7 @@ mod test {
 			);
 
 			// Move 1,000 after the unlock duration
-			Time::set_timestamp((1_000 + <UnlockDuration<Test>>::get() + 1_000).into());
+			Time::set_timestamp(1_000 + <UnlockDuration<Test>>::get() + 1_000);
 
 			Ticketing::withdraw(Origin::signed(alice.clone())).expect("Failed to withdraw funds from deposit");
 
@@ -508,7 +508,7 @@ mod test {
 		Balance::make_free_balance_be(&alice, 1_000);
 		// 150 is deposited into the escrow and 50 into the penalty
 		Ticketing::deposit_escrow(Origin::signed(alice.clone()), 150).expect("Failed to deposit into the escrow");
-		Ticketing::deposit_penalty(Origin::signed(alice.clone()), 50).expect("Failed to deposit into the penalty");
+		Ticketing::deposit_penalty(Origin::signed(alice), 50).expect("Failed to deposit into the penalty");
 	}
 
 	#[test]
@@ -549,7 +549,7 @@ mod test {
 				Balance::make_free_balance_be(&sender, 1_000);
 				Ticketing::deposit_escrow(Origin::signed(sender.clone()), 150)
 					.expect("Failed to deposit into the escrow");
-				Ticketing::deposit_penalty(Origin::signed(sender.clone()), 50)
+				Ticketing::deposit_penalty(Origin::signed(sender), 50)
 					.expect("Failed to deposit into the penalty");
 				// Bob also gets 1,000
 				Balance::make_free_balance_be(&receiver, 1_000);
@@ -578,7 +578,7 @@ mod test {
 			|alice, bob| {
 				Balance::make_free_balance_be(&alice, 1_000);
 				Ticketing::deposit_escrow(Origin::signed(alice.clone()), 10).expect("Could not deposit into escrow");
-				Ticketing::deposit_penalty(Origin::signed(alice.clone()), 5).expect("Could not deposit into penalty");
+				Ticketing::deposit_penalty(Origin::signed(alice), 5).expect("Could not deposit into penalty");
 				Balance::make_free_balance_be(&bob, 1_000);
 			},
 			|result, _, _| {
@@ -600,7 +600,7 @@ mod test {
 			|alice, bob| {
 				Balance::make_free_balance_be(&alice, 1_000);
 				Ticketing::deposit_escrow(Origin::signed(alice.clone()), 50).expect("Could not deposit into escrow");
-				Ticketing::deposit_penalty(Origin::signed(alice.clone()), 100).expect("Could not deposit into penalty");
+				Ticketing::deposit_penalty(Origin::signed(alice), 100).expect("Could not deposit into penalty");
 				Balance::make_free_balance_be(&bob, 1_000);
 			},
 			|result, sender, receiver| {
@@ -627,7 +627,7 @@ mod test {
 			|alice, _| {
 				Balance::make_free_balance_be(&alice, 1_000);
 				Ticketing::deposit_escrow(Origin::signed(alice.clone()), 100).expect("Couldn't deposit into escrow");
-				Ticketing::deposit_penalty(Origin::signed(alice.clone()), 50).expect("Couldn't deposit into penalty");
+				Ticketing::deposit_penalty(Origin::signed(alice), 50).expect("Couldn't deposit into penalty");
 			},
 			|result, _, bob| {
 				result.expect_err("This is meant to be a losing ticket");
@@ -749,7 +749,7 @@ mod test {
 			let ticket_hash = keccak_256(ticket.encode().as_ref());
 			let sig: MultiSignature = keychain2.sign(&ticket_hash).into(); // The receiver should not be signing the message
 
-			Ticketing::redeem(Origin::signed(bob.clone()), ticket.clone(), receiver_rand, sig.clone())
+			Ticketing::redeem(Origin::signed(bob.clone()), ticket, receiver_rand, sig)
 				.expect_err("Ticket should have had the wrong signature");
 		})
 	}
