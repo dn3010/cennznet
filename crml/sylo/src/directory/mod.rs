@@ -6,7 +6,10 @@ use frame_support::{
 };
 use frame_system::ensure_signed;
 use sp_io::hashing::keccak_256;
-use sp_runtime::{traits::{Bounded, Saturating}, DispatchResult};
+use sp_runtime::{
+	traits::{Bounded, Saturating},
+	DispatchResult,
+};
 
 // TODO: Set unlock duration to a sensible value
 const UNLOCK_DURATION: u32 = 5;
@@ -436,7 +439,10 @@ impl<T: Trait> Module<T> {
 			0u32.into()
 		} else {
 			let root_stake = <Stakes<T>>::get(Root::get());
-			root_stake.amount.saturating_add(root_stake.left_amount).saturating_add(root_stake.right_amount)
+			root_stake
+				.amount
+				.saturating_add(root_stake.left_amount)
+				.saturating_add(root_stake.right_amount)
 		}
 	}
 }

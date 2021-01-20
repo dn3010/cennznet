@@ -10,7 +10,10 @@ use frame_support::{
 use frame_system::{ensure_root, ensure_signed};
 use sp_core::U256;
 use sp_io::hashing::keccak_256;
-use sp_runtime::{traits::{Saturating, Verify}, AccountId32, MultiSignature};
+use sp_runtime::{
+	traits::{Saturating, Verify},
+	AccountId32, MultiSignature,
+};
 use sp_std::convert::TryFrom;
 
 mod default_weights;
@@ -549,8 +552,7 @@ mod test {
 				Balance::make_free_balance_be(&sender, 1_000);
 				Ticketing::deposit_escrow(Origin::signed(sender.clone()), 150)
 					.expect("Failed to deposit into the escrow");
-				Ticketing::deposit_penalty(Origin::signed(sender), 50)
-					.expect("Failed to deposit into the penalty");
+				Ticketing::deposit_penalty(Origin::signed(sender), 50).expect("Failed to deposit into the penalty");
 				// Bob also gets 1,000
 				Balance::make_free_balance_be(&receiver, 1_000);
 			},
