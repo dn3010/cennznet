@@ -116,7 +116,7 @@ decl_module! {
 			ensure!(deposit.unlock_at == 0u32.into(), Error::<T>::DepositWhileUnlocking);
 
 			T::Currency::withdraw(&account, amount, WithdrawReason::Fee.into(), ExistenceRequirement::KeepAlive)?;
-			deposit.escrow += amount;
+			deposit.escrow = deposit.escrow.saturating_add(amount);
 			<Deposits<T>>::insert(&account, deposit);
 		}
 
@@ -127,7 +127,7 @@ decl_module! {
 			ensure!(deposit.unlock_at == 0u32.into(), Error::<T>::DepositWhileUnlocking);
 
 			T::Currency::withdraw(&account, amount, WithdrawReason::Fee.into(), ExistenceRequirement::KeepAlive)?;
-			deposit.penalty += amount;
+			deposit.penalty = deposit.penalty.saturating_add(amount);
 			<Deposits<T>>::insert(&account, deposit);
 		}
 
@@ -138,7 +138,7 @@ decl_module! {
 			ensure!(deposit.escrow > 0u32.into() || deposit.penalty > 0u32.into(), Error::<T>::NothingToWithdraw);
 			ensure!(deposit.unlock_at == 0u32.into(), Error::<T>::UnlockAlreadyInProgress);
 
-			deposit.unlock_at = T::Time::now() + <UnlockDuration<T>>::get();
+			deposit.unlock_at = T::Time::now().saturating_add(<UnlockDuration<T>>::get());
 			<Deposits<T>>::insert(&account, deposit)
 		}
 
@@ -173,16 +173,16 @@ decl_module! {
 
 			let mut deposit = <Deposits<T>>::get(&ticket.sender);
 
-			ensure!(deposit.escrow + deposit.penalty >= ticket.face_value, Error::<T>::InsufficientFunds);
+			ensure!(deposit.escrow.saturating_add(deposit.penalty) >= ticket.face_value, Error::<T>::InsufficientFunds);
 
 			UsedTickets::insert(&hash, true);
 
 			if ticket.face_value > deposit.escrow {
-				let penalty_amount = ticket.face_value - deposit.escrow;
+				let penalty_amount = ticket.face_value.saturating_sub(deposit.escrow);
 				deposit.escrow = 0u32.into();
 				deposit.penalty = deposit.penalty.saturating_sub(penalty_amount);
 			} else {
-				deposit.escrow -= ticket.face_value;
+				deposit.escrow = deposit.escrow.saturating_sub(ticket.face_value);
 			}
 
 			T::Currency::deposit_into_existing(&ticket.receiver, ticket.face_value)?;
@@ -202,7 +202,7 @@ fn withdraw_to<T: Trait>(account: T::AccountId) -> Result<(), DispatchError> {
 	ensure!(deposit.unlock_at > 0u32.into(), Error::<T>::DepositNotUnlocked);
 	ensure!(deposit.unlock_at < T::Time::now(), Error::<T>::UnlockPeriodNotComplete);
 
-	let amount: BalanceOf<T> = deposit.escrow + deposit.penalty;
+	let amount: BalanceOf<T> = deposit.escrow.saturating_add(deposit.penalty);
 
 	// Set values to 0
 	deposit.escrow = 0u32.into();

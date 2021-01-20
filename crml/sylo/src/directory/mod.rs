@@ -6,7 +6,7 @@ use frame_support::{
 };
 use frame_system::ensure_signed;
 use sp_io::hashing::keccak_256;
-use sp_runtime::{traits::Bounded, DispatchResult};
+use sp_runtime::{traits::{Bounded, Saturating}, DispatchResult};
 
 // TODO: Set unlock duration to a sensible value
 const UNLOCK_DURATION: u32 = 5;
@@ -236,13 +236,13 @@ decl_module! {
 
 			// Create unlock
 			let mut unlock = <Unlockings<T>>::get(stake_key);
-			let unlock_at = T::Time::now() + UNLOCK_DURATION.into();
+			let unlock_at = T::Time::now().saturating_add(UNLOCK_DURATION.into());
 
 			if unlock.unlock_at < unlock_at {
 				unlock.unlock_at = unlock_at;
 			}
 
-			unlock.amount += amount;
+			unlock.amount = unlock.amount.saturating_add(amount);
 			<Unlockings<T>>::insert(stake_key, unlock);
 		}
 
@@ -301,9 +301,9 @@ impl<T: Trait> Module<T> {
 
 		// XXX: Edit stake amount, flag for + or -
 		if !flag {
-			stake.amount += amount;
+			stake.amount = stake.amount.saturating_add(amount);
 		} else {
-			stake.amount -= amount;
+			stake.amount = stake.amount.saturating_sub(amount);
 		}
 
 		// Insert stakee amount into tree and update stake
@@ -328,14 +328,14 @@ impl<T: Trait> Module<T> {
 		// XXX: Find a better way to create a negative balance
 		if !flag {
 			if parent.left == stake_key {
-				parent.left_amount += amount;
+				parent.left_amount = parent.left_amount.saturating_add(amount);
 			} else {
-				parent.right_amount += amount;
+				parent.right_amount = parent.right_amount.saturating_add(amount);
 			}
 		} else if parent.left == stake_key {
-			parent.left_amount -= amount;
+			parent.left_amount = parent.left_amount.saturating_sub(amount);
 		} else {
-			parent.right_amount -= amount;
+			parent.right_amount = parent.right_amount.saturating_sub(amount);
 		}
 
 		<Stakes<T>>::insert(parent_key, parent);
@@ -400,7 +400,7 @@ impl<T: Trait> Module<T> {
 			<Unlockings<T>>::remove(unlock_key);
 		} else {
 			ensure!(unlock.amount >= amount, Error::<T>::RelockAmount);
-			unlock.amount -= amount;
+			unlock.amount = unlock.amount.saturating_sub(amount);
 			<Unlockings<T>>::insert(unlock_key, unlock);
 		}
 		Ok(())
@@ -419,13 +419,13 @@ impl<T: Trait> Module<T> {
 				continue;
 			}
 
-			expected_val -= stake.left_amount;
+			expected_val = expected_val.saturating_sub(stake.left_amount);
 
 			if expected_val <= stake.amount {
 				return Ok(stake.stakee);
 			}
 
-			expected_val -= stake.amount;
+			expected_val = expected_val.saturating_sub(stake.amount);
 			current = stake.right;
 		}
 	}
@@ -436,7 +436,7 @@ impl<T: Trait> Module<T> {
 			0u32.into()
 		} else {
 			let root_stake = <Stakes<T>>::get(Root::get());
-			root_stake.amount + root_stake.left_amount + root_stake.right_amount
+			root_stake.amount.saturating_add(root_stake.left_amount).saturating_add(root_stake.right_amount)
 		}
 	}
 }
