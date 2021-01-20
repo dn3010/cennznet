@@ -29,9 +29,3 @@ decl_module! {
 		}
 	}
 }
-
-impl<T: Trait> Module<T> {
-	pub fn get_listing(key: T::AccountId) -> MultiAddress {
-		<Listings<T>>::get(key)
-	}
-}
