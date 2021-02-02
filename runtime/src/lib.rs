@@ -895,6 +895,10 @@ impl_runtime_apis! {
 
 	impl crml_sylo_directory_rpc_runtime_api::SyloDirectoryApi<Block, AccountId> for Runtime {
 		fn scan(point: U256) -> SyloDirectoryResult<AccountId> {
+			// Accepts u256 but should only work on u128.
+			// This is because u128 has a bug upstream where they are not properly deserialised by the runtime.
+			// The suggested workaround for this is to accept a u256 and then do a checked cast into a u128.
+			// It is assumed that the number can be converted into a u128 or else it would've been rejected.
 			let point: u128 = point.saturated_into();
 			let result = SyloDirectory::scan(point);
 			match result {

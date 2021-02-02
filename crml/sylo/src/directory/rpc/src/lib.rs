@@ -62,12 +62,15 @@ where
 		let best = self.client.info().best_hash;
 		let at = BlockId::hash(best);
 
-		// Accepts u256 but should only work on u128
+		// Accepts u256 but should only work on u128.
+		// This is because u128 has a bug upstream where they are not properly deserialised by the runtime.
+		// The suggested workaround for this is to accept a u256 and then do a checked cast into a u128.
+		// Therefore, reject any value that cannot be cast into a u128 here.
 		if point > u128::MAX.into() {
 			return Err(RpcError {
 				code: ErrorCode:: ServerError(Error::Runtime.into()),
 				message: "Value too large.".into(),
-				data: Some(format!("Expected a 128bit integer but received {:?} instead", point).into()), 
+				data: Some(format!("Expected a 128bit integer but received `{:?}` instead", point).into()),
 			})
 		}
 		let result = api.scan(&at, point).map_err(|e| RpcError {
