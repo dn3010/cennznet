@@ -7,6 +7,7 @@ use frame_support::{
 use frame_system::ensure_signed;
 use sp_io::hashing::keccak_256;
 use sp_runtime::{traits::Bounded, DispatchResult};
+use sp_arithmetic::Permill;
 
 // TODO: Set unlock duration to a sensible value
 const UNLOCK_DURATION: u32 = 5;
@@ -411,13 +412,11 @@ impl<T: Trait> Module<T> {
 	// Scan the stake directory, select a node
 	pub fn scan(point: BalanceOf<T>) -> Result<T::AccountId, Error<T>> {
 		ensure!(Root::get() != EMPTY_HASH, Error::<T>::NoStakes);
-		let mut expected_val = (point / BalanceOf::<T>::max_value()) * Self::get_total_stake();
+		let mut expected_val = Permill::from_rational_approximation(point, BalanceOf::<T>::max_value()).mul_floor(Self::get_total_stake());
 		let mut current = Root::get();
 
 		loop {
 			let stake = <Stakes<T>>::get(current);
-			frame_support::debug::RuntimeLogger::init();
-			frame_support::debug::debug!("{:?}", stake);
 			if expected_val < stake.left_amount {
 				current = stake.left;
 				continue;
@@ -1110,10 +1109,10 @@ mod test {
 			assert_eq!(Directory::get_total_stake(), 2);
 
 			let selected_1 = Directory::scan(BalanceOf::<Test>::max_value());
-			assert_eq!(selected_1, Some(a.clone()));
+			assert_eq!(selected_1.unwrap(), a.clone());
 
 			let selected_0 = Directory::scan((0 as u32).into());
-			assert_eq!(selected_0, Some(b.clone()));
+			assert_eq!(selected_0.unwrap(), b.clone());
 		})
 	}
 }
