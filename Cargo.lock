@@ -1148,6 +1148,7 @@ dependencies = [
  "pallet-timestamp",
  "parity-scale-codec",
  "serde",
+ "sp-arithmetic",
  "sp-core",
  "sp-io",
  "sp-runtime",
@@ -1183,6 +1184,7 @@ dependencies = [
  "serde_json",
  "sp-api",
  "sp-arithmetic",
+ "sp-core",
  "sp-runtime",
  "sp-std",
 ]

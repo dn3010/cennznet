@@ -5,6 +5,7 @@ use frame_support::{
 	weights::Weight,
 };
 use frame_system::ensure_signed;
+use sp_arithmetic::Permill;
 use sp_io::hashing::keccak_256;
 use sp_runtime::{
 	traits::{Bounded, Saturating},
@@ -412,7 +413,7 @@ impl<T: Trait> Module<T> {
 	// Scan the stake directory, select a node
 	pub fn scan(point: BalanceOf<T>) -> Result<T::AccountId, Error<T>> {
 		ensure!(Root::get() != EMPTY_HASH, Error::<T>::NoStakes);
-		let mut expected_val = (point / BalanceOf::<T>::max_value()) * Self::get_total_stake();
+		let mut expected_val = Permill::from_rational_approximation(point, BalanceOf::<T>::max_value()).mul_floor(Self::get_total_stake());
 		let mut current = Root::get();
 
 		loop {
