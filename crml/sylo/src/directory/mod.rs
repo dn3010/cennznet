@@ -5,9 +5,12 @@ use frame_support::{
 	weights::Weight,
 };
 use frame_system::ensure_signed;
-use sp_io::hashing::keccak_256;
-use sp_runtime::{traits::Bounded, DispatchResult};
 use sp_arithmetic::Permill;
+use sp_io::hashing::keccak_256;
+use sp_runtime::{
+	traits::{Bounded, Saturating},
+	DispatchResult,
+};
 
 // TODO: Set unlock duration to a sensible value
 const UNLOCK_DURATION: u32 = 5;
@@ -84,13 +87,13 @@ decl_module! {
 		// Add a stake to the directory
 		#[weight = T::WeightInfo::add_stake()]
 		fn add_stake(origin, amount: BalanceOf<T>, stakee: T::AccountId) -> DispatchResult {
-			ensure!(amount != (0 as u32).into(), Error::<T>::ZeroStake);
+			ensure!(amount != 0u32.into(), Error::<T>::ZeroStake);
 
 			let staker = ensure_signed(origin)?;
 			let key = Self::get_key(staker.clone(), stakee.clone());
 
 			// Stake does not exist, create a stake
-			if <Stakes<T>>::get(key).amount == (0 as u32).into() {
+			if <Stakes<T>>::get(key).amount == 0u32.into() {
 
 				let mut parent_key = Root::get();
 
@@ -120,7 +123,7 @@ decl_module! {
 				// Create a stake and insert it into directory
 				let mut stake = <Stakes<T>>::get(key);
 				stake.parent = parent_key;
-				stake.stakee = stakee.clone();
+				stake.stakee = stakee;
 				<Stakes<T>>::insert(key, stake);
 			}
 
@@ -146,7 +149,7 @@ decl_module! {
 			let stake_key = Self::get_key(staker, stakee);
 			let mut stake = <Stakes<T>>::get(&stake_key);
 
-			ensure!(stake.amount > (0 as u32).into(), Error::<T>::ZeroStake);
+			ensure!(stake.amount > 0u32.into(), Error::<T>::ZeroStake);
 			ensure!(stake.amount >= amount, Error::<T>::InsufficientStakeBalance);
 
 			// Remove the balance from the stake
@@ -154,7 +157,7 @@ decl_module! {
 			stake = <Stakes<T>>::get(&stake_key); // Update the stake that has changed above
 
 			//Stake has been withdrawn now update the tree
-			if stake.amount == (0 as u32).into() {
+			if stake.amount == 0u32.into() {
 				let mut child_key : Hash;
 				if stake.left_amount > stake.right_amount {
 					child_key = stake.left;
@@ -210,7 +213,7 @@ decl_module! {
 
 						// Place stake where current was and...
 						stake.parent = current_parent; // ... set parent...
-						<Stakes<T>>::insert(stake_key, stake.clone());
+						<Stakes<T>>::insert(stake_key, stake);
 						Self::set_child(current_parent, child_key, stake_key); // ...set parents' child
 
 						// Unstake amount
@@ -237,13 +240,13 @@ decl_module! {
 
 			// Create unlock
 			let mut unlock = <Unlockings<T>>::get(stake_key);
-			let unlock_at = T::Time::now() + UNLOCK_DURATION.into();
+			let unlock_at = T::Time::now().saturating_add(UNLOCK_DURATION.into());
 
 			if unlock.unlock_at < unlock_at {
 				unlock.unlock_at = unlock_at;
 			}
 
-			unlock.amount += amount;
+			unlock.amount = unlock.amount.saturating_add(amount);
 			<Unlockings<T>>::insert(stake_key, unlock);
 		}
 
@@ -256,11 +259,11 @@ decl_module! {
 			let unlock = <Unlockings<T>>::get(key);
 
 			ensure!(unlock.unlock_at <T::Time::now(), Error::<T>::UnlockPeriodNonExhasted);
-			ensure!(unlock.amount > (0 as u32).into(), Error::<T>::ZeroStake);
+			ensure!(unlock.amount > 0u32.into(), Error::<T>::ZeroStake);
 
 			let amount = unlock.amount;
 			<Unlockings<T>>::remove(key);
-			T::Currency::deposit_into_existing(&staker, amount);
+			T::Currency::deposit_into_existing(&staker, amount)?;
 		}
 
 		// Relock an unlock to restake
@@ -269,7 +272,7 @@ decl_module! {
 			let staker = ensure_signed(origin)?;
 			let key = Self::get_key(staker, stakee);
 
-			Self::pull_unlocking(key, amount);
+			Self::pull_unlocking(key, amount)?;
 			Self::update_stake_amount(key, amount, false);
 		}
 
@@ -302,9 +305,9 @@ impl<T: Trait> Module<T> {
 
 		// XXX: Edit stake amount, flag for + or -
 		if !flag {
-			stake.amount += amount;
+			stake.amount = stake.amount.saturating_add(amount);
 		} else {
-			stake.amount -= amount;
+			stake.amount = stake.amount.saturating_sub(amount);
 		}
 
 		// Insert stakee amount into tree and update stake
@@ -329,21 +332,19 @@ impl<T: Trait> Module<T> {
 		// XXX: Find a better way to create a negative balance
 		if !flag {
 			if parent.left == stake_key {
-				parent.left_amount += amount;
+				parent.left_amount = parent.left_amount.saturating_add(amount);
 			} else {
-				parent.right_amount += amount;
+				parent.right_amount = parent.right_amount.saturating_add(amount);
 			}
+		} else if parent.left == stake_key {
+			parent.left_amount = parent.left_amount.saturating_sub(amount);
 		} else {
-			if parent.left == stake_key {
-				parent.left_amount -= amount;
-			} else {
-				parent.right_amount -= amount;
-			}
+			parent.right_amount = parent.right_amount.saturating_sub(amount);
 		}
 
 		<Stakes<T>>::insert(parent_key, parent);
 
-		return Self::apply_stake_change(parent_key, amount, root, flag);
+		Self::apply_stake_change(parent_key, amount, root, flag)
 	}
 
 	// Fix the left children of a stake to the left children of another stake
@@ -403,7 +404,7 @@ impl<T: Trait> Module<T> {
 			<Unlockings<T>>::remove(unlock_key);
 		} else {
 			ensure!(unlock.amount >= amount, Error::<T>::RelockAmount);
-			unlock.amount -= amount;
+			unlock.amount = unlock.amount.saturating_sub(amount);
 			<Unlockings<T>>::insert(unlock_key, unlock);
 		}
 		Ok(())
@@ -422,13 +423,13 @@ impl<T: Trait> Module<T> {
 				continue;
 			}
 
-			expected_val -= stake.left_amount;
+			expected_val = expected_val.saturating_sub(stake.left_amount);
 
 			if expected_val <= stake.amount {
 				return Ok(stake.stakee);
 			}
 
-			expected_val -= stake.amount;
+			expected_val = expected_val.saturating_sub(stake.amount);
 			current = stake.right;
 		}
 	}
@@ -436,10 +437,13 @@ impl<T: Trait> Module<T> {
 	// Retrieve the total stake weight of the directory
 	fn get_total_stake() -> BalanceOf<T> {
 		if !Root::exists() {
-			return (0 as u32).into();
+			0u32.into()
 		} else {
 			let root_stake = <Stakes<T>>::get(Root::get());
-			root_stake.amount + root_stake.left_amount + root_stake.right_amount
+			root_stake
+				.amount
+				.saturating_add(root_stake.left_amount)
+				.saturating_add(root_stake.right_amount)
 		}
 	}
 }
@@ -451,8 +455,7 @@ mod test {
 	use frame_support::{impl_outer_origin, parameter_types};
 	use pallet_balances::Module as BalanceModule;
 	use pallet_timestamp::Module as TimeModule;
-	use sp_core::{crypto::AccountId32, ecdsa, ed25519, sr25519, Pair};
-	use sp_runtime::{traits::IdentifyAccount, MultiSigner};
+	use sp_core::{crypto::AccountId32, ed25519, Pair};
 
 	#[derive(Clone, Eq, PartialEq)]
 	pub struct Test;
@@ -638,7 +641,7 @@ mod test {
 			assert_eq!(Balance::free_balance(a.clone()), 500);
 
 			// Unlock part of stake
-			Directory::unlock_stake(Origin::signed(a.clone()), 250, a.clone());
+			Directory::unlock_stake(Origin::signed(a.clone()), 250, a.clone()).unwrap();
 
 			// Check unlocking
 			let unlocking = <Unlockings<Test>>::get(key);
@@ -653,7 +656,7 @@ mod test {
 			Time::set_timestamp(10);
 
 			// Unstake
-			Directory::unstake(Origin::signed(a.clone()), a.clone());
+			Directory::unstake(Origin::signed(a.clone()), a.clone()).unwrap();
 			assert_eq!(Balance::free_balance(a.clone()), 750);
 		})
 	}
@@ -673,7 +676,7 @@ mod test {
 			assert_eq!(Balance::free_balance(a.clone()), 500);
 
 			// Unlock part of stake
-			Directory::unlock_stake(Origin::signed(a.clone()), 250, a.clone());
+			Directory::unlock_stake(Origin::signed(a.clone()), 250, a.clone()).unwrap();
 
 			// Check unlocking
 			let mut unlocking = <Unlockings<Test>>::get(key);
@@ -685,7 +688,7 @@ mod test {
 			assert_eq!(stake.amount, 250);
 
 			// Relock part of the stake
-			Directory::lock_stake(Origin::signed(a.clone()), 125, a.clone());
+			Directory::lock_stake(Origin::signed(a.clone()), 125, a.clone()).unwrap();
 
 			// Recheck unlocking
 			unlocking = <Unlockings<Test>>::get(key);
@@ -807,9 +810,9 @@ mod test {
 			assert_eq!(f_stakee, 50);
 
 			// Remove a non leaf, non root node
-			Directory::unlock_stake(Origin::signed(c.clone()), 300, c.clone());
+			Directory::unlock_stake(Origin::signed(c.clone()), 300, c.clone()).unwrap();
 			Time::set_timestamp(30);
-			Directory::unstake(Origin::signed(c.clone()), c.clone());
+			Directory::unstake(Origin::signed(c.clone()), c.clone()).unwrap();
 			assert_eq!(Directory::get_total_stake(), 1_250);
 
 			// Refetch stakes
@@ -886,15 +889,14 @@ mod test {
 			assert_eq!(f_stakee, 50);
 
 			// Remove a leaf node
-			Directory::unlock_stake(Origin::signed(f.clone()), 50, f.clone());
+			Directory::unlock_stake(Origin::signed(f.clone()), 50, f.clone()).unwrap();
 			Time::set_timestamp(50);
-			Directory::unstake(Origin::signed(f.clone()), f.clone());
+			Directory::unstake(Origin::signed(f.clone()), f.clone()).unwrap();
 			assert_eq!(Directory::get_total_stake(), 1200);
 
 			// Refetch stakes
 			a_stake = <Stakes<Test>>::get(a_key);
 			b_stake = <Stakes<Test>>::get(b_key);
-			c_stake = <Stakes<Test>>::get(c_key);
 			d_stake = <Stakes<Test>>::get(d_key);
 			e_stake = <Stakes<Test>>::get(e_key);
 			f_stake = <Stakes<Test>>::get(f_key);
@@ -956,15 +958,14 @@ mod test {
 			assert_eq!(f_stakee, 0);
 
 			// Remove a root node
-			Directory::unlock_stake(Origin::signed(a.clone()), 500, a.clone());
+			Directory::unlock_stake(Origin::signed(a.clone()), 500, a.clone()).unwrap();
 			Time::set_timestamp(100);
-			Directory::unstake(Origin::signed(a.clone()), a.clone());
+			Directory::unstake(Origin::signed(a.clone()), a.clone()).unwrap();
 			assert_eq!(Directory::get_total_stake(), 700);
 
 			// Refetch stakes
 			a_stake = <Stakes<Test>>::get(a_key);
 			b_stake = <Stakes<Test>>::get(b_key);
-			c_stake = <Stakes<Test>>::get(c_key);
 			d_stake = <Stakes<Test>>::get(d_key);
 			e_stake = <Stakes<Test>>::get(e_key);
 			f_stake = <Stakes<Test>>::get(f_key);
@@ -1065,7 +1066,7 @@ mod test {
 			assert_eq!(<Stakes<Test>>::get(key).amount, 100);
 
 			// Unlock tokens that were staked
-			Directory::unlock_stake(Origin::signed(a.clone()), 50, b.clone());
+			Directory::unlock_stake(Origin::signed(a.clone()), 50, b.clone()).unwrap();
 
 			// check unlock amount
 			let unlock = <Unlockings<Test>>::get(key);
@@ -1078,7 +1079,7 @@ mod test {
 
 			// Set time past unlock period and withdraw unlock
 			Time::set_timestamp(10);
-			Directory::unstake(Origin::signed(a.clone()), b.clone());
+			Directory::unstake(Origin::signed(a.clone()), b.clone()).unwrap();
 
 			// Check that unlock is withdrawn and removed and that balances is restored
 			assert_eq!(<Unlockings<Test>>::contains_key(key), false);
@@ -1100,19 +1101,16 @@ mod test {
 			Balance::make_free_balance_be(&b, 1_000);
 
 			// Alice stakes with bob as stakee
-			let a_key = Directory::get_key(a.clone(), a.clone());
 			Directory::add_stake(Origin::signed(a.clone()), 1, a.clone()).expect("Failed to create a stake");
-
-			let b_key = Directory::get_key(b.clone(), b.clone());
 			Directory::add_stake(Origin::signed(b.clone()), 1, b.clone()).expect("Failed to create a stake");
 
 			assert_eq!(Directory::get_total_stake(), 2);
 
 			let selected_1 = Directory::scan(BalanceOf::<Test>::max_value());
-			assert_eq!(selected_1.unwrap(), a.clone());
+			assert_eq!(selected_1.unwrap(), a);
 
-			let selected_0 = Directory::scan((0 as u32).into());
-			assert_eq!(selected_0.unwrap(), b.clone());
+			let selected_0 = Directory::scan(0u32.into());
+			assert_eq!(selected_0.unwrap(), b);
 		})
 	}
 }

@@ -87,7 +87,6 @@ pub use crml_sylo::response as sylo_response;
 pub use crml_sylo::ticketing as sylo_ticketing;
 pub use crml_sylo::vault as sylo_vault;
 use crml_sylo_directory_rpc_runtime_api::SyloDirectoryResult;
-use crml_sylo_listing_rpc_runtime_api::SyloListingResult;
 
 pub use crml_transaction_payment::{Multiplier, TargetedFeeAdjustment};
 pub use prml_generic_asset::{AssetInfo, Call as GenericAssetCall, SpendingAssetCurrency, StakingAssetCurrency};
@@ -905,13 +904,6 @@ impl_runtime_apis! {
 				Ok(acc) => SyloDirectoryResult::Success(acc),
 				Err(_) => SyloDirectoryResult::Error,
 			}
-		}
-	}
-
-	impl crml_sylo_listing_rpc_runtime_api::SyloListingApi<Block, AccountId> for Runtime {
-		fn get_listing(key: AccountId) -> SyloListingResult {
-			let result = SyloListing::get_listing(key);
-			SyloListingResult::Success(result)
 		}
 	}
 

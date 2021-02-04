@@ -1,7 +1,6 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
 use codec::{Codec, Decode, Encode};
-use sp_arithmetic::traits::BaseArithmetic;
 use sp_core::U256;
 use sp_runtime::RuntimeDebug;
 
